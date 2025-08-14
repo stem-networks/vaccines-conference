@@ -5348,6 +5348,7 @@ li {
 
 .img_text5 {
 	text-align: right;
+	/* margin: auto 0; */
 }
 
 .img_text5 img {
@@ -5357,12 +5358,12 @@ li {
 
 
 
-.map_wrap156 {
-	padding-left: 90px;
+/* .map_wrap156 {
+	padding-left: 100px;
 	font-size: 15.5px;
-	padding-top: 21px;
+	padding-top: 10px;
 	line-height: 24px;
-}
+} */
 
 .map_wrap156 img {
 	position: absolute;
@@ -5581,7 +5582,7 @@ li {
 	width: 93.5%;
 	height: 174.5px;
 	display: block;
-	background-image: url(/images/images/cal.png);
+	/* background-image: url(/images/images/cal.png); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding: 70px 0px 0px 0px;
@@ -5593,7 +5594,7 @@ li {
 	width: 93.5%;
 	height: 174.5px;
 	display: block;
-	background-image: url(/images/images/cal2.png);
+	/* background-image: url(/images/images/cal2.png); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding: 70px 0px 0px 0px;
@@ -5781,7 +5782,7 @@ li {
 	max-width: 450px;
 	vertical-align: top;
 	display: inline-block;
-	margin: -28px 0px 0px -13px;
+	 margin: -51px 0px 0px -3px;
 }
 
 .set_gray_wrap2 img {
@@ -6335,11 +6336,11 @@ li {
 	position: relative;
 }
 
-.june_wrap55 h1 {
+/* .june_wrap55 h1 {
 	font-size: 25px;
 	color: #737373;
 	font-weight: 400;
-}
+} */
 
 .june_wrap55 .main-head-box {
 	/* display: inline-block; */
@@ -6364,7 +6365,7 @@ li {
 	width: 88%;
 	display: block;
 	height: 420px;
-	background-image: url(/images/images/img4.png);
+	background-image: url(/images/images/img4.webp);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -8829,7 +8830,7 @@ li {
 }
 
 .test-highlights1 {
-	background-image: url(/images/images/g1.jpg);
+	background-image: url(/images/images/g1.webp);
 }
 
 .test-highlights2 {

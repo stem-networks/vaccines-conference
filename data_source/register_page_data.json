@@ -1,66 +1,66 @@
 {
     "accommodation_prices": [
         {
-            "id": "14",
-            "single": "250",
+            "id": "7",
+            "single": "200",
             "doubl": "270",
             "tri": "0",
-            "accompanying": "200",
+            "accompanying": "150",
             "created_dt": "2024-07-15 15:05:58",
             "updated_dt": "2024-05-10 12:45:31",
             "status": "1",
-            "cid": "14"
+            "cid": "10032"
         }
     ],
     "checkdates_text": {
         "1": [
-            "05-05-2026 (Tuesday)",
-            "06-05-2026 (Wednesday)",
-            "07-05-2026 (Thursday)",
-            "08-05-2026 (Friday)"
+            "14-04-2026 (Monday)",
+            "15-04-2026 (Tuesday)",
+            "16-04-2026 (Wednesday)",
+            "17-04-2026 (Thursday)"
         ],
         "2": [
-            "07-05-2026 (Thursday)",
-            "08-05-2026 (Friday)",
-            "09-05-2026 (Saturday)",
-            "10-05-2026 (Sunday)"
+            "16-04-2026 (Wednesday)",
+            "17-04-2026 (Thursday)",
+            "18-04-2026 (Friday)",
+            "19-04-2026 (Saturday)"
         ]
     },
     "checkdates": {
         "1": [
-            "05-05-2026",
-            "06-05-2026",
-            "07-05-2026",
-            "08-05-2026"
+            "04-08-2025",
+            "05-08-2025",
+            "06-08-2025",
+            "07-08-2025"
         ],
         "2": [
-            "07-05-2026",
-            "08-05-2026",
-            "09-05-2026",
-            "10-05-2026"
+            "06-08-2025",
+            "07-08-2025",
+            "08-08-2025",
+            "09-08-2025"
         ]
     },
     "conference_date": "March 17-19, 2025",
     "registration_open_date": {
         "register_dt": "15-03-2024",
-        "id": "14",
+        "id": "7",
         "conference_date": "March 17-19, 2025"
     },
     "RegDeadline": [
         {
-            "id": "95",
+            "id": "46",
             "title": "Early Bird Registration",
             "deadline_dt": "17-07-2024",
             "page_url": "early-bird-registration"
         },
         {
-            "id": "99",
+            "id": "50",
             "title": "Mid Term Registration",
             "deadline_dt": "15-10-2024",
             "page_url": "mid-term-registration"
         },
         {
-            "id": "94",
+            "id": "45",
             "title": "On Spot Registration",
             "deadline_dt": "17-03-2025",
             "page_url": "on-spot-registration"
@@ -89,15 +89,21 @@
         }
     },
     "increment_price": {
-        "Listener (In-Person)": {
-            "Standard Registration Fee": "$1299",
-            "total": "909",
-            "min": "30",
+        "Presenter (In-Person)": {
+            "Standard Registration Fee": "$1599",
+            "total": "899",
+            "min": "44",
             "conference_dt": "2025-09-21"
         },
-        "Presenter (In-Person)": {
-            "Standard Registration Fee": "$1499",
-            "total": "749",
+        "Listener (In-Person)": {
+            "Standard Registration Fee": "$1299",
+            "total": "999",
+            "min": "23",
+            "conference_dt": "2025-09-21"
+        },
+        "Presenter (Virtual)": {
+            "Standard Registration Fee": "$299",
+            "total": "149",
             "min": "50",
             "conference_dt": "2025-09-21"
         },
@@ -107,16 +113,10 @@
             "min": "50",
             "conference_dt": "2025-09-21"
         },
-        "Presenter (Virtual)": {
-            "Standard Registration Fee": "$299",
-            "total": "149",
-            "min": "50",
-            "conference_dt": "2025-09-21"
-        },
         "Student/Young Researcher": {
             "Standard Registration Fee": "$699",
-            "total": "349",
-            "min": "50",
+            "total": "399",
+            "min": "43",
             "conference_dt": "2025-09-21"
         }
     },

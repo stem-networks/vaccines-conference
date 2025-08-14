@@ -1,99 +1,101 @@
 {
   "data": {
-    "cid": "14",
-    "site_url": "https://diabetes-conference.com",
-    "clname": "Diabetes Global Conference",
-    "csname": "DGC",
-    "clogotext": "DGC-2026",
-    "sdate": "07",
-    "edate": "08",
-    "month": "May",
+    "cid": "10032",
+    "site_url": "https://materialssciencesummit.com",
+    "clname": "Materials Science Conference",
+    "csname": "MSNC",
+    "clogotext": "MSNC-2026",
+    "sdate": "16",
+    "edate": "17",
+    "month": "April",
     "year": "2026",
-    "venue_p1": "London, UK",
+    "venue_p1": "Barcelona, Spain",
     "location_name": "",
     "loc_address": "",
-    "v1": "London",
-    "v2": "UK",
+    "postal_code": "",
+    "v1": "Barcelona",
+    "v2": "Spain",
     "venue_p2": "",
-    "cemail": "diabetes@stemnetwork.info",
+    "cemail": "materials.msnc@stemnetwork.net",
     "phone": "+1 (872) 2138-777",
     "whatsapp": "+1 (872) 2138-777",
-    "full_length_dates": "May 07-08, 2026",
+    "full_length_dates": "April 16-17, 2026",
     "full_length_venue": "Hybrid Event ",
-    "startDate": "2026-05-07",
-    "endDate": "2026-05-08",
-    "main_keyword": "Diabetes",
-    "confkeyword": "Diabetes"
+    "startDate": "2026-04-16",
+    "endDate": "2026-04-17",
+    "main_keyword": "Materials Science",
+    "confkeyword": "Materials Science"
   },
+  "status": "200",
   "pages": {
     "index": [
       {
-        "title": "Diabetes Conference | Meetings | Events | UK | 2026",
-        "content": "Discover the rearmost in diabetes exploration and treatment at our comprehensive Diabetes Global Conference during May 07-08, 2026 in London, UK. Join experts in exploring slice- edge curatives, technological advancements, and holistic approaches to managing diabetes effectively. Register now to secure your place at the van of diabetes invention.",
-        "meta_keywords": "Diabetes Global Conference 2026, Diabetes conference London, Diabetes research advancements, Global diabetes summit, Diabetes treatment innovations, Diabetes prevention strategies, International diabetes event, Diabetes care and management 2026, Diabetes healthcare conference, Diabetes experts summit UK 2026"
+        "title": "Materials Science Conference 2026 | MSNC 2026 | Spain | April 2026",
+        "content": "Welcome to the Materials Science Conference 2026 in Spain this April. Connect with leading experts, explore groundbreaking innovations in nanotechnology and materials science, and shape the future of nanomaterials.",
+        "meta_keywords": "Materials Science Conference 2026, Nanotechnology Conference, Nanomaterials Summit, Nanotech Innovations, Materials Science Event Spain, Nanomaterials Research Conference, Nanotechnology 2026 Spain"
       }
     ],
     "sessions_meta": [
       {
-        "title": "Diabetes Conference Sessions | Meetings | Events | UK | 2026",
-        "content": "Join the 2026 Diabetes Conference in the UK, featuring sessions on diabetes management, innovative treatments, prevention strategies, and clinical research. Connect with healthcare professionals and researchers to explore the latest advancements in diabetes care and technology.",
-        "meta_keywords": "diabetes conference, 2026 diabetes events, diabetes management sessions, diabetes treatment innovations, diabetes prevention strategies, clinical research in diabetes, diabetes care advancements, diabetes technology, UK diabetes conference, diabetes healthcare professionals"
+        "title": "Sessions | Materials Science Conference 2026 | MSNC 2026 | Spain | April 2026",
+        "content": "Discover the diverse sessions at the Materials Science Conference 2026 in Spain. Explore groundbreaking presentations on nanotechnology, materials science innovations, and nanomaterials research.",
+        "meta_keywords": "Materials Science Conference Sessions, Nanotechnology Conference Sessions, Nanomaterials Research Presentations, Nanotechnology Sessions 2026, Materials Science Innovations, Nanomaterials Conference Spain, Nanotech Conference Sessions"
       }
     ],
     "planning_committee": [
       {
-        "title": "Planning Committee | Diabetes",
-        "content": "Be a part of uniquely enriching experience at our Diabetes Conference! Engage with pioneering healthcare strategies, connect with top professionals, and elevate your expertise through dynamic workshops and discussions. Secure your place today for unrivaled insights into the future of Diabetes.",
-        "meta_keywords": "Diabetes conferences 2024,\r\nInternational diabetes congress,\r\nGlobal diabetes summit,\r\nDiabetes research conference,\r\nDiabetes and endocrinology conferences,\r\nDiabetes care and management symposium,\r\nType 1 diabetes conference,\r\nType 2 diabetes summit,\r\nPediatric diabetes conference 2024,\r\nDiabetes and obesity congress,\r\nDiabetes and metabolic disorders meetings,\r\nDiabetes prevention and treatment conferences,\r\nDiabetes and insulin therapy conference,\r\nEndocrinology and diabetes events,\r\nClinical diabetes research conferences"
+        "title": "Planning Committee | Materials Science Conference 2026 | MSNC 2026 | Spain | April 2026",
+        "content": "Meet the esteemed planning committee behind the Materials Science Conference 2026. These experts are shaping the future of materials science and nanotechnology research.",
+        "meta_keywords": "Materials Science Planning Committee, Nanotechnology Conference Organizers, Nanomaterials Experts, Materials Science Innovation Leaders, Nanotechnology Event Committee, Nanomaterials Research Team, Nanotechnology Conference Planning"
       }
     ],
     "organizing_committee": [
       {
-        "title": "Organizing Committee | Diabetes",
-        "content": "Be a part of uniquely enriching experience at our Diabetes Conference! Engage with pioneering healthcare strategies, connect with top professionals, and elevate your expertise through dynamic workshops and discussions. Secure your place today for unrivaled insights into the future of Diabetes.",
-        "meta_keywords": "Diabetes conferences 2024,\r\nInternational diabetes congress,\r\nGlobal diabetes summit,\r\nDiabetes research conference,\r\nDiabetes and endocrinology conferences,\r\nDiabetes care and management symposium,\r\nType 1 diabetes conference,\r\nType 2 diabetes summit,\r\nPediatric diabetes conference 2024,\r\nDiabetes and obesity congress,\r\nDiabetes and metabolic disorders meetings,\r\nDiabetes prevention and treatment conferences,\r\nDiabetes and insulin therapy conference,\r\nEndocrinology and diabetes events,\r\nClinical diabetes research conferences"
+        "title": "Organizing Committee | Materials",
+        "content": "Be a part of uniquely enriching experience at our Global Materials Science Summit! Engage with pioneering healthcare strategies, connect with top professionals, and elevate your expertise through dynamic workshops and discussions. Secure your place today for unrivaled insights into the future of Materials Science.",
+        "meta_keywords": "Materials Science World Congress 2024,International Materials Science Conference,Global Materials Science Summit,Materials Research and Development Congress,Advanced Materials Science Conference,Materials Science and Engineering World Congress,Nanomaterials World Congress,Materials Science Congress keynote speakers,Emerging Materials Science Trends,Materials Science Innovations Summit,Materials Science and Technology Conference,Materials Science and Manufacturing Congress,Smart Materials Global Summit,Materials Chemistry World Congress,Materials Science Research Forum,Materials Science in Energy Applications Congress,Sustainable Materials Science Summit,Biomaterials World Congress,Materials Science and Nanotechnology Conference,Global Materials Science Research Congress"
       }
     ],
     "speakers": [
       {
-        "title": "Speakers | Diabetes",
-        "content": "Be a part of uniquely enriching experience at our Diabetes Conference! Engage with pioneering healthcare strategies, connect with top professionals, and elevate your expertise through dynamic workshops and discussions. Secure your place today for unrivaled insights into the future of Diabetes.",
-        "meta_keywords": "Diabetes conferences 2024,\r\nInternational diabetes congress,\r\nGlobal diabetes summit,\r\nDiabetes research conference,\r\nDiabetes and endocrinology conferences,\r\nDiabetes care and management symposium,\r\nType 1 diabetes conference,\r\nType 2 diabetes summit,\r\nPediatric diabetes conference 2024,\r\nDiabetes and obesity congress,\r\nDiabetes and metabolic disorders meetings,\r\nDiabetes prevention and treatment conferences,\r\nDiabetes and insulin therapy conference,\r\nEndocrinology and diabetes events,\r\nClinical diabetes research conferences"
+        "title": "Materials Science Conference 2026 Speakers | MSNC 2026 | Spain | April 2026",
+        "content": "Meet the esteemed speakers at the Materials Science Conference 2026. Hear from leading experts in materials science, nanotechnology, and nanomaterials research, as they share groundbreaking insights and innovations.",
+        "meta_keywords": "Materials Science Conference Speakers, Nanotechnology Experts, Nanomaterials Research Leaders, Nanotech Speakers 2026, Materials Science Innovators, Nanomaterials Experts, Nanotechnology Research Speakers"
       }
     ],
     "down_brochure": [
       {
-        "title": "Download Brochure | Diabetes",
-        "content": "Be a part of uniquely enriching experience at our Diabetes Conference! Engage with pioneering healthcare strategies, connect with top professionals, and elevate your expertise through dynamic workshops and discussions. Secure your place today for unrivaled insights into the future of Diabetes.",
-        "meta_keywords": "Diabetes conferences 2024,\r\nInternational diabetes congress,\r\nGlobal diabetes summit,\r\nDiabetes research conference,\r\nDiabetes and endocrinology conferences,\r\nDiabetes care and management symposium,\r\nType 1 diabetes conference,\r\nType 2 diabetes summit,\r\nPediatric diabetes conference 2024,\r\nDiabetes and obesity congress,\r\nDiabetes and metabolic disorders meetings,\r\nDiabetes prevention and treatment conferences,\r\nDiabetes and insulin therapy conference,\r\nEndocrinology and diabetes events,\r\nClinical diabetes research conferences"
+        "title": "Download Brochure | Materials",
+        "content": "Be a part of uniquely enriching experience at our Global Materials Science Summit! Engage with pioneering healthcare strategies, connect with top professionals, and elevate your expertise through dynamic workshops and discussions. Secure your place today for unrivaled insights into the future of Materials Science.",
+        "meta_keywords": "Materials Science World Congress 2024,International Materials Science Conference,Global Materials Science Summit,Materials Research and Development Congress,Advanced Materials Science Conference,Materials Science and Engineering World Congress,Nanomaterials World Congress,Materials Science Congress keynote speakers,Emerging Materials Science Trends,Materials Science Innovations Summit,Materials Science and Technology Conference,Materials Science and Manufacturing Congress,Smart Materials Global Summit,Materials Chemistry World Congress,Materials Science Research Forum,Materials Science in Energy Applications Congress,Sustainable Materials Science Summit,Biomaterials World Congress,Materials Science and Nanotechnology Conference,Global Materials Science Research Congress"
       }
     ],
     "FAQ": [
       {
-        "title": "Diabetes Conference FAQs | Meetings | Events | UK | 2026",
-        "content": "scrutinized frequently asked questions about the 2026 Diabetes Conference in the UK. Learn about key meetings, events, and the latest innovations in diabetes research, treatment, and care",
-        "meta_keywords": " Diabetes Conference 2026, diabetes events UK, Diabetes FAQs, UK diabetes conferences, diabetes research meetings, diabetes care advancements, diabetes treatment guidelines, UK health conference 2026"
+        "title": "FAQ’S | Materials Science Conference 2026 | MSNC 2026 | Spain | April 2026",
+        "content": "Find answers to all your questions about the Materials Science Conference 2026 in Spain. Get details on registration, agenda, speakers, and more to help plan your participation.",
+        "meta_keywords": "Materials Science Conference FAQs, Nanotechnology FAQs, Nanomaterials Conference Questions, Nanotechnology Event Details, Materials Science Event Information, Nanomaterials Conference FAQs, Spain Nanotech Conference"
       }
     ],
     "submit_abstract": [
       {
-        "title": "Diabetes Conference Call for Abstracts | Meetings | Events | UK | 2026",
-        "content": "Submit your abstract for the Diabetes Conference 2026 in the UK. Join researchers, clinicians, and healthcare professionals to present your studies on diabetes management, treatment innovations, and prevention strategies at this premier global diabetes event.",
-        "meta_keywords": "diabetes conference 2026, call for abstracts, diabetes management, treatment innovations, diabetes prevention, submit abstract diabetes, UK conferences 2026, diabetes research, clinical diabetes, endocrinology, global diabetes meetings, healthcare professionals, diabetes care"
+        "title": "Abstract Submission | Materials Science Conference 2026 | MSNC 2026 | Spain | April 2026",
+        "content": "Submit your abstract for the Materials Science Conference 2026 in Spain. Share your latest research on materials science, nanotechnology, and nanomaterials with experts and be part of this groundbreaking event.",
+        "meta_keywords": "Abstract Submission Materials Science, Nanotechnology Abstracts, Nanomaterials Research Abstracts, Nanotech Conference Submission, Materials Science Conference 2026, Nanotechnology Research Submission, Nanomaterials Conference Spain"
       }
     ],
     "register": [
       {
-        "title": "Diabetes Conference Registration | Meetings | Events | UK | 2026",
-        "content": "Subscribe to the Diabetes Global Summit 2026 in the UK, an event for endocrinologists, researchers, and healthcare professionals to connect and explore innovations in diabetes care and management. Don’t miss this important opportunity.",
-        "meta_keywords": "Diabetes Global Summit 2026, diabetes care, diabetes research, endocrinology conference, diabetes prevention, treatment strategies, healthcare professionals, diabetes summit, UK medical conference, diabetes innovations, UK 2026"
+        "title": "Register for Materials Science Conference 2026 | MSNC 2026 | Spain | April 2026",
+        "content": "Secure your spot at the Materials Science Conference 2026 in Spain this April. Register now to join global experts and discover the latest advancements in materials science and nanotechnology.",
+        "meta_keywords": "Materials Science Conference Registration, Nanotechnology Conference 2026, Nanotech Event Spain, Register for Nanotechnology Conference, Materials Science Event Registration, Nanomaterials Conference 2026"
       }
     ],
     "guidlines": [
       {
-        "title": "Diabetes Conference Guidelines | Meetings | Events | UK | 2026",
-        "content": "Discover essential guidelines for the Diabetes Conference 2026 in the UK. Learn about event protocols, registration details, and speaker requirements for successful participation in the upcoming diabetes-focused conference.",
-        "meta_keywords": "Diabetes Conference 2026, UK Diabetes conference guidelines, event guidelines for diabetes meetings, diabetes events UK, 2026 diabetes conference, conference participation guidelines, diabetes conference registration, diabetes research events UK, speaker requirements diabetes conference, medical conference UK 2026"
+        "title": "Guidelines | Materials Science Conference 2026 | MSNC 2026 | Spain | April 2026",
+        "content": "Find all the important guidelines for the Materials Science Conference 2026 in Spain. Learn about paper submissions, participation requirements, and deadlines to be part of this groundbreaking event.",
+        "meta_keywords": "Materials Science Conference Guidelines, Nanotechnology Submission Guidelines, Nanomaterials Conference Participation, Nanotech Paper Submission, Conference Submission Guidelines, Nanomaterials Event Guidelines, Materials Science Conference 2026 Rules"
       }
     ],
     "terms": [
@@ -101,6 +103,34 @@
         "title": "Terms of use",
         "content": "",
         "meta_keywords": ""
+      }
+    ],
+    "scientific_program": [
+      {
+        "title": "Scientific Program | Materials Science Conference 2026 | MSNC 2026 | Spain | April 2026",
+        "content": "Explore the comprehensive scientific program for the Materials Science Conference 2026. Dive into cutting-edge research, presentations, and discussions on materials science, nanotechnology, and nanomaterials by experts.",
+        "meta_keywords": "Scientific Program Materials Science, Nanotechnology Conference Agenda, Nanomaterials Research Program, Materials Science Conference Schedule, Nanotechnology Scientific Sessions, Nanomaterials Research Talks, Nanotech Conference 2026 Program"
+      }
+    ],
+    "venue": [
+      {
+        "title": "Venue | Materials Science Conference 2026 | MSNC 2026 | Spain, April 2026",
+        "content": "Discover the venue for the Materials Science Conference 2026 in Spain. Learn more about the world-class facilities and accommodations available for conference attendees.",
+        "meta_keywords": "Materials Science Conference Venue, Nanotechnology Conference Spain, Nanomaterials Conference Venue, Conference Location Spain, Nanotechnology Event Venue, Spain Conference Facilities, Nanotech Conference 2026 Venue"
+      }
+    ],
+    "register_details": [
+      {
+        "title": "Register for Materials Science Conference 2026 | MSNC 2026 | Spain | April 2026",
+        "content": "Register now for the Materials Science Conference 2026 in Spain this April. Secure your spot to connect with experts and explore the latest innovations in materials science, nanotechnology, and nanomaterials.",
+        "meta_keywords": "Materials Science Conference Registration, Nanotechnology Conference Sign-up, Nanomaterials Event Registration, Nanotech Conference Spain 2026, Materials Science Conference Sign-up, Nanotechnology Event Registration"
+      }
+    ],
+    "privacy_policy": [
+      {
+        "title": "Privacy Policy | Materials Science Conference 2026 | MSNC 2026 | Spain | April 2026",
+        "content": "Read the Privacy Policy for the Materials Science Conference 2026. Learn how we collect, use, and protect your personal information for a safe and secure conference experience.",
+        "meta_keywords": "Privacy Policy Materials Science Conference, Nanotechnology Conference Privacy, Nanomaterials Conference Data Protection, Conference Privacy Policy, Data Privacy Nanotechnology, Materials Science Data Usage, Nanotech Conference Privacy Terms"
       }
     ]
   },
@@ -110,12 +140,20 @@
       "link": "/sessions"
     },
     {
+      "title": "Scientific Program",
+      "link": "/scientific-program"
+    },
+    {
       "title": "Guidelines",
       "link": "/guidelines"
     },
     {
       "title": "FAQs",
       "link": "/faqs"
+    },
+    {
+      "title": "Venue",
+      "link": "/venue"
     },
     {
       "title": "Submit Abstract",
@@ -129,15 +167,15 @@
   "social_links": {
     "facebook": {
       "link": "https://www.facebook.com/profile.php?id=61563649766977",
-      "title": "Diabetes Global Conference 2026 facebook"
+      "title": "Materials Science Conference 2026 facebook"
     },
     "linkedin": {
       "link": "https://linkedin.com/company/stem-network-com",
-      "title": "Diabetes Global Conference 2026 linkedin"
+      "title": "Materials Science Conference 2026 linkedin"
     },
     "instagram": {
       "link": "https://www.instagram.com/stemnetwork_com",
-      "title": "Diabetes Global Conference 2026 instagram"
+      "title": "Materials Science Conference 2026 instagram"
     }
   }
 }

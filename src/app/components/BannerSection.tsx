@@ -413,7 +413,8 @@ const BannerSection: React.FC<BannerSectionProps> = ({
                 dangerouslySetInnerHTML={{ __html: headding || "" }}
               />
               <h2 className="banner-heading-tagline">{tag_line || ""}</h2>
-              <p>{content || ""}</p>
+              {/* <p>{content || ""}</p> */}
+              <p dangerouslySetInnerHTML={{ __html: content || "" }}/>
               <button
                 type="button"
                 title={`${general?.clogotext}_Brochure`}

@@ -8,15 +8,16 @@ Intructions:
 3) If there is a need to do any new block for any conference website in specific, ensure to add and save the file in the style.css
  */
 :root {
-	--primary-color: #d86422;
-	--secondary-color: #008dc9;
-	--third-color: #46413dbf;
-	--light-color: #f3d2bf75;
+	--primary-color: #00b9d7;
+	--secondary-color: #00b9d7;
+	--third-color: #ffd838;
+	--fourth-color: #35479E;
+	--light-color: #eefdff;
 	--preloader-color: #f9fbfe;
 	--white-color: #fff;
 	--black-color: #000;
-	--abstractfilebg-color: #f6a170;
-	--offerbg-color: #7e4524;
+	--abstractfilebg-color: #8cdfed;
+	--offerbg-color: #2b3b5c;
 	--contentbg-color: #737373;
 	--iconbg-color: #adadad;
 	--bannerhover-color: #029bb4;
@@ -42,8 +43,9 @@ div.error {
 	margin-bottom: -20px;
 }
 
-input:focus {
-	border: 1px solid var(--primary-color);
+input:focus,
+textarea:focus {
+	border: 1px solid var(--primary-color) !important;
 }
 
 select:focus {
@@ -96,7 +98,7 @@ a {
 .sticky-header .logo .sti-logo {
 	width: 100%;
 	height: auto;
-	margin: -5px 0px 0px;
+	margin: 5px 0px 0px;
 }
 
 .banner_wrap {
@@ -758,7 +760,7 @@ a {
 
 	.main-menu .navbar-header .navbar-toggle {
 		background: var(--primary-color);
-		margin-top: 15px !important;
+		margin-top: 5px !important;
 	}
 
 	.main-menu .navbar-header .navbar-toggle .icon-bar {
@@ -1635,7 +1637,7 @@ a {
 	background: url(/images/images/welcomebg.webp);
 	background-repeat: no-repeat;
 	background-size: cover;
-	border-radius: 35px;
+	/* border-radius: 35px; */
 }
 
 @media only screen and (min-width: 320px) and (max-width: 575px) {
@@ -1662,6 +1664,22 @@ a {
 	}
 }
 
+/* Approved Provider Block */
+
+.approved-provider-block {
+	width: 220px;
+	margin: auto 0;
+	height: auto;
+	object-fit: fill;
+	/* margin-right: -32px; */
+
+}
+
+.approved-provider-block .approved-prov-img {
+	width: 100%;
+	height: auto;
+}
+
 /* Members View All button */
 
 .members-view-all-btn-block {
@@ -1670,12 +1688,12 @@ a {
 }
 
 .members-view-all-btn-block .view-more-speakers-btn {
-	background-color: var(--primary-color);
+	background-color: var(--fourth-color);
 	padding: 13px 37px 14px;
 	font-size: 19px;
 	color: #fff;
 	border-radius: 25px;
-	border: 1px solid var(--primary-color);
+	border: 1px solid var(--fourth-color);
 }
 
 .members-view-all-btn-block .view-more-speakers-btn:hover {
@@ -1683,6 +1701,7 @@ a {
 	background-color: #fff;
 	border: 1px solid var(--primary-color);
 }
+
 
 /* Members View All button for 4 */
 
@@ -1722,6 +1741,10 @@ a {
 /* Active color for navbar links */
 
 .main-menu .navigation>li>a.active {
+	color: var(--secondary-color);
+}
+
+.sticky-header .main-menu .navigation>li>a.active {
 	color: var(--secondary-color);
 }
 
@@ -1805,4 +1828,102 @@ a {
 	font-size: 18px;
 	color: var(--black-color);
 	margin-left: 15px;
+}
+
+/* Venue Page  */
+.venue-page {
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	width: 85%;
+	margin: 50px auto;
+	background: var(--white-color);
+	padding: 30px;
+	border-radius: 10px;
+}
+
+.venue-page .content1 {
+	margin-bottom: 60px;
+	margin-top: 30px;
+}
+
+.google-map {
+	display: flex;
+	justify-content: center;
+}
+
+.google-map iframe {
+	width: 100%;
+	height: 415px !important;
+	border: 5px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1), -3px -3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.venue-add-block {
+	padding: 0px 35px;
+}
+
+.venue-address {
+	margin-top: 10px;
+	line-height: 30px !important;
+}
+
+.venue-heading {
+	padding: 0 30px;
+	color: var(--black-color) !important;
+	margin: 10px 0 15px !important;
+}
+
+.venue-address p {
+	margin: 10px 0 15px !important;
+}
+
+.venue-address-p {
+	padding: 0px 70px;
+}
+
+.venue-heading-p {
+	/* padding: 0 30px; */
+	margin: 10px 0 15px !important;
+}
+
+.venue-address {
+	font-size: 18px;
+	color: #737373;
+	margin: 0px 0px 10px 0px !important;
+	line-height: 23px;
+}
+
+.poster-heading {
+	margin-bottom: 10px !important;
+}
+
+.venue-page .content1 ul li {
+	margin-bottom: 8px;
+}
+
+/* Welcome Message2 Block  */
+.welcome-message-latest .welcome-card {
+	background-image: url(/images/images/welcomebg2_block.webp);
+}
+
+/* Members View All button */
+
+.members-view-all-btn-block {
+	text-align: center;
+	margin: 30px;
+}
+
+.members-view-all-btn-block .view-more-speakers-btn {
+	background-color: var(--fourth-color);
+	padding: 13px 37px 14px;
+	font-size: 19px;
+	color: #fff;
+	border-radius: 25px;
+	border: 1px solid var(--fourth-color);
+}
+
+.members-view-all-btn-block .view-more-speakers-btn:hover {
+	color: var(--primary-color);
+	background-color: #fff;
+	border: 1px solid var(--primary-color);
 }

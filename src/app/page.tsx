@@ -7,6 +7,7 @@ import AbstractNetwork from "./components/AbstractNetwork";
 import Downloads from "./components/Downloads";
 import VolunteerCommunity from "./components/VolunteerCommunity";
 import Venue from "./components/Venue";
+import Members from "./components/Members"
 import { Metadata } from "next";
 import {
   IndexPageData,
@@ -21,6 +22,7 @@ import {
   emptyCommonContent,
   emptyRegisterInfo,
 } from "@/lib/fallbacks";
+import Speakers from "./components/Speakers";
 
 async function safeFetch<T>(fn: () => Promise<T>, fallback: T): Promise<T> {
   try {
@@ -133,12 +135,14 @@ const Home = async () => {
         generalbannerInfo={general}
         onelinerBannerInfo={indexPageData}
       />
+      <Members />
       <SessionsComponent
         generalInfo={general_info}
         sessions={sessions}
         sessionContent={sessionContent}
       />
       <MainSlider generalInfo={general} registerInfo={registerData} />
+      <Speakers />
       <ImportantDates onelinerInfo={indexPageData} />
       <FaqsMain commonInfo={commonContent} />
       <Venue onelinerVenueInfo={indexPageData} />

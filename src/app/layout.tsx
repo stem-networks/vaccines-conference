@@ -20,6 +20,8 @@ import {
   emptyIndexPageData,
   emptyRegisterInfo,
 } from "@/lib/fallbacks";
+import WhatsAppWidget from "./components/WhatsAppWidget";
+import MediaCollaborators from "./components/MediaCollaborators";
 
 async function safeFetch<T>(fn: () => Promise<T>, fallback: T): Promise<T> {
   try {
@@ -61,9 +63,8 @@ export async function generateMetadata(): Promise<Metadata> {
     const data = await fetchGeneralData();
     const general = data?.data || emptyApiResponse.data;
     const pageData = data?.pages || emptyApiResponse.pages;
-    const eventName = `${general?.clname || "Annual Tech Conference"} ${
-      general?.year || ""
-    }`.trim();
+    const eventName = `${general?.clname || "Annual Tech Conference"} ${general?.year || ""
+      }`.trim();
 
     return {
       title: eventName,
@@ -130,9 +131,8 @@ export default async function RootLayout({
   const general: GeneralData = generaldata?.data || emptyApiResponse.data;
   const pageData: PagesData = generaldata?.pages || emptyApiResponse.pages;
 
-  const eventName = `${general?.clname || "Annual Tech Conference"} ${
-    general?.year || ""
-  }`.trim();
+  const eventName = `${general?.clname || "Annual Tech Conference"} ${general?.year || ""
+    }`.trim();
   const register = pageData?.register || [];
 
   // Format dates
@@ -209,8 +209,10 @@ export default async function RootLayout({
         />
         <Header generalData={generaldata} registerData={registerData} />
         {children}
+        <MediaCollaborators />
         <PartneredContent />
         <Footer indexPageData={indexPageData} generalData={generaldata} />
+        <WhatsAppWidget />
       </body>
     </html>
   );
