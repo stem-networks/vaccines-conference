@@ -73,7 +73,7 @@
             "banner_conent_id": "9",
             "image": "images/banner.jpg",
             "headding": "Pioneering Advances in Materials Science and Innovation",
-            "tag_line": "MSNC-April 16-17, 2026 in Spain",
+            "tag_line": "MSNC-April 16-17, 2026 in Barcelona, Spain",
             "content": "Join the world's most in-demand materials science experts at the <b>Materials Science Conference</b>. Learn keynote sessions, speaker insights, and innovation. <b>Download our brochure</b> to see what's more about this conference and book your place now!",
             "page": "index",
             "status": "1",
@@ -134,12 +134,12 @@
     ],
     "important_dates": [
         {
-            "text": "Final Abstract Submission Deadline",
-            "date": "20<sub>th</sub> <span>July <br> 2026</span>"
+            "text": "First Round of Abstract Submission Deadline",
+            "date": "29<sub>th</sub> <span>August <br> 2026</span>"
         },
         {
-            "text": "Final Registration Deadline",
-            "date": "25<sub>th</sub> <span>July <br> 2026</span>"
+            "text": "Early Bird Registration Deadline",
+            "date": "29<sub>th</sub> <span>August <br> 2026</span>"
         }
     ],
     "venue_images": {

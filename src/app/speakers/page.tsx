@@ -158,7 +158,7 @@ const speakers = () => {
                 </div>
             </div>
 
-            <h2 className="abs_wrap5 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">Our Speakers</h2>
+            <h2 className="abs_wrap5 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">Our Speakers 2025</h2>
 
             <div className="speakers-sections members-main-block">
                 <div className='auto-container'>
