@@ -82,7 +82,7 @@ const ScientificProgram = async () => {
 
       {/* Title */}
       <h2 className="abs_wrap5 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
-        Scientific Program
+        Scientific Program 2025
       </h2>
 
       {/* PDF Viewer */}
