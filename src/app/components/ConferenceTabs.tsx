@@ -79,7 +79,7 @@ export default function ConferenceTabs() {
                     <div className="auto-container">
                       <div className="days-main-para">
                         {/* <p>{sessionContent[activeSession].description}</p> */}
-                        <p>
+                        {/* <p>
                           The event commenced with an inspiring opening ceremony
                           that highlighted the significance of{" "}
                           <span>collaborative efforts in nursing innovation</span>.
@@ -89,7 +89,7 @@ export default function ConferenceTabs() {
                             critical role of research, patient care advancements,
                             and interdisciplinary cooperation.
                           </span>
-                        </p>
+                        </p> */}
                       </div>
 
                       {/* Gallery */}

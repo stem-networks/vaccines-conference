@@ -91,8 +91,58 @@ const PreviousConference = async () => {
                         <h3 className="overview-subhead">A Journey of Innovation, Collaboration, and Excellence</h3>
                         <p><span>Catalysis, Chemical Engineering, and Green Chemistry (CCGC 2025)</span> and the<span>[Materials, Nanotechnology, and Nanoscience Conference (MNNC 2025)]</span> were successfully organized on<span>August 06–07, 2025, in Singapore,</span> bringing together global leaders, researchers, academicians, and industry experts for two days of knowledge-sharing and collaboration.</p>
 
-                        {/* <p>Let’s walk through the <span>unforgettable journey of {general_info?.csname}-{general_info?.year}</span>, capturing its highlights, achievements, and defining moments.</p> */}
                     </div>
+                    {/* <div className="auto-container">
+                        <div className="content1">
+
+                            <div className="heading Poster-heading">Highlights of the Conference</div>
+                            <ul>
+                                <li>
+                                    <b>Global Participation:</b> Speakers and delegates from multiple countries joined the events, representing universities, research institutions, healthcare organizations, and industries.
+                                </li>
+                                <li>
+                                    <b>Distinguished Speakers:</b>Our keynote speakers delivered insightful presentations on cutting-edge topics in catalysis, chemical engineering, green chemistry, nanotechnology, and materials science.
+                                </li>
+                                <li>
+                                    <b>Interactive Sessions:</b>CCGC and MNNC featured a mix of keynote lectures, plenary talks, oral presentations, poster sessions, and panel discussions, ensuring lively interactions and meaningful academic exchange.
+                                </li>
+
+                                <li>
+                                    <b>Networking Opportunities:</b> The joint gatherings created an ideal platform for participants to build collaborations, share research findings, and explore potential partnerships.
+                                </li>
+
+                                <li>
+                                    <b>Poster & Young Researcher Forum:</b> Emerging scientists and students actively participated in poster competitions and young researcher forums, showcasing innovative projects and receiving valuable feedback.
+                                </li>
+
+                            </ul>
+                            <div className="heading Participants-heading">
+                                Information we collect
+                            </div>
+                            <ul>
+                                <li>
+                                    The personal information that you are asked to provide,
+                                    and the reasons why you are asked to provide it, will be
+                                    made clear to you at the point we ask you to provide your
+                                    personal information.
+                                </li>
+                                <li>
+                                    If you contact us directly, we may receive additional
+                                    information about you such as your name, email address,
+                                    phone number, the contents of the message and/or
+                                    attachments you may send us, and any other information you
+                                    may choose to provide.
+                                </li>
+                                <li>
+                                    When you register for an Account, we may ask for your
+                                    contact information, including items such as name, company
+                                    name, address, email address, and telephone number.
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div> */}
                     {/* </div> */}
                 </section>
 
