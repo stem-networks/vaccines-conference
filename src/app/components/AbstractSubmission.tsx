@@ -6,9 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import countries from "../../data/countries";
 import { toast } from "react-toastify";
-// import Captcha from "./Captcha"; // Make sure you have this component
 
-interface FormData {
+interface FormDataState {
   module_name: string;
   title: string;
   name: string;
@@ -31,8 +30,8 @@ interface CaptchaRefType {
 
 type PossibleRef =
   | React.RefObject<
-    HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null
-  >
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null
+    >
   | React.RefObject<CaptchaRefType | null>;
 
 interface FormAutoData {
@@ -55,18 +54,8 @@ interface FormAutoData {
   web_token?: string;
 }
 
-// type CaptchaRefType = {
-//   focusCaptcha: () => void;
-//   resetCaptchaInput: () => void;
-//   refreshCaptcha: () => void;
-// };
-
-// type FieldRef = React.RefObject<
-//   HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null
-// > | CaptchaRefType | null;
-
 // Your custom captcha ref type
-interface CaptchaRefType {
+interface CaptchaRefTypeFull {
   focusCaptcha: () => void;
   resetCaptchaInput: () => void;
   refreshCaptcha: () => void;
@@ -75,12 +64,10 @@ interface CaptchaRefType {
 // FieldRef type union includes both types of refs
 type FieldRef =
   | React.RefObject<
-    HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null
-  >
-  | React.RefObject<CaptchaRefType | null>
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null
+    >
+  | React.RefObject<CaptchaRefTypeFull | null>
   | null;
-
-// Usage:
 
 interface Errors {
   [key: string]: string | null;
@@ -95,18 +82,25 @@ import map2 from "../../../public/images/images/map.png";
 import { ApiResponse } from "@/types";
 import Captcha, { CaptchaRef } from "./Captcha";
 
-interface generalInfoProps {
+interface GeneralInfoProps {
   generalInfo: ApiResponse;
 }
 
-const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
-  const general = generalInfo?.data || {};
-  // const conf_id = Number(process.env.NEXT_PUBLIC_CID || 0);
+const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
+  // general's structure is not fully typed; safely access with optional chaining
+  const general = (generalInfo?.data ?? {}) as {
+    site_url?: string;
+    clname?: string;
+    csname?: string;
+    year?: string;
+    clogotext?: string;
+    full_length_dates?: string;
+    venue_p1?: string;
+  };
 
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<FormDataState>({
     module_name: "abstract_save",
     title: "",
-    // cid: conf_id,
     name: "",
     email: "",
     alt_email: "",
@@ -143,13 +137,9 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
   const [selectedFileName, setSelectedFileName] =
     useState<string>("No File Chosen");
   const [errors, setErrors] = useState<Errors>({});
-  //   const [modalContent, setModalContent] = useState<string>("");
   const [showModal, setShowModal] = useState<boolean>(false);
-  // const [isCaptchaValid, setIsCaptchaValid] = useState<boolean>(false);
   const [captchaValue, setCaptchaValue] = useState<CaptchaValue | null>(null);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-
-  // console.log(captchaValue);
 
   const modalRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -168,7 +158,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
   const abstractTitleRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
-  // const captchaRef = React.useRef<CaptchaRefType>(null);
   const captchaRef = useRef<CaptchaRef>(null);
   const [isCaptchaValid, setIsCaptchaValid] = useState<boolean>(false);
 
@@ -176,33 +165,79 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
     [key: string]: string | undefined;
   }>({});
 
-  // Extract dynamic project name from general.site_url
+  // Extract dynamic project name from general.site_url, sanitize, and keep it safe for server path segments
   const rawSiteUrl = general?.site_url || "";
-  const siteHostname = rawSiteUrl.replace(/^https?:\/\//, "").replace(".com", "");
+  const siteHostname = rawSiteUrl
+    .replace(/^https?:\/\//, "")
+    .replace(/\/.*$/, "") // trim path
+    .replace(/\.[a-z]+$/i, ""); // drop TLD like .com
+  const sanitizedProject =
+    (siteHostname || "uploads").replace(/[^a-zA-Z0-9-_]/g, "") || "uploads";
 
-  // Upload File to CMS
+  // Upload File to CMS (server route expects multipart with "file" and "project")
   async function uploadFile(
     file: File | null,
     projectName: string
   ): Promise<string> {
     if (!file) return "";
 
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("project", projectName); // required for Vercel Blob folder structure
+    const fd = new FormData();
+    fd.append("file", file);
+    fd.append("project", projectName); // used in the server route for path prefix
 
     const uploadRes = await fetch("/api/upload", {
       method: "POST",
-      body: formData,
+      body: fd,
     });
 
+    // Improved error extraction: try JSON, fallback to text
     if (!uploadRes.ok) {
-      const errorData = await uploadRes.json();
-      throw new Error(errorData.error || "File upload failed");
+      let message = "File upload failed";
+      try {
+        const data: unknown = await uploadRes.json();
+        if (
+          data &&
+          typeof data === "object" &&
+          "error" in data &&
+          typeof (data as { error?: unknown }).error === "string"
+        ) {
+          message = (data as { error: string }).error;
+        }
+      } catch {
+        try {
+          const text = await uploadRes.text();
+          if (text) message = text;
+        } catch {
+          // ignore
+        }
+      }
+      throw new Error(message);
     }
 
-    const { fileUrl } = await uploadRes.json();
-    return fileUrl;
+    // Expecting { fileUrl }
+    try {
+      const data: unknown = await uploadRes.json();
+      if (
+        data &&
+        typeof data === "object" &&
+        "fileUrl" in data &&
+        typeof (data as { fileUrl?: unknown }).fileUrl === "string"
+      ) {
+        return (data as { fileUrl: string }).fileUrl;
+      }
+    } catch {
+      // If server returned blob JSON directly, try to parse url field
+      try {
+        const text = await uploadRes.text();
+        // last-resort naive parsing
+        const urlMatch = text.match(/https?:\/\/[^\s"]+/);
+        if (urlMatch) return urlMatch[0];
+      } catch {
+        // ignore
+      }
+    }
+
+    throw new Error("Upload succeeded but no file URL returned");
   }
 
   function validateAbstractFile(file: File | null): string | null {
@@ -212,10 +247,11 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
       "application/pdf",
       "application/msword",
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "text/rtf",
       "application/rtf",
-    ];
+    ] as const;
 
-    if (!allowedTypes.includes(file.type)) {
+    if (!allowedTypes.includes(file.type as (typeof allowedTypes)[number])) {
       return "Invalid file type. Please upload a PDF, DOC, DOCX, or RTF file.";
     }
 
@@ -233,24 +269,33 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
     >
   ) => {
     const { name, value } = e.target;
-    const target = e.target as HTMLInputElement;
-    const files = target.files;
+    const target = e.target as HTMLInputElement & { files?: FileList | null };
+    const files = target.files ?? null;
 
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
 
-    if (name === "upload_abstract_file" && files) {
+    if (name === "upload_abstract_file" && files && files.length > 0) {
       const file = files[0];
       const allowedTypes = [
         "application/pdf",
         "application/msword",
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         "text/rtf",
-      ];
+        "application/rtf",
+      ] as const;
 
-      if (!allowedTypes.includes(file.type)) {
+      if (!allowedTypes.includes(file.type as (typeof allowedTypes)[number])) {
         setErrors((prevErrors) => ({
           ...prevErrors,
           upload_abstract_file: "Please select a PDF, DOC, DOCX, or RTF file.",
+        }));
+        return;
+      }
+
+      if (file.size > 2 * 1024 * 1024) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          upload_abstract_file: "File size should be less than 2MB.",
         }));
         return;
       }
@@ -273,170 +318,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
       }));
     }
   };
-
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   setErrors({});
-  //   const formErrors: Errors = {};
-  //   let firstErrorField: FieldRef = null;
-
-  //   // ====== VALIDATION ======
-  //   if (!formData.title) {
-  //     formErrors.title = "Title is required";
-  //     firstErrorField = titleRef;
-  //   } else if (!formData.name) {
-  //     formErrors.name = "Name is required";
-  //     firstErrorField = nameRef;
-  //   } else if (!formData.email) {
-  //     formErrors.email = "Email is required";
-  //     firstErrorField = emailRef;
-  //   } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-  //     formErrors.email = "Email is Invalid";
-  //     firstErrorField = emailRef;
-  //   } else if (formData.alt_email && !/\S+@\S+\.\S+/.test(formData.alt_email)) {
-  //     formErrors.alt_email = "Alternative Email is Invalid";
-  //     firstErrorField = altEmailRef;
-  //   } else if (!formData.phone) {
-  //     formErrors.phone = "Phone number is required";
-  //     firstErrorField = phoneRef;
-  //   } else if (!formData.city) {
-  //     formErrors.city = "City is required";
-  //     firstErrorField = cityRef;
-  //   } else if (!formData.country) {
-  //     formErrors.country = "Country is required";
-  //     firstErrorField = countryRef;
-  //   } else if (!formData.organization) {
-  //     formErrors.organization = "Organization is required";
-  //     firstErrorField = organizationRef;
-  //   } else if (!formData.intrested) {
-  //     formErrors.intrested = "Interested In is required";
-  //     firstErrorField = intrestedRef;
-  //   } else if (!formData.abstract_title) {
-  //     formErrors.abstract_title = "Abstract Title is required";
-  //     firstErrorField = abstractTitleRef;
-  //   } else if (!formData.upload_abstract_file) {
-  //     formErrors.upload_abstract_file = "Abstract file is required";
-  //     firstErrorField = fileRef;
-  //   }
-
-  //   // ====== CAPTCHA CHECK ======
-
-  //   else if (!captchaValue || !captchaValue.text || captchaValue.text.trim() === "") {
-  //     formErrors.captcha = "CAPTCHA is required";
-  //     setErrors(formErrors);
-  //     toast.error(formErrors.captcha);
-
-  //     captchaRef.current?.focusCaptcha?.();
-
-  //     return;
-  //   }
-
-  //   else if (!isCaptchaValid) {
-  //     formErrors.captcha = "Invalid CAPTCHA";
-  //     setErrors(formErrors);
-  //     toast.error(formErrors.captcha);
-
-  //     // captchaRef.current?.refreshCaptcha();
-  //     captchaRef.current?.focusCaptcha?.();
-
-  //     return;
-  //   }
-
-  //   // ====== SHOW VALIDATION ERRORS ======
-  //   if (Object.keys(formErrors).length > 0) {
-  //     setErrors({ ...formErrors });
-
-  //     const firstErrorMessage = Object.values(formErrors)[0];
-  //     toast.error(
-  //       firstErrorMessage ?? "Validation Error"
-  //     );
-
-  //     if (firstErrorField?.current?.focus) {
-  //       firstErrorField.current.focus();
-  //     }
-
-  //     return;
-  //   }
-
-  //   // ====== SUBMIT FORM ======
-  //   setIsSubmitting(true);
-
-  //   const formDataToSend = new FormData();
-  //   Object.entries(formData).forEach(([key, value]) => {
-  //     if (value !== null && value !== undefined) {
-  //       formDataToSend.append(
-  //         key,
-  //         value instanceof File ? value : String(value)
-  //       );
-  //     }
-  //   });
-
-  //   try {
-  //     const response = await fetch("/api/abstract", {
-  //       method: "POST",
-  //       body: formDataToSend,
-  //     });
-
-  //     const result = await response.json();
-
-  //     if (result.success) {
-  //       // toast.success("Abstract form submitted successfully!", {
-  //       //   autoClose: 3000,
-  //       // });
-
-  //       setShowModal(true);
-
-  //       setFormData({
-  //         module_name: "abstract_save",
-  //         title: "",
-  //         name: "",
-  //         email: "",
-  //         alt_email: "",
-  //         phone: "",
-  //         whatsapp_number: "", // add missing field
-  //         city: "",
-  //         country: "",
-  //         organization: "",
-  //         intrested: "",
-  //         abstract_title: "",
-  //         message: "", //  add missing field
-  //         upload_abstract_file: null,
-  //       });
-  //       captchaRef.current?.refreshCaptcha();
-
-  //     }
-
-  //     else {
-  //       toast.error(result.error || "Failed to submit the form");
-  //       await sendErrorToCMS({
-  //         name: formData?.name || "Unknown User",
-  //         email: formData?.email || "Unknown Email",
-  //         errorMessage: `Form submission failed with server response: ${result.error || "No specific error"
-  //           }`,
-  //       });
-  //       // await logError(
-  //       //   `Abstract Form Submission Error: ${result.error || "Unknown error"}`
-  //       // );
-
-  //     }
-  //   } catch (error) {
-  //     console.error("Form submission failed:", error);
-  //     toast.error("There was an error submitting the form. Please try again.");
-  //     await sendErrorToCMS({
-  //       name: formData?.name || "Unknown User",
-  //       email: formData?.email || "Unknown Email",
-  //       errorMessage: `Failed to submit Abstract form: ${(error as Error)?.message || "No error message"
-  //         }`,
-  //     });
-  //     // await logError(
-  //     //   `Abstract Form Submission Error: ${error instanceof Error ? error.message : "Unknown error"
-  //     //   }`
-  //     // );
-  //   } finally {
-  //     setIsSubmitting(false);
-  //   }
-  // };
 
   const handleKeyDown = (
     e: React.KeyboardEvent,
@@ -491,8 +372,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
         fieldName === "upload_abstract_file" &&
         !formData.upload_abstract_file
       ) {
-        // newErrors.upload_abstract_file = "Abstract file is required";
-        // fieldValid = false;
         const fileError = validateAbstractFile(formData.upload_abstract_file);
         if (fileError) {
           newErrors.upload_abstract_file = fileError;
@@ -502,7 +381,8 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
 
       if (!fieldValid) {
         setErrors(newErrors);
-        toast.error(newErrors[fieldName]!);
+        const msg = newErrors[fieldName] ?? "Validation error";
+        toast.error(msg);
 
         switch (fieldName) {
           case "title":
@@ -545,16 +425,24 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
       setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: "" }));
 
       if (nextFieldRef?.current) {
-        if (
-          "focusCaptcha" in nextFieldRef.current &&
-          typeof nextFieldRef.current.focusCaptcha === "function"
-        ) {
-          nextFieldRef.current.focusCaptcha();
+        // Narrow to either CaptchaRef or a focusable form element
+        const nextObj = nextFieldRef.current;
+        const maybeCaptcha = nextObj as unknown as {
+          focusCaptcha?: () => void;
+        };
+        const maybeFocusable = nextObj as
+          | HTMLInputElement
+          | HTMLSelectElement
+          | HTMLTextAreaElement
+          | null;
+
+        if (maybeCaptcha && typeof maybeCaptcha.focusCaptcha === "function") {
+          maybeCaptcha.focusCaptcha();
         } else if (
-          "focus" in nextFieldRef.current &&
-          typeof nextFieldRef.current.focus === "function"
+          maybeFocusable &&
+          typeof maybeFocusable.focus === "function"
         ) {
-          nextFieldRef.current.focus();
+          maybeFocusable.focus();
         }
       } else if (fieldName === "upload_abstract_file" && !isCaptchaValid) {
         captchaRef.current?.focusCaptcha();
@@ -563,11 +451,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
   };
 
   const handleCaptchaInputChange = () => {
-    // Clear only the CAPTCHA-related error message
-    // setFormErrors((prevErrors) => {
-    //   const { captcha, ...rest } = prevErrors;
-    //   return rest;
-    // });
     setFormErrors((prevErrors) => {
       const newErrors = { ...prevErrors };
       delete newErrors.captcha;
@@ -619,28 +502,23 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
         return null;
       }
 
-      const formData = new FormData();
-
-      // Object.entries(updatedData).forEach(([key, value]) => {
-      //   formData.append(key, value || "");
-      // });
+      const fd = new FormData();
 
       Object.entries(updatedData).forEach(([key, value]) => {
         const trimmedValue =
           typeof value === "string" ? value.trim() : value ?? "";
-        formData.append(key, trimmedValue);
+        fd.append(key, String(trimmedValue));
       });
 
       if (submitStatus) {
-        formData.append("submit_status", submitStatus);
+        fd.append("submit_status", submitStatus);
       }
 
-      const response = await axios.post("/api/send-to-cms", formData, {
+      const response = await axios.post("/api/send-to-cms", fd, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
-      // console.log("Response:", response.data);
-      return response.data;
+      return response.data as unknown;
     } catch (error) {
       console.error("Error sending form data:", error);
       await sendErrorToCMS({
@@ -651,8 +529,8 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
           (error instanceof Error
             ? error.message
             : typeof error === "string"
-              ? error
-              : JSON.stringify(error)),
+            ? error
+            : JSON.stringify(error)),
         formBased: "CMS Abstract Form Submission",
       });
       return null;
@@ -674,7 +552,7 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
       ...formAutoData,
       [name]: value,
       submit_status: formAutoData.submit_status || "0",
-    };
+    } as FormAutoData;
 
     setFormAutoData(updatedData);
 
@@ -701,14 +579,14 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
     }
 
     // The email is valid at this point, so we can send the data
-    sendFullFormData(updatedData);
+    void sendFullFormData(updatedData);
   };
 
   // UTF-8 safe Base64 encoder
   function utf8ToBase64(str: string) {
     const bytes = new TextEncoder().encode(str);
     let binary = "";
-    bytes.forEach((b) => binary += String.fromCharCode(b));
+    bytes.forEach((b) => (binary += String.fromCharCode(b)));
     return btoa(binary);
   }
 
@@ -716,88 +594,114 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
     e.preventDefault();
 
     setErrors({});
-    const formErrors: Errors = {};
+    const nextErrors: Errors = {};
     let firstErrorField: FieldRef = null;
 
     // ====== VALIDATION ======
     if (!formData.title) {
-      formErrors.title = "Title is required";
+      nextErrors.title = "Title is required";
       firstErrorField = titleRef;
     } else if (!formData.name) {
-      formErrors.name = "Name is required";
+      nextErrors.name = "Name is required";
       firstErrorField = nameRef;
     } else if (!formData.email) {
-      formErrors.email = "Email is required";
+      nextErrors.email = "Email is required";
       firstErrorField = emailRef;
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      formErrors.email = "Email is Invalid";
+      nextErrors.email = "Email is Invalid";
       firstErrorField = emailRef;
     } else if (formData.alt_email && !/\S+@\S+\.\S+/.test(formData.alt_email)) {
-      formErrors.alt_email = "Alternative Email is Invalid";
+      nextErrors.alt_email = "Alternative Email is Invalid";
       firstErrorField = altEmailRef;
     } else if (!formData.phone) {
-      formErrors.phone = "Phone number is required";
+      nextErrors.phone = "Phone number is required";
       firstErrorField = phoneRef;
     } else if (!formData.city) {
-      formErrors.city = "City is required";
+      nextErrors.city = "City is required";
       firstErrorField = cityRef;
     } else if (!formData.country) {
-      formErrors.country = "Country is required";
+      nextErrors.country = "Country is required";
       firstErrorField = countryRef;
     } else if (!formData.organization) {
-      formErrors.organization = "Organization is required";
+      nextErrors.organization = "Organization is required";
       firstErrorField = organizationRef;
     } else if (!formData.intrested) {
-      formErrors.intrested = "Interested In is required";
+      nextErrors.intrested = "Interested In is required";
       firstErrorField = intrestedRef;
     } else if (!formData.abstract_title) {
-      formErrors.abstract_title = "Abstract Title is required";
+      nextErrors.abstract_title = "Abstract Title is required";
       firstErrorField = abstractTitleRef;
+    } else if (!formData.upload_abstract_file) {
+      nextErrors.upload_abstract_file = "Abstract file is required";
+      firstErrorField = fileRef;
     }
-    // else if (!formData.upload_abstract_file) {
-    //   formErrors.upload_abstract_file = "Abstract file is required";
-    //   firstErrorField = fileRef;
-    // }
 
     // ====== CAPTCHA CHECK ======
-    else if (
-      !captchaValue ||
-      !captchaValue.text ||
-      captchaValue.text.trim() === ""
+    if (
+      !nextErrors.title &&
+      !nextErrors.name &&
+      !nextErrors.email &&
+      !nextErrors.alt_email &&
+      !nextErrors.phone &&
+      !nextErrors.city &&
+      !nextErrors.country &&
+      !nextErrors.organization &&
+      !nextErrors.intrested &&
+      !nextErrors.abstract_title &&
+      !nextErrors.upload_abstract_file
     ) {
-      formErrors.captcha = "CAPTCHA is required";
-      setErrors(formErrors);
-      toast.error(formErrors.captcha);
-
-      captchaRef.current?.focusCaptcha?.();
-
-      return;
-    } else if (!isCaptchaValid) {
-      formErrors.captcha = "Invalid CAPTCHA";
-      setErrors(formErrors);
-      toast.error(formErrors.captcha);
-
-      // captchaRef.current?.refreshCaptcha();
-      captchaRef.current?.focusCaptcha?.();
-
-      return;
-    } else {
-      const fileError = validateAbstractFile(formData.upload_abstract_file);
-      if (fileError) {
-        formErrors.upload_abstract_file = fileError;
-        firstErrorField = fileRef;
+      if (
+        !captchaValue ||
+        !captchaValue.text ||
+        captchaValue.text.trim() === ""
+      ) {
+        nextErrors.captcha = "CAPTCHA is required";
+        setErrors(nextErrors);
+        toast.error(nextErrors.captcha);
+        captchaRef.current?.focusCaptcha?.();
+        return;
+      } else if (!isCaptchaValid) {
+        nextErrors.captcha = "Invalid CAPTCHA";
+        setErrors(nextErrors);
+        toast.error(nextErrors.captcha);
+        captchaRef.current?.focusCaptcha?.();
+        return;
+      } else {
+        const fileError = validateAbstractFile(formData.upload_abstract_file);
+        if (fileError) {
+          nextErrors.upload_abstract_file = fileError;
+          firstErrorField = fileRef;
+        }
       }
     }
 
     // ====== SHOW VALIDATION ERRORS ======
-    if (Object.keys(formErrors).length > 0) {
-      setErrors({ ...formErrors });
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors({ ...nextErrors });
 
-      const firstErrorMessage = Object.values(formErrors)[0];
+      const firstErrorMessage = Object.values(nextErrors)[0];
       toast.error(firstErrorMessage ?? "Validation Error");
 
-      if (firstErrorField?.current?.focus) {
-        firstErrorField.current.focus();
+      const focusable =
+        firstErrorField && "current" in firstErrorField
+          ? firstErrorField.current
+          : null;
+
+      if (
+        focusable &&
+        typeof (
+          focusable as
+            | HTMLInputElement
+            | HTMLSelectElement
+            | HTMLTextAreaElement
+        ).focus === "function"
+      ) {
+        (
+          focusable as
+            | HTMLInputElement
+            | HTMLSelectElement
+            | HTMLTextAreaElement
+        ).focus();
       }
 
       return;
@@ -806,23 +710,12 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
     // ====== SUBMIT FORM ======
     setIsSubmitting(true);
 
-    const formDataToSend = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
-      if (value !== null && value !== undefined) {
-        formDataToSend.append(
-          key,
-          value instanceof File ? value : String(value)
-        );
-      }
-    });
-
-    // Upload file and get URL using dynamic project name
-    const fileUrl = await uploadFile(
-      formData.upload_abstract_file,
-      siteHostname
-    );
-
     try {
+      // Upload file and get URL using sanitized project name
+      const fileUrl = await uploadFile(
+        formData.upload_abstract_file,
+        sanitizedProject
+      );
 
       // Construct other_info field
       const otherInfo = {
@@ -832,7 +725,7 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
         message: formData.message.trim(),
       };
 
-      // Final payload with other_info field
+      // Final payload with other_info field (base64-encoded fields)
       const payload = {
         abstract_title: utf8ToBase64(formData.abstract_title.trim()),
         title: utf8ToBase64(formData.title.trim()),
@@ -843,7 +736,7 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
         phone: utf8ToBase64(formData.phone.trim()),
         intrested: utf8ToBase64(formData.intrested.trim()),
         upload_abstract_file: utf8ToBase64(fileUrl.trim()),
-        other_info: utf8ToBase64(JSON.stringify(otherInfo)), // Moved here as base64 encoded JSON
+        other_info: utf8ToBase64(JSON.stringify(otherInfo)),
       };
 
       const response = await fetch("/api/abstract", {
@@ -862,34 +755,54 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
           email: "",
           alt_email: "",
           phone: "",
-          whatsapp_number: "", // add missing field
+          whatsapp_number: "",
           city: "",
           country: "",
           organization: "",
           intrested: "",
           abstract_title: "",
-          message: "", //  add missing field
+          message: "",
           upload_abstract_file: null,
         });
         captchaRef.current?.refreshCaptcha();
       } else {
-        const errorAbs = await response.json();
-        toast.error(errorAbs.error || "Failed to submit the form");
+        let message = "Failed to submit the form";
+        try {
+          const errorAbs: unknown = await response.json();
+          if (
+            errorAbs &&
+            typeof errorAbs === "object" &&
+            "error" in errorAbs &&
+            typeof (errorAbs as { error?: unknown }).error === "string"
+          ) {
+            message = (errorAbs as { error: string }).error;
+          }
+        } catch {
+          try {
+            const text = await response.text();
+            if (text) message = text;
+          } catch {
+            // ignore
+          }
+        }
+        toast.error(message);
         await sendErrorToCMS({
           name: formData?.name || "Unknown User",
           email: formData?.email || "Unknown Email",
-          errorMessage: `Form submission failed with server response: ${errorAbs.error || "No specific error"
-            }`,
+          errorMessage: `Form submission failed with server response: ${message}`,
         });
       }
     } catch (error) {
       console.error("Form submission failed:", error);
-      toast.error("There was an error submitting the form. Please try again.");
+      const message =
+        error instanceof Error ? error.message : "Unknown upload error";
+      toast.error(
+        message || "There was an error submitting the form. Please try again."
+      );
       await sendErrorToCMS({
         name: formData?.name || "Unknown User",
         email: formData?.email || "Unknown Email",
-        errorMessage: `Failed to submit Abstract form: ${(error as Error)?.message || "No error message"
-          }`,
+        errorMessage: `Failed to submit Abstract form: ${message}`,
       });
     } finally {
       setIsSubmitting(false);
@@ -902,7 +815,8 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
     email,
     errorMessage,
     formBased = "Abstract Form",
-    siteName = `${general.clname || "N/A"} (${general.csname || "N/A"} - ${general.year || "N/A"
+    siteName = `${general.clname || "N/A"} (${general.csname || "N/A"} - ${
+      general.year || "N/A"
     })`,
   }: {
     name: string;
@@ -917,7 +831,7 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
       payload.append("email", email);
       payload.append("error_message", errorMessage);
       payload.append("form_based", formBased);
-      payload.append("siteName", siteName); // added
+      payload.append("siteName", siteName);
 
       const res = await fetch("/api/send-to-telegram", {
         method: "POST",
@@ -1005,7 +919,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
                       disabled={isSubmitting}
                       autoComplete="new-password"
                       value={formData.name}
-                      // onBlur={(e) => handleFieldUpdate("name", e.target.value)}
                       onBlur={handleBlur}
                     />
                     {errors.name && <div className="error">{errors.name}</div>}
@@ -1025,7 +938,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
                       disabled={isSubmitting}
                       autoComplete="off"
                       value={formData.email}
-                      // onBlur={(e) => handleFieldUpdate("email", e.target.value)}
                       onBlur={handleBlur}
                     />
                     {errors.email && (
@@ -1045,9 +957,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
                       disabled={isSubmitting}
                       autoComplete="off"
                       value={formData.alt_email}
-                      // onBlur={(e) =>
-                      //   handleFieldUpdate("alt_email", e.target.value)
-                      // }
                       onBlur={handleBlur}
                     />
                     {errors.alt_email && (
@@ -1069,7 +978,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
                       disabled={isSubmitting}
                       autoComplete="new-password"
                       value={formData.phone}
-                      // onBlur={(e) => handleFieldUpdate("phone", e.target.value)}
                       onBlur={handleBlur}
                     />
                     {errors.phone && (
@@ -1091,9 +999,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
                       disabled={isSubmitting}
                       autoComplete="off"
                       value={formData.whatsapp_number}
-                      // onBlur={(e) =>
-                      //   handleFieldUpdate("whatsapp_number", e.target.value)
-                      // }
                       onBlur={handleBlur}
                     />
                     {errors.whatsapp_number && (
@@ -1115,7 +1020,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
                       disabled={isSubmitting}
                       autoComplete="off"
                       value={formData.city}
-                      // onBlur={(e) => handleFieldUpdate("city", e.target.value)}
                       onBlur={handleBlur}
                     />
                     {errors.city && <div className="error">{errors.city}</div>}
@@ -1163,9 +1067,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
                       disabled={isSubmitting}
                       autoComplete="off"
                       value={formData.organization}
-                      // onBlur={(e) =>
-                      //   handleFieldUpdate("organization", e.target.value)
-                      // }
                       onBlur={handleBlur}
                     />
                     {errors.organization && (
@@ -1217,9 +1118,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
                       disabled={isSubmitting}
                       autoComplete="off"
                       value={formData.abstract_title}
-                      // onBlur={(e) =>
-                      //   handleFieldUpdate("abstract_title", e.target.value)
-                      // }
                       onBlur={handleBlur}
                     />
                     {errors.abstract_title && (
@@ -1240,9 +1138,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
                       disabled={isSubmitting}
                       autoComplete="off"
                       value={formData.message}
-                      // onBlur={(e) =>
-                      //   handleFieldUpdate("message", e.target.value)
-                      // }
                       onBlur={handleBlur}
                     ></textarea>
                     {errors.message && (
@@ -1295,10 +1190,9 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
                     </div>
                   </div>
                 </div>
+
                 <div className="row clearfix">
                   <div className="col-md-12" style={{ marginTop: "20px" }}>
-                    {/* <Captcha onValidChange={setIsCaptchaValid} /> */}
-
                     <Captcha
                       ref={captchaRef}
                       onValidate={setIsCaptchaValid}
@@ -1323,13 +1217,6 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
                     >
                       {isSubmitting ? "Please Wait..." : "Submit Abstract"}
                     </button>
-                    {/* <button
-                      type="submit"
-                      className="btn btn-primary"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? "Submitting..." : "Submit Abstract"}
-                    </button> */}
                   </div>
                 </div>
               </div>
@@ -1342,20 +1229,18 @@ const AbstractSubmission: React.FC<generalInfoProps> = ({ generalInfo }) => {
               <div className="sq_abmainbox">
                 <div className="sq_abbox1"></div>
                 <div className="sq_abbox2"></div>
-                <span className="nur_wrap11">
-                  {general ? general.clogotext : ""}
-                </span>
+                <span className="nur_wrap11">{general?.clogotext ?? ""}</span>
                 <span className="nur_wrap22">CONFERENCE</span>
                 <span className="nur_wrap33">
-                  {general ? general.full_length_dates : ""}
+                  {general?.full_length_dates ?? ""}
                 </span>
                 <span className="map_l55 sq_map">
                   <Image
                     src={map2}
-                    alt={general ? general.clname : ""}
-                    title={general ? general.clname : ""}
+                    alt={general?.clname ?? ""}
+                    title={general?.clname ?? ""}
                   />
-                  {general ? general.venue_p1 : ""}
+                  {general?.venue_p1 ?? ""}
                 </span>
               </div>
             </div>
