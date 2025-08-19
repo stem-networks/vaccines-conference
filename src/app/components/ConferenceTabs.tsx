@@ -310,19 +310,6 @@ export default function ConferenceSessions() {
 
   // Session content (no Day1/Day2 separation now)
   const sessions: Record<string, { images: string[]; description: string }> = {
-    "Coffee Break": {
-      images: [
-        "/images/gallery-event/coffee/1.webp",
-        "/images/gallery-event/coffee/2.webp",
-        "/images/gallery-event/coffee/3.webp",
-        "/images/gallery-event/coffee/4.webp",
-        "/images/gallery-event/coffee/5.webp",
-        "/images/gallery-event/coffee/6.webp",
-        "/images/gallery-event/coffee/7.webp",
-        "/images/gallery-event/coffee/8.webp",
-      ],
-      description: "Networking and casual discussions over coffee.",
-    },
     "Keynotes": {
       images: [
         "/images/gallery-event/keynotes/1.webp",
@@ -335,19 +322,6 @@ export default function ConferenceSessions() {
         "/images/gallery-event/keynotes/8.webp",
       ],
       description: "Inspiring keynote sessions from industry leaders.",
-    },
-    "Posters": {
-      images: [
-        "/images/gallery-event/posters/1.webp",
-        "/images/gallery-event/posters/2.webp",
-        "/images/gallery-event/posters/3.webp",
-        "/images/gallery-event/posters/4.webp",
-        "/images/gallery-event/posters/5.webp",
-        "/images/gallery-event/posters/6.webp",
-        "/images/gallery-event/posters/7.webp",
-        "/images/gallery-event/posters/8.webp",
-      ],
-      description: "Poster presentations showcasing innovative research.",
     },
     "Oral speakers": {
       images: [
@@ -362,6 +336,32 @@ export default function ConferenceSessions() {
       ],
       description: "Oral presentations from selected speakers.",
     },
+    "Panel Discussion": {
+      images: [
+        "/images/gallery-event/panel-discussion/1.webp",
+        "/images/gallery-event/panel-discussion/2.webp",
+        "/images/gallery-event/panel-discussion/3.webp",
+        "/images/gallery-event/panel-discussion/4.webp",
+        "/images/gallery-event/panel-discussion/5.webp",
+        "/images/gallery-event/panel-discussion/6.webp",
+        "/images/gallery-event/panel-discussion/7.webp",
+        "/images/gallery-event/panel-discussion/8.webp",
+      ],
+      description: "Interactive panel discussions on emerging trends.",
+    },
+    "Coffee Break": {
+      images: [
+        "/images/gallery-event/coffee/1.webp",
+        "/images/gallery-event/coffee/2.webp",
+        "/images/gallery-event/coffee/3.webp",
+        "/images/gallery-event/coffee/4.webp",
+        "/images/gallery-event/coffee/5.webp",
+        "/images/gallery-event/coffee/6.webp",
+        "/images/gallery-event/coffee/7.webp",
+        "/images/gallery-event/coffee/8.webp",
+      ],
+      description: "Networking and casual discussions over coffee.",
+    },
     "Lunch Break": {
       images: [
         "/images/gallery-event/lunch/1.webp",
@@ -375,18 +375,18 @@ export default function ConferenceSessions() {
       ],
       description: "Lunch networking session with delegates.",
     },
-    "Panel Discussion": {
+    "Posters": {
       images: [
-        "/images/gallery-event/panel-discussion/1.webp",
-        "/images/gallery-event/panel-discussion/2.webp",
-        "/images/gallery-event/panel-discussion/3.webp",
-        "/images/gallery-event/panel-discussion/4.webp",
-        "/images/gallery-event/panel-discussion/5.webp",
-        "/images/gallery-event/panel-discussion/6.webp",
-        "/images/gallery-event/panel-discussion/7.webp",
-        "/images/gallery-event/panel-discussion/8.webp",
+        "/images/gallery-event/posters/1.webp",
+        "/images/gallery-event/posters/2.webp",
+        "/images/gallery-event/posters/3.webp",
+        "/images/gallery-event/posters/4.webp",
+        "/images/gallery-event/posters/5.webp",
+        "/images/gallery-event/posters/6.webp",
+        "/images/gallery-event/posters/7.webp",
+        "/images/gallery-event/posters/8.webp",
       ],
-      description: "Interactive panel discussions on emerging trends.",
+      description: "Poster presentations showcasing innovative research.",
     },
     "Certificates": {
       images: [
@@ -459,6 +459,7 @@ export default function ConferenceSessions() {
                     width={300}
                     height={400}
                     className="rounded-lg shadow-md"
+                    title={activeSession}
                   />
                 </div>
               ))}
@@ -470,8 +471,8 @@ export default function ConferenceSessions() {
       </section>
 
       <div className="gallery-complete-block">
-        <Link href="./gallery-of-event" className="gallery-complete-btn">
-          Gallery of Complete Event
+        <Link href="./gallery-of-event" className="gallery-complete-btn" title="View Complete Gallery">
+          View Complete Gallery
         </Link>
       </div>
     </div>
