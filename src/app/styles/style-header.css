@@ -10866,48 +10866,6 @@ input[text]:focus {
 	white-space: nowrap;
 }
 
-/* Left side (Flipped: Rhombus first, then line) */
-/* .past-conference-page .tab-day-heading .line-rhombus.left::before {
-	content: "";
-	width: 6px;
-	height: 6px;
-	background-color: #d93c7f;
-	transform: rotate(45deg);
-	display: block;
-} */
-
-/* .past-conference-page .tab-day-heading .line-rhombus.left::after {
-	content: "";
-	width: 30px;
-	height: 2px;
-	background-color: #d93c7f;
-	display: block;
-} */
-
-/* Right side (Normal: Line first, then Rhombus) */
-/* .past-conference-page .tab-day-heading .line-rhombus.right::before {
-	content: "";
-	width: 30px;
-	height: 2px;
-	background-color: #d93c7f;
-	display: block;
-} */
-
-/* .past-conference-page .tab-day-heading .line-rhombus.right::after {
-	content: "";
-	width: 6px;
-	height: 6px;
-	background-color: #d93c7f;
-	transform: rotate(45deg);
-	display: block;
-} */
-
-/* .past-conference-page .tab-day-heading .line-rhombus {
-	display: flex;
-	align-items: center;
-	position: relative;
-} */
-
 /* Days Content Block  */
 .past-conference-page .days-content-block {
 	margin: 30px 0 40px;
@@ -10965,7 +10923,7 @@ input[text]:focus {
 	font-weight: 600;
 }
 
-.gallery-grid {
+.past-conference-page .gallery-grid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 25px;
@@ -10973,39 +10931,41 @@ input[text]:focus {
 	max-width: 1200px;
 }
 
-.gallery-card {
+.past-conference-page .gallery-card {
 	position: relative;
 	border-radius: 30px;
 	overflow: hidden;
 	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 	/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); */
 	transition: transform 0.3s ease;
+	/* width: 300px;
+	height: 300px; */
 }
 
-.gallery-card img {
+.past-conference-page .gallery-card img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	/* object-fit: cover; */
 	display: block;
 }
 
 /* Hover effect */
-.gallery-card:hover {
+.past-conference-page .gallery-card:hover {
 	transform: translateY(-6px);
 }
 
 /* Odd cards (1,3,5,7...) appear a bit smaller + shifted up */
-.gallery-card:nth-child(even) {
-	margin-top: -50px;
-	height: 380px;
+.past-conference-page .gallery-card:nth-child(even) {
+	margin-top: -40px;
+	height: 300px;
 }
 
 /* Even cards (2,4,6,8...) larger */
-.gallery-card:nth-child(even) {
-	height: 280px;
+.past-conference-page .gallery-card:nth-child(odd) {
+	height: 300px;
 }
 
-.day-break-blocks {
+.past-conference-page .day-break-blocks {
 	/* text-align: center; */
 	/* position: relative; */
 	/* display: flex;
@@ -11021,12 +10981,12 @@ input[text]:focus {
 	gap: 20px;
 }
 
-.custom-pill-buttons {
+.past-conference-page .custom-pill-buttons {
 	display: flex;
 	justify-content: space-evenly;
 }
 
-.custom-pill-buttons .pill-btn {
+.past-conference-page .custom-pill-buttons .pill-btn {
 	background-color: #333;
 	/* dark background */
 	color: var(--white-color);
@@ -11045,20 +11005,22 @@ input[text]:focus {
 	vertical-align: middle;
 }
 
-.custom-pill-buttons .pill-btn:hover {
+.past-conference-page .custom-pill-buttons .pill-btn:hover,
+.past-conference-page .custom-pill-buttons .pill-btn:focus,
+.past-conference-page .custom-pill-buttons .pill-btn.active {
 	background-color: #00b9d7;
 	/* highlight blue on hover */
 	border-color: #00a2bb;
 }
 
-.gallery-complete-block {
+.past-conference-page .gallery-complete-block {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 50px 0;
 }
 
-.gallery-complete-block .gallery-complete-btn {
+.past-conference-page .gallery-complete-block .gallery-complete-btn {
 	background-color: var(--primary-color);
 	/* dark background */
 	color: var(--white-color);
@@ -11077,20 +11039,14 @@ input[text]:focus {
 	vertical-align: middle;
 }
 
-/* Responsive (2 cards per row on tablets, 1 on mobile) */
-@media (max-width: 991px) {
-	.gallery-grid {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
 
-@media (max-width: 575px) {
-	.gallery-grid {
+@media (max-width: 767px) {
+	.past-conference-page .gallery-grid {
 		grid-template-columns: 1fr;
 	}
 
-	.gallery-card:nth-child(odd),
-	.gallery-card:nth-child(even) {
+	.past-conference-page .gallery-card:nth-child(odd),
+	.past-conference-page .gallery-card:nth-child(even) {
 		margin-top: 0;
 		height: auto;
 	}
@@ -11149,4 +11105,146 @@ input[text]:focus {
 	background: #fff;
 	color: rgba(0, 0, 0, 0.7);
 	transition: background 0.3s ease-in;
+}
+
+@media screen and (max-width: 991px) {
+	.gallery-event-block .gallery-images-block {
+		flex-wrap: nowrap;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.gallery-event-block .download-icon {
+		bottom: 11px;
+		font-size: 11px;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1150px) {
+	.past-conference-page .gallery-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.past-conference-page .gallery-card {
+		height: 400px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.past-conference-page .tab-day-heading .day-heading-text {
+		font-size: 22px;
+	}
+
+	.past-conference-page .custom-pill-buttons {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	.past-conference-page .gallery-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+	.past-conference-page .tab-day-heading .day-heading-text {
+		font-size: 20px;
+	}
+
+	.past-conference-page .custom-pill-buttons {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	.about-conf-section .overview-content-block .overview-subhead {
+		font-size: 20px;
+
+	}
+}
+
+@media only screen and (min-width: 425px) and (max-width: 575px) {
+	.past-conference-page .tab-day-heading .day-heading-text {
+		font-size: 17px;
+	}
+
+	.past-conference-page .custom-pill-buttons {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	.past-conference-page .custom-pill-buttons .pill-btn {
+		font-size: 14px;
+		padding: 4px 16px;
+	}
+
+	.about-conf-section .overview-content-block .overview-subhead {
+		font-size: 19px;
+	}
+
+	.abs_wrap5 {
+		font-size: 25px;
+	}
+}
+
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+	.past-conference-page .tab-day-heading .day-heading-text {
+		font-size: 14px;
+	}
+
+	.past-conference-page .custom-pill-buttons {
+		display: flex;
+		justify-content: start;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	.past-conference-page .custom-pill-buttons .pill-btn {
+		font-size: 14px;
+		padding: 4px 16px;
+	}
+
+	.about-conf-section .overview-content-block .overview-subhead {
+		font-size: 18px;
+	}
+
+	.abs_wrap5 {
+		font-size: 22px;
+	}
+}
+
+@media screen and (max-width: 374px) {
+	.past-conference-page .tab-day-heading .day-heading-text {
+		font-size: 12px;
+	}
+
+	.past-conference-page .custom-pill-buttons {
+		display: flex;
+		justify-content: start;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	.past-conference-page .custom-pill-buttons .pill-btn {
+		font-size: 14px;
+		padding: 4px 16px;
+	}
+
+	.about-conf-section .overview-content-block .overview-subhead {
+		font-size: 18px;
+	}
+
+	.abs_wrap5 {
+		font-size: 22px;
+	}
+
+	.past-conference-page .custom-tabs .nav-link {
+		padding: 10px 30px;
+		font-weight: 500;
+		font-size: 20px;
+	}
 }
