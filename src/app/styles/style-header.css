@@ -11049,6 +11049,11 @@ input[text]:focus {
 	vertical-align: middle;
 }
 
+.past-conference-page .gallery-complete-block .gallery-complete-btn:hover {
+	background: var(--abstractfilebg-color);
+	color: var(--white-color);
+	transition: background 0.3s ease-in;
+}
 
 @media (max-width: 767px) {
 	.past-conference-page .gallery-grid {
