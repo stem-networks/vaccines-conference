@@ -306,7 +306,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function ConferenceSessions() {
-  const [activeSession, setActiveSession] = useState<string>("Coffee Break");
+  const [activeSession, setActiveSession] = useState<string>("Keynotes");
 
   // Session content (no Day1/Day2 separation now)
   const sessions: Record<string, { images: string[]; description: string }> = {
