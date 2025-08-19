@@ -143,7 +143,10 @@
       "title": "Scientific Program",
       "link": "/scientific-program"
     },
-   
+     {
+      "title": "Previous Conference",
+      "link": "/previous-conference"
+    },
     {
       "title": "Guidelines",
       "link": "/guidelines"

@@ -87,62 +87,56 @@ const PreviousConference = async () => {
                         <Image src="/images/images/group_image.webp" width={1200} height={500} alt={general_info?.clname} title={general_info?.clname} className="overview-img" />
                     </div>
                     <div className="overview-content-block">
-                        <h2 className="overview-heading">{general_info?.csname}-{general_info?.year}</h2>
+                        <h2 className="overview-heading">Previous Conference Report</h2>
                         <h3 className="overview-subhead">A Journey of Innovation, Collaboration, and Excellence</h3>
-                        <p><span>Catalysis, Chemical Engineering, and Green Chemistry (CCGC 2025)</span> and the<span>[Materials, Nanotechnology, and Nanoscience Conference (MNNC 2025)]</span> were successfully organized on<span>August 06–07, 2025, in Singapore,</span> bringing together global leaders, researchers, academicians, and industry experts for two days of knowledge-sharing and collaboration.</p>
+                        <p><span>Catalysis, Chemical Engineering, and Green Chemistry (CCGC 2025)</span> and the <span>[Materials, Nanotechnology, and Nanoscience Conference (MNNC 2025)]</span> were successfully organized on <span>August 06–07, 2025, in Singapore,</span> bringing together global leaders, researchers, academicians, and industry experts for two days of knowledge-sharing and collaboration.</p>
 
                     </div>
-                    {/* <div className="auto-container">
+                    <div className="auto-container">
                         <div className="content1">
 
                             <div className="heading Poster-heading">Highlights of the Conference</div>
                             <ul>
                                 <li>
-                                    <b>Global Participation:</b> Speakers and delegates from multiple countries joined the events, representing universities, research institutions, healthcare organizations, and industries.
+                                    <span>Global Participation:</span> Speakers and delegates from multiple countries joined the events, representing universities, research institutions, healthcare organizations, and industries.
                                 </li>
                                 <li>
-                                    <b>Distinguished Speakers:</b>Our keynote speakers delivered insightful presentations on cutting-edge topics in catalysis, chemical engineering, green chemistry, nanotechnology, and materials science.
+                                    <span>Distinguished Speakers:</span>Our keynote speakers delivered insightful presentations on cutting-edge topics in catalysis, chemical engineering, green chemistry, nanotechnology, and materials science.
                                 </li>
                                 <li>
-                                    <b>Interactive Sessions:</b>CCGC and MNNC featured a mix of keynote lectures, plenary talks, oral presentations, poster sessions, and panel discussions, ensuring lively interactions and meaningful academic exchange.
-                                </li>
-
-                                <li>
-                                    <b>Networking Opportunities:</b> The joint gatherings created an ideal platform for participants to build collaborations, share research findings, and explore potential partnerships.
+                                    <span>Interactive Sessions:</span>CCGC and MNNC featured a mix of keynote lectures, plenary talks, oral presentations, poster sessions, and panel discussions, ensuring lively interactions and meaningful academic exchange.
                                 </li>
 
                                 <li>
-                                    <b>Poster & Young Researcher Forum:</b> Emerging scientists and students actively participated in poster competitions and young researcher forums, showcasing innovative projects and receiving valuable feedback.
+                                    <span>Networking Opportunities:</span> The joint gatherings created an ideal platform for participants to build collaborations, share research findings, and explore potential partnerships.
+                                </li>
+
+                                <li>
+                                    <span>Poster & Young Researcher Forum:</span> Emerging scientists and students actively participated in poster competitions and young researcher forums, showcasing innovative projects and receiving valuable feedback.
                                 </li>
 
                             </ul>
-                            <div className="heading Participants-heading">
-                                Information we collect
-                            </div>
+
+                            <div className="heading Poster-heading">Key Outcomes</div>
                             <ul>
                                 <li>
-                                    The personal information that you are asked to provide,
-                                    and the reasons why you are asked to provide it, will be
-                                    made clear to you at the point we ask you to provide your
-                                    personal information.
+                                    Strengthened international collaborations across academia and industry.
                                 </li>
                                 <li>
-                                    If you contact us directly, we may receive additional
-                                    information about you such as your name, email address,
-                                    phone number, the contents of the message and/or
-                                    attachments you may send us, and any other information you
-                                    may choose to provide.
+                                    Exchange of new ideas and research breakthroughs in <span>sustainable chemistry, nanomaterials, biotechnology, and applied sciences.</span>
                                 </li>
                                 <li>
-                                    When you register for an Account, we may ask for your
-                                    contact information, including items such as name, company
-                                    name, address, email address, and telephone number.
+                                    Recognition of outstanding contributions through speaker awards and best poster awards.
                                 </li>
                             </ul>
 
+                            <div className="heading Poster-heading">Acknowledgment</div>
+                            <p>We extend our sincere gratitude to the <span>distinguished speakers, session chairs, delegates, sponsors, and organizing committee members</span> for their invaluable contributions to the success of CCGC 2025 and MNNC 2025.</p>
 
+                            <div className="heading Poster-heading">Looking Ahead</div>
+                            <p>Building on this success, we are excited to announce that the next editions of <span>CCGC and MNNC</span> will continue to provide a premier platform for advancing scientific innovation and fostering global collaboration. Details of upcoming conferences will be shared soon.</p>
                         </div>
-                    </div> */}
+                    </div>
                     {/* </div> */}
                 </section>
 
