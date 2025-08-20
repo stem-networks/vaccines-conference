@@ -339,10 +339,10 @@ const BannerSection: React.FC<BannerSectionProps> = ({
                     <i className="bx bxs-phone-call box-phone"></i>
                     <b>
                       <a
-                        href={`tel:${general?.phone || ""}`}
-                        title={`${general?.phone || ""}`}
+                        href={`tel:${general?.whatsapp || ""}`}
+                        title={`${general?.whatsapp || ""}`}
                       >
-                        {general?.phone || ""}
+                        {general?.whatsapp || ""}
                       </a>
                     </b>
                   </div>
@@ -385,10 +385,10 @@ const BannerSection: React.FC<BannerSectionProps> = ({
                     <i className="bx bxs-phone-call box-phone"></i>
                     <b>
                       <a
-                        href={`tel:${general?.phone || ""}`}
-                        title={`${general?.phone || ""}`}
+                        href={`tel:${general?.whatsapp || ""}`}
+                        title={`${general?.whatsapp || ""}`}
                       >
-                        {general?.phone || ""}
+                        {general?.whatsapp || ""}
                       </a>
                     </b>
                   </div>

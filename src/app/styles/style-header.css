@@ -9776,7 +9776,7 @@ input[text]:focus {
 }
 
 .venue-page .content1 {
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 	margin-top: 30px;
 }
 
@@ -9824,8 +9824,8 @@ input[text]:focus {
 /* Mapping  */
 .venue-mapping-block {
 	display: grid;
-	grid-template-columns: 5.5fr 6.5fr;
-	margin-bottom: 40px;
+	grid-template-columns: 1fr;
+	margin-bottom: 140px;
 }
 
 .hotel-map-block h3 {
@@ -10065,7 +10065,7 @@ input[text]:focus {
 @media only screen and (min-width: 1215px) and (max-width: 1380px) {
 	.venue-mapping-block {
 		display: grid;
-		grid-template-columns: 6fr 6fr;
+		grid-template-columns: 1fr;
 		row-gap: 45px;
 	}
 
@@ -10796,6 +10796,7 @@ input[text]:focus {
 
 .about-conf-section .overview-content-block p span {
 	font-weight: 600;
+	color: var(--primary-color);
 }
 
 /* Tabs Navigation  */
@@ -10933,6 +10934,10 @@ input[text]:focus {
 	font-size: 16px;
 }
 
+.past-conference-page .highlight-word {
+	color: var(--primary-color) !important;
+}
+
 .past-conference-page .gallery-grid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -10976,16 +10981,12 @@ input[text]:focus {
 }
 
 .past-conference-page .day-break-blocks {
-	/* text-align: center; */
-	/* position: relative; */
-	/* display: flex;
-	justify-content: center;
-	align-items: center; */
-	background: linear-gradient(to right,
+
+	/* background: linear-gradient(to right,
 			rgba(0, 185, 215, 0.2),
-			rgba(185, 215, 215, 0.2),
-			rgba(0, 185, 215, 0.2));
-	/* background-color: var(--primary-color); */
+			rgba(0, 185, 215, 0.2),
+			rgba(0, 185, 215, 0.2)); */
+	background-color: #e3f4ff;
 	color: var(--white-color);
 	padding: 20px 20px;
 	gap: 20px;
@@ -10997,19 +10998,19 @@ input[text]:focus {
 }
 
 .past-conference-page .custom-pill-buttons .pill-btn {
-	background-color: #333;
+	background-color: #3f3f3f;
 	/* dark background */
 	color: var(--white-color);
 	/* white text */
-	font-size: 16px;
+	font-size: 17px;
 	font-weight: 600;
 	padding: 6px 22px;
 	border-radius: 50px;
 	cursor: pointer;
 	transition: all 0.3s ease;
 	text-decoration: none;
-	border: 2px solid #444444;
-	outline: 1px solid #444444 !important;
+	border: 2px solid #3f3f3f;
+	outline: 1px solid #3f3f3f !important;
 	outline-offset: 5px;
 	/* height: 48px; */
 	vertical-align: middle;
@@ -11031,7 +11032,7 @@ input[text]:focus {
 }
 
 .past-conference-page .gallery-complete-block .gallery-complete-btn {
-	background-color: var(--primary-color);
+	background-color: var(--fourth-color);
 	/* dark background */
 	color: var(--white-color);
 	/* white text */
@@ -11042,7 +11043,7 @@ input[text]:focus {
 	cursor: pointer;
 	transition: all 0.3s ease;
 	text-decoration: none;
-	border: 2px solid var(--primary-color);
+	border: 2px solid var(--fourth-color);
 	outline: 1px solid #cecece !important;
 	outline-offset: 5px;
 	/* height: 48px; */
@@ -11050,8 +11051,8 @@ input[text]:focus {
 }
 
 .past-conference-page .gallery-complete-block .gallery-complete-btn:hover {
-	background: var(--abstractfilebg-color);
-	color: var(--white-color);
+	background: var(--white-color);
+	color: var(--fourth-color);
 	transition: background 0.3s ease-in;
 }
 

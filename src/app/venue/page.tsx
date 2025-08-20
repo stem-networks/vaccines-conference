@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { getBaseUrl } from "@/lib/getBaseUrl";
 import { ApiResponse } from '@/types';
 import { Metadata } from 'next';
@@ -128,7 +128,7 @@ const Venue = async () => {
 
                     <div className='hotel-map-block'>
                         <div className='venue-mapping-block'>
-                            <div className='venue-mapping-left-block'>
+                            {/* <div className='venue-mapping-left-block'>
                                 <h3>Hotel Images</h3>
                                 <div className='hotelImages-block'>
                                     <Image src="/images/images/hotel1.webp" width={200} height={200} alt="" title="" />
@@ -136,7 +136,7 @@ const Venue = async () => {
                                     <Image src="/images/images/hotel3.webp" width={200} height={200} alt="" title="" />
                                     <Image src="/images/images/hotel4.webp" width={200} height={200} alt="" title="" />
                                 </div>
-                            </div>
+                            </div> */}
                             <div className='venue-mapping-right-block'>
                                 <h3>Map</h3>
                                 <div className="google-map">
