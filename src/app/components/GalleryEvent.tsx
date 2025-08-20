@@ -89,11 +89,11 @@ export default function GalleryEvent() {
         <div className="gallery-complete-page">
             <div className="gallery-event-block">
                 <div className="auto-container">
-                    <div className="row gallery-images-block">
+                    <div className="gallery-images-block">
                         {columns.map((col, i) => (
                             <div
                                 key={i}
-                                className="col-lg-3 col-md-4 col-sm-4 col-6 each-indiv-images-block"
+                                className="each-indiv-images-block"
                             >
                                 {col}
                             </div>

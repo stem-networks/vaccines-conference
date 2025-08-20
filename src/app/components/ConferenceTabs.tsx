@@ -349,6 +349,32 @@ export default function ConferenceSessions() {
       ],
       description: "Interactive panel discussions on emerging trends.",
     },
+    "Certificates": {
+      images: [
+        "/images/gallery-event/certificates/1.webp",
+        "/images/gallery-event/certificates/2.webp",
+        "/images/gallery-event/certificates/3.webp",
+        "/images/gallery-event/certificates/4.webp",
+        "/images/gallery-event/certificates/5.webp",
+        "/images/gallery-event/certificates/6.webp",
+        "/images/gallery-event/certificates/7.webp",
+        "/images/gallery-event/certificates/8.webp",
+      ],
+      description: "Interactive panel discussions on emerging trends.",
+    },
+    "Posters": {
+      images: [
+        "/images/gallery-event/posters/1.webp",
+        "/images/gallery-event/posters/2.webp",
+        "/images/gallery-event/posters/3.webp",
+        "/images/gallery-event/posters/4.webp",
+        "/images/gallery-event/posters/5.webp",
+        "/images/gallery-event/posters/6.webp",
+        "/images/gallery-event/posters/7.webp",
+        "/images/gallery-event/posters/8.webp",
+      ],
+      description: "Poster presentations showcasing innovative research.",
+    },
     "Coffee Break": {
       images: [
         "/images/gallery-event/coffee/1.webp",
@@ -374,32 +400,6 @@ export default function ConferenceSessions() {
         "/images/gallery-event/lunch/8.webp",
       ],
       description: "Lunch networking session with delegates.",
-    },
-    "Posters": {
-      images: [
-        "/images/gallery-event/posters/1.webp",
-        "/images/gallery-event/posters/2.webp",
-        "/images/gallery-event/posters/3.webp",
-        "/images/gallery-event/posters/4.webp",
-        "/images/gallery-event/posters/5.webp",
-        "/images/gallery-event/posters/6.webp",
-        "/images/gallery-event/posters/7.webp",
-        "/images/gallery-event/posters/8.webp",
-      ],
-      description: "Poster presentations showcasing innovative research.",
-    },
-    "Certificates": {
-      images: [
-        "/images/gallery-event/certificates/1.webp",
-        "/images/gallery-event/certificates/2.webp",
-        "/images/gallery-event/certificates/3.webp",
-        "/images/gallery-event/certificates/4.webp",
-        "/images/gallery-event/certificates/5.webp",
-        "/images/gallery-event/certificates/6.webp",
-        "/images/gallery-event/certificates/7.webp",
-        "/images/gallery-event/certificates/8.webp",
-      ],
-      description: "Interactive panel discussions on emerging trends.",
     },
   };
 

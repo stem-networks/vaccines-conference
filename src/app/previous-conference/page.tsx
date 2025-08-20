@@ -89,7 +89,7 @@ const PreviousConference = async () => {
                     <div className="overview-content-block">
                         <h2 className="overview-heading">Previous Conference Report</h2>
                         {/* <h3 className="overview-subhead">A Journey of Innovation, Collaboration, and Excellence</h3> */}
-                        <p><span>Catalysis, Chemical Engineering and Materials Science Conference 2025</span> were successfully organized on <span>August 06–07, 2025, in Singapore,</span> bringing together global leaders, researchers, academicians, and industry experts for two days of knowledge-sharing and collaboration.</p>
+                        <p><span>{general_info?.clname} ({general_info?.csname}-2025)</span> was successfully organized on <span>August 06–07, 2025, in Singapore,</span> bringing together global leaders, researchers, academicians, and industry experts for two days of knowledge-sharing and collaboration.</p>
 
                     </div>
                     <div className="auto-container">
@@ -104,7 +104,7 @@ const PreviousConference = async () => {
                                     <span>Distinguished Speakers:</span> Our keynote speakers delivered insightful presentations on cutting-edge topics in catalysis, chemical engineering, green chemistry, nanotechnology, and materials science.
                                 </li>
                                 <li>
-                                    <span>Interactive Sessions:</span> Catalysis, Chemical Engineering and Materials Science Conference 2025 featured a mix of keynote lectures, plenary talks, oral presentations, poster sessions, and panel discussions, ensuring lively interactions and meaningful academic exchange.
+                                    <span>Interactive Sessions:</span> {general_info?.clname} ({general_info?.csname}-2025) featured a mix of keynote lectures, plenary talks, oral presentations, poster sessions, and panel discussions, ensuring lively interactions and meaningful academic exchange.
                                 </li>
 
                                 <li>
@@ -131,7 +131,7 @@ const PreviousConference = async () => {
                             </ul>
 
                             <div className="heading Poster-heading">Acknowledgment</div>
-                            <p>We extend our sincere gratitude to the <span>distinguished speakers, session chairs, delegates, sponsors, and organizing committee members</span> for their invaluable contributions to the success of Catalysis, Chemical Engineering and Materials Science Conference 2025.</p>
+                            <p>We extend our sincere gratitude to the <span>distinguished speakers, session chairs, delegates, sponsors, and organizing committee members</span> for their invaluable contributions to the success of {general_info?.clname} ({general_info?.csname}-2025).</p>
 
                             <div className="heading Poster-heading">Looking Ahead</div>
                             <p>Building on this success, we are excited to announce that the next editions of <span>{general_info?.clname}</span> will continue to provide a premier platform for advancing scientific innovation and fostering global collaboration. Details of upcoming conferences will be shared soon.</p>

@@ -11074,8 +11074,12 @@ input[text]:focus {
 }
 
 .gallery-event-block .gallery-images-block {
-	display: flex;
-	justify-content: start;
+	/* display: flex;
+	justify-content: start; */
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	flex-wrap: wrap;
+	/* 4 columns on large screens */
 	margin-top: 50px;
 }
 
@@ -11083,6 +11087,7 @@ input[text]:focus {
 	display: flex;
 	justify-content: start;
 	flex-wrap: wrap;
+	/* flex-direction: column; */
 	gap: 10px;
 	padding: 10px;
 }
@@ -11120,6 +11125,28 @@ input[text]:focus {
 	background: #fff;
 	color: rgba(0, 0, 0, 0.7);
 	transition: background 0.3s ease-in;
+}
+
+/* 📱 Responsive breakpoints */
+@media (max-width: 1200px) {
+	.gallery-event-block .gallery-images-block {
+		grid-template-columns: repeat(4, 1fr);
+		/* 3 columns */
+	}
+}
+
+@media (max-width: 991px) {
+	.gallery-event-block .gallery-images-block {
+		grid-template-columns: repeat(2, 1fr);
+		/* 2 columns */
+	}
+}
+
+@media (max-width: 480px) {
+	.gallery-event-block .gallery-images-block {
+		grid-template-columns: repeat(1, 1fr);
+		/* 1 column on mobile */
+	}
 }
 
 @media screen and (max-width: 991px) {
@@ -11160,6 +11187,11 @@ input[text]:focus {
 	.past-conference-page .gallery-grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
+	/* .gallery-event-block .each-indiv-images-block {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	} */
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
