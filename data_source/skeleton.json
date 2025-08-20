@@ -132,6 +132,20 @@
         "content": "Read the Privacy Policy for the Materials Science Conference 2026. Learn how we collect, use, and protect your personal information for a safe and secure conference experience.",
         "meta_keywords": "Privacy Policy Materials Science Conference, Nanotechnology Conference Privacy, Nanomaterials Conference Data Protection, Conference Privacy Policy, Data Privacy Nanotechnology, Materials Science Data Usage, Nanotech Conference Privacy Terms"
       }
+    ],
+    "previous_conference": [
+      {
+        "title": "Previous Conference | Materials Science Conference 2026 | MSNC 2026 | Spain | April 2026",
+        "content": "Explore highlights from our previous Materials Science Conferences. Discover groundbreaking sessions, keynote speakers, and innovations in nanotechnology and nanomaterials that paved the way for MSNC 2026 in Spain.",
+        "meta_keywords": "Previous Materials Science Conference, Nanotechnology Past Events, Nanomaterials Research Highlights, Materials Science Conference History, Nanotech Conference Recap, Past Nanomaterials Summit, Previous Materials Science Innovations"
+      }
+    ],
+    "galleryEvent": [
+      {
+        "title": "Gallery of Event | Materials Science Conference 2026 | MSNC 2026 | Spain | April 2026",
+        "content": "Browse the official gallery of the Materials Science Conference. Relive key moments, scientific sessions, and networking highlights from past events leading up to MSNC 2026 in Spain this April.",
+        "meta_keywords": "Materials Science Conference Gallery, Nanotechnology Conference Photos, Nanomaterials Event Images, Scientific Conference Highlights, Nanotech Summit Pictures, Materials Science Networking Gallery, Previous Conference Photos"
+      }
     ]
   },
   "display_features": [
@@ -143,7 +157,7 @@
       "title": "Scientific Program",
       "link": "/scientific-program"
     },
-     {
+    {
       "title": "Previous Conference",
       "link": "/previous-conference"
     },

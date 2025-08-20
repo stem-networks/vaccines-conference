@@ -26,7 +26,7 @@ async function fetchGeneralDataStatic(): Promise<ApiResponse> {
 export async function generateMetadata(): Promise<Metadata> {
     try {
         const generalData = await fetchGeneralDataStatic();
-        const meta = generalData?.pages?.scientific_program?.[0] || {
+        const meta = generalData?.pages?.previous_conference?.[0] || {
             title: "Previous Conference",
             content: "Explore the Previous Conference of the conference.",
             meta_keywords: "",

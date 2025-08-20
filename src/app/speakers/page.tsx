@@ -1,6 +1,9 @@
 import React from 'react'
 import Image from "next/image";
 import Link from "next/link";
+import { getBaseUrl } from '@/lib/getBaseUrl';
+import { ApiResponse } from '@/types';
+import { Metadata } from 'next';
 
 interface Speaker {
     id: number;
@@ -142,6 +145,48 @@ const speakersData: Speaker[] = [
     },
 ];
 
+async function fetchGeneralDataStatic(): Promise<ApiResponse> {
+    const baseUrl = getBaseUrl();
+    const res = await fetch(`${baseUrl}/api/general`, {
+        next: { revalidate: 3600 }, // Cache for 1 hour
+    });
+    if (!res.ok) throw new Error("Failed to fetch general data statically");
+    return res.json();
+}
+
+// SEO Metadata
+export async function generateMetadata(): Promise<Metadata> {
+    try {
+        const generalData = await fetchGeneralDataStatic();
+        const meta = generalData?.pages?.speakers?.[0] || {
+            title: "Speakers",
+            content: "Explore the Speakers of the conference.",
+            meta_keywords: "",
+        };
+
+        // Canonical
+        // const baseUrl = process.env.BASE_URL || "";
+        const canonicalPath = "/speakers"; // hardcode since we know this is sessions page
+        const canonicalURL = `${getBaseUrl()}${canonicalPath}`;
+
+        return {
+            title: meta.title,
+            description: meta.content,
+            keywords: meta.meta_keywords,
+            metadataBase: new URL(getBaseUrl()),
+            alternates: {
+                canonical: canonicalURL,
+            },
+        };
+    } catch (error) {
+        console.error("Metadata generation error Speakers:", error);
+        return {
+            title: "Speakers",
+            description: "Explore the Speakers of the conference.",
+            keywords: "",
+        };
+    }
+}
 
 const speakers = () => {
     return (

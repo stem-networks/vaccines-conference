@@ -11131,21 +11131,18 @@ input[text]:focus {
 @media (max-width: 1200px) {
 	.gallery-event-block .gallery-images-block {
 		grid-template-columns: repeat(4, 1fr);
-		/* 3 columns */
 	}
 }
 
 @media (max-width: 991px) {
 	.gallery-event-block .gallery-images-block {
 		grid-template-columns: repeat(2, 1fr);
-		/* 2 columns */
 	}
 }
 
 @media (max-width: 480px) {
 	.gallery-event-block .gallery-images-block {
 		grid-template-columns: repeat(1, 1fr);
-		/* 1 column on mobile */
 	}
 }
 
@@ -11208,7 +11205,10 @@ input[text]:focus {
 
 	.about-conf-section .overview-content-block .overview-subhead {
 		font-size: 20px;
+	}
 
+	.about-conf-section .overview-content-block .overview-heading {
+		font-size: 36px;
 	}
 }
 
@@ -11236,6 +11236,10 @@ input[text]:focus {
 	.abs_wrap5 {
 		font-size: 25px;
 	}
+
+	.about-conf-section .overview-content-block .overview-heading {
+		font-size: 25px;
+	}
 }
 
 @media only screen and (min-width: 375px) and (max-width: 424px) {
@@ -11261,6 +11265,15 @@ input[text]:focus {
 
 	.abs_wrap5 {
 		font-size: 22px;
+	}
+
+	.about-conf-section .overview-content-block .overview-heading {
+		font-size: 22px;
+	}
+
+	.about-conf-section .overview-content-block p {
+		text-align-last: left;
+		text-align: left;
 	}
 }
 
@@ -11293,5 +11306,14 @@ input[text]:focus {
 		padding: 10px 30px;
 		font-weight: 500;
 		font-size: 20px;
+	}
+
+	.about-conf-section .overview-content-block .overview-heading {
+		font-size: 18px;
+	}
+
+	.about-conf-section .overview-content-block p {
+		text-align-last: left;
+		text-align: left;
 	}
 }
