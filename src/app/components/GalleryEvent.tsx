@@ -11,7 +11,7 @@ type GalleryData = {
 
 const galleryData: GalleryData = {
     allPhotos: [
-        "1.webp", "2.webp", "6.webp", "7.webp", "4.webp", "12.webp",
+        "1.webp", "2.webp", "6.webp", "3.webp", "4.webp", "12.webp",
         "7.webp", "8.webp", "9.webp", "10.webp",
         "11.webp", "5.webp", "13.webp", "14.webp", "15.webp",
         "16.webp", "17.webp", "18.webp", "19.webp", "20.webp",
@@ -24,12 +24,12 @@ const galleryData: GalleryData = {
         "51.webp", "52.webp", "53.webp", "54.webp", "55.webp",
         "56.webp", "57.webp", "58.webp", "59.webp", "60.webp",
         "61.webp", "62.webp", "63.webp", "64.webp", "65.webp",
-         "67.webp", "68.webp", "69.webp", "70.webp",
-        "71.webp",  "72.webp", "73.webp", "74.webp", "75.webp",
-        "76.webp",  "77.webp", "78.webp", "79.webp", "80.webp",
-        "81.webp", "82.webp", "83.webp",  "84.webp", 
-        // "85.webp",
-        // "86.webp", "87.webp", "88.webp", "89.webp", "90.webp",
+        "67.webp", "68.webp", "69.webp", "70.webp",
+        "71.webp", "72.webp", "73.webp", "74.webp", "75.webp",
+        "76.webp", "78.webp", "79.webp", "80.webp",
+        "81.webp", "82.webp", "83.webp", "84.webp",
+        // "85.webp", "86.webp", "87.webp",
+        //  "88.webp", "89.webp", "90.webp",
         // "91.webp", "92.webp", "93.webp", "94.webp", "95.webp",
         // "96.webp", "97.webp", "98.webp", "99.webp", "100.webp"
 
