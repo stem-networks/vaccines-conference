@@ -5,6 +5,13 @@ import { getBaseUrl } from '@/lib/getBaseUrl';
 import { ApiResponse } from '@/types';
 import { Metadata } from 'next';
 
+async function fetchGeneralData(): Promise<ApiResponse> {
+  const baseUrl = getBaseUrl();
+  const res = await fetch(`${baseUrl}/api/general`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch general data");
+  return res.json();
+}
+
 async function fetchGeneralDataStatic(): Promise<ApiResponse> {
     const baseUrl = getBaseUrl();
     const res = await fetch(`${baseUrl}/api/general`, {
@@ -48,7 +55,11 @@ export async function generateMetadata(): Promise<Metadata> {
     }
 }
 
-const page = () => {
+const page = async () => {
+
+    const generalFetch = await fetchGeneralData();
+    const general = generalFetch?.data || {};
+
     return (
         <div>
             {/* Breadcrumb */}
@@ -69,7 +80,7 @@ const page = () => {
             </h2>
 
             {/* <!-- All Images  --> */}
-            <GalleryEvent />
+            <GalleryEvent generalInfo={general}/>
         </div>
     )
 }

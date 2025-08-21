@@ -4,11 +4,17 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { BsDownload } from "react-icons/bs";
+// import { GeneralInfo } from "@/types";
 
 type GalleryData = {
     [key: string]: string[];
 };
-
+interface GeneralInfo {
+    clname?: string;
+}
+interface GalleryEventProps {
+    generalInfo: GeneralInfo;
+}
 const galleryData: GalleryData = {
     allPhotos: [
         "1.webp", "2.webp", "3.webp", "8.webp", "5.webp",
@@ -24,8 +30,8 @@ const galleryData: GalleryData = {
         "51.webp", "52.webp", "53.webp", "54.webp", "55.webp",
         "56.webp", "57.webp", "58.webp", "59.webp", "60.webp",
         "61.webp", "62.webp", "63.webp", "64.webp", "65.webp",
-        "66.webp","71.webp","72.webp","73.webp","74.webp","76.webp",
-        "77.webp", "78.webp", "79.webp","80.webp","81.webp","82.webp",
+        "66.webp", "71.webp", "72.webp", "73.webp", "74.webp", "76.webp",
+        "77.webp", "78.webp", "79.webp", "80.webp", "81.webp", "82.webp",
         // "85.webp", "86.webp", "87.webp",
         //  "88.webp", "89.webp", "90.webp",
         // "91.webp", "92.webp", "93.webp", "94.webp", "95.webp",
@@ -35,7 +41,8 @@ const galleryData: GalleryData = {
     allDay2: [],
 };
 
-export default function GalleryEvent() {
+export default function GalleryEvent({ generalInfo }: GalleryEventProps) {
+
     const [columns, setColumns] = useState<React.ReactNode[][]>([[], [], [], []]);
     const colCount = 4;
 
@@ -51,7 +58,8 @@ export default function GalleryEvent() {
                     <div key={`${folder}-${imageName}`} className="image-wrapper relative mb-4">
                         <Image
                             src={imgPath}
-                            alt="Gallery Image"
+                            alt={generalInfo?.clname || ""}
+                            title={generalInfo?.clname}
                             width={400}
                             height={400}
                             className="w-100 h-auto rounded shadow-sm"
