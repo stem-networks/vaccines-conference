@@ -428,7 +428,7 @@ export default function ConferenceSessions() {
             <div className="custom-pill-buttons">
               {Object.keys(sessions).map((session) => (
                 <button
-                  key={session}
+                  key={session} title={session}
                   className={`pill-btn ${activeSession === session ? "active" : ""}`}
                   onClick={() => {
                     setActiveSession(session);
