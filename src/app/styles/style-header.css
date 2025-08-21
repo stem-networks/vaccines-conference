@@ -11320,12 +11320,13 @@ input[text]:focus {
 }
 
 /* Loader */
-.loader-block{
+.loader-block {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.loader {
+
+.loader-block.loader {
 	width: 48px;
 	height: 48px;
 	border: 4px solid var(--primary-color);
