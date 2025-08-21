@@ -134,7 +134,7 @@ const PreviousConference = async () => {
                             <p>We extend our sincere gratitude to the <span className='highlight-word'>distinguished speakers, session chairs, delegates, sponsors, and organizing committee members</span> for their invaluable contributions to the success of {general_info?.clname} ({general_info?.csname}-2025).</p>
 
                             <div className="heading Poster-heading">Looking Ahead</div>
-                            <p>Building on this success, we are excited to announce that the next editions of <span className='highlight-word'>{general_info?.clname}</span> will continue to provide a premier platform for advancing scientific innovation and fostering global collaboration. Details of upcoming conferences will be shared soon.</p>
+                            <p>Building on this success, we are excited to announce that the next edition of <span>{general_info?.clname} which is ({general_info?.csname} {general_info?.year} at {general_info?.venue_p1} during {general_info?.full_length_dates})</span> will continue to provide a premier platform for advancing scientific innovation and fostering global collaboration. </p>
                         </div>
                     </div>
                     {/* </div> */}
