@@ -11326,7 +11326,7 @@ input[text]:focus {
 	align-items: center;
 }
 
-.loader-block.loader {
+.loader-block .loader {
 	width: 48px;
 	height: 48px;
 	border: 4px solid var(--primary-color);
