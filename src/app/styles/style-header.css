@@ -10740,15 +10740,25 @@ input[text]:focus {
 	margin: 50px 0;
 }
 
-.about-conf-section .overview-image-block {
+.tabsSlider-block {
+	overflow: hidden;
+	width: 100%;
+	display: block;
+	/* background-color: #2b3b5c; */
+	padding: 40px 0px 30px 0px;
+	text-align: center;
+	color: #fff;
+}
+
+.overview-image-block {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	margin: 0 auto 40px;
+	margin: 0 auto 0px;
 }
 
-.about-conf-section .overview-image-block .overview-img {
+.overview-image-block .overview-img {
 	width: 100%;
 	height: auto;
 	/* border-radius: 200px; */
@@ -10772,6 +10782,7 @@ input[text]:focus {
 	padding: 0px 50px;
 	border-width: 0px 0px 1px 0px;
 	border-image: linear-gradient(to right, #ededed 0%, #bbbaba 25%, #808080 50%, #bbbaba 75%, #ededed 100%) 1;
+	margin-top: 20px;
 }
 
 .about-conf-section .overview-content-block .overview-subhead {
@@ -10794,9 +10805,13 @@ input[text]:focus {
 	margin: 20px auto 18px;
 }
 
-.about-conf-section .overview-content-block p span {
+.past-conference-page a {
 	font-weight: 600;
 	color: var(--primary-color);
+}
+
+.past-conference-page a:hover {
+	color: var(--fourth-color);
 }
 
 /* Tabs Navigation  */

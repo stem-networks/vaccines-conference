@@ -349,7 +349,7 @@ export default function ConferenceSessions() {
       ],
       description: "Interactive panel discussions on emerging trends.",
     },
-    "Certificates": {
+    "Certificate Presentation Ceremony": {
       images: [
         "/images/gallery-event/certificates/1.webp",
         "/images/gallery-event/certificates/2.webp",

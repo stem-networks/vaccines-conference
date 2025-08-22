@@ -3,8 +3,9 @@ import { ApiResponse } from '@/types';
 import { getBaseUrl } from '@/lib/getBaseUrl';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import ConferenceTabs from '../components/ConferenceTabs';
+import TabSlider from '../components/TabSlider';
 
 async function fetchGeneralData(): Promise<ApiResponse> {
     const baseUrl = getBaseUrl();
@@ -82,14 +83,16 @@ const PreviousConference = async () => {
 
             <div className='past-conference-page'>
                 <section className="about-conf-section">
-                    {/* <div className="auto-container"> */}
-                    <div className="overview-image-block">
+                    {/* <div className="overview-image-block">
                         <Image src="/images/images/group_image.webp" width={1200} height={500} alt={general_info?.clname} title={general_info?.clname} className="overview-img" />
-                    </div>
+                    </div> */}
+                    <TabSlider />
+
+
                     <div className="overview-content-block">
                         <h2 className="overview-heading">Previous Conference Report</h2>
                         {/* <h3 className="overview-subhead">A Journey of Innovation, Collaboration, and Excellence</h3> */}
-                        <p><span>{general_info?.clname} ({general_info?.csname}-2025)</span> was successfully organized on <span>August 06–07, 2025, in Singapore,</span> bringing together global leaders, researchers, academicians, and industry experts for two days of knowledge-sharing and collaboration.</p>
+                        <p><Link href="/" title={general_info?.clname}>{general_info?.clname} ({general_info?.csname}-2025)</Link> was successfully organized on <span>August 06–07, 2025, in Singapore,</span> bringing together global leaders, researchers, academicians, and industry experts for two days of knowledge-sharing and collaboration.</p>
 
                     </div>
                     <div className="auto-container">
@@ -123,7 +126,7 @@ const PreviousConference = async () => {
                                     Strengthened international collaborations across academia and industry.
                                 </li>
                                 <li>
-                                    Exchange of new ideas and research breakthroughs in <span className='highlight-word'>materials science, nanotechnology, nanomaterials, chemistry and chemical engineering</span>
+                                    Exchange of new ideas and research breakthroughs in <Link href="/" title={general_info?.clname}>materials science, nanotechnology, nanomaterials, chemistry and chemical engineering.</Link>
                                 </li>
                                 <li>
                                     Recognition of outstanding contributions through speaker awards and best poster awards.
@@ -131,10 +134,10 @@ const PreviousConference = async () => {
                             </ul>
 
                             <div className="heading Poster-heading">Acknowledgment</div>
-                            <p>We extend our sincere gratitude to the <span className='highlight-word'>distinguished speakers, session chairs, delegates, sponsors, and organizing committee members</span> for their invaluable contributions to the success of {general_info?.clname} ({general_info?.csname}-2025).</p>
+                            <p>We extend our sincere gratitude to the <Link href="/" title={general_info?.clname}>distinguished speakers, session chairs, delegates, sponsors, and organizing committee members</Link> for their invaluable contributions to the success of {general_info?.clname} ({general_info?.csname}-2025).</p>
 
                             <div className="heading Poster-heading">Looking Ahead</div>
-                            <p>Building on this success, we are excited to announce that the next edition of <span>{general_info?.clname} which is ({general_info?.csname} {general_info?.year} at {general_info?.venue_p1} during {general_info?.full_length_dates})</span> will continue to provide a premier platform for advancing scientific innovation and fostering global collaboration. </p>
+                            <p>Building on this success, we are excited to announce that the next edition of <Link href="/" title={general_info?.clname}>{general_info?.clname} which is ({general_info?.csname} {general_info?.year} at {general_info?.venue_p1} during {general_info?.full_length_dates})</Link> will continue to provide a premier platform for advancing scientific innovation and fostering global collaboration. </p>
                         </div>
                     </div>
                     {/* </div> */}
