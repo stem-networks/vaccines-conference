@@ -323,7 +323,7 @@ export default function ConferenceSessions() {
       ],
       description: "Inspiring keynote sessions from industry leaders.",
     },
-    "Oral speakers": {
+    "Oral Speakers": {
       images: [
         "/images/gallery-event/oral-speakers/1.webp",
         "/images/gallery-event/oral-speakers/2.webp",

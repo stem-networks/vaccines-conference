@@ -75,7 +75,7 @@ const TabSlider = () => {
                 <Slider {...settings}>
                     {/* Slide 1 - Book Today */}
                     <div className="overview-image-block">
-                        <Image src="/images/images/group_image2.webp" width={1200} height={500} alt="" title="" className="overview-img" />
+                        <Image src="/images/images/group_image1.webp" width={1200} height={500} alt="" title="" className="overview-img" />
                     </div>
 
                     {/* Slide 2 - Sponsor */}

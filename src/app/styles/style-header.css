@@ -10745,7 +10745,7 @@ input[text]:focus {
 	width: 100%;
 	display: block;
 	/* background-color: #2b3b5c; */
-	padding: 40px 0px 30px 0px;
+	padding: 0px 0px 30px 0px;
 	text-align: center;
 	color: #fff;
 }
