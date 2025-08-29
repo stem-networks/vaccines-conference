@@ -97,7 +97,7 @@
             "session_short_name": "Material for Textile"
         },
         {
-            "text": "4.\tDrug Delivery",
+            "text": "4.\tEmerging Areas of Materials Science",
             "link": "drug-delivery",
             "session_short_name": "Drug Delivery"
         },
@@ -127,19 +127,19 @@
             "session_short_name": "Innovations in Surface Science and Engineering"
         },
         {
-            "text": "10.\tAdvanced Semiconductor Materials for Electronics and Photonics",
-            "link": "advanced-semiconductor-materials-for-electronics-and-photonics",
-            "session_short_name": "Advanced Semiconductor Materials for Electronics and Photonics"
+            "text": "10.\tAdvanced Semiconductor Materials",
+            "link": "advanced-semiconductor-materials",
+            "session_short_name": "Advanced Semiconductor Materials"
         }
     ],
     "important_dates": [
         {
             "text": "First Round of Abstract Submission Deadline",
-            "date": "29<sub>th</sub> <span>August <br> 2025</span>"
+            "date": "22<sub>nd</sub> <span>September <br> 2025</span>"
         },
         {
             "text": "Early Bird Registration Deadline",
-            "date": "29<sub>th</sub> <span>August <br> 2025</span>"
+            "date": "22<sub>nd</sub> <span>September <br> 2025</span>"
         }
     ],
     "venue_images": {

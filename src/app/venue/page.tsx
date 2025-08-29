@@ -103,7 +103,7 @@ const Venue = async () => {
                                         })()}
 
 
-                                        <p className='venue-heading-p'><b>General Inquiries: </b>{general.cemail ? general.cemail : ''}</p>
+                                        <p className='venue-heading-p'><b>General Inquiries: </b><Link href={`mailto:${general?.cemail || ""}`} title={general?.cemail || ''}>{general?.cemail || ''}</Link></p>
 
 
                                         <div
