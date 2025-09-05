@@ -17,22 +17,22 @@
         },
         "Be_A_Volunteer": {
             "category": "Be_A_Volunteer",
-            "content": "Be a part of the team as a Volunteer for Nursing 2026 and become a vital contributor to the success of this international event. Volunteering is an excellent chance to gain significant experience, make professional connections, and be part of shaping the future of nursing.",
+            "content": "Join the team as a Volunteer for <b>Gynecology 2026</b> and be part of this global event. Volunteering is a great way to earn professional experience, develop international contacts, and be a part of the contribution to improve women's health and gynecology.",
             "headding": "Be A Volunteer"
         },
         "Submit_Your_Abstract": {
             "category": "Submit_Your_Abstract",
-            "content": "Share your research, innovations, and clinical insights with global nursing professionals at Nursing-2026. Submit your abstract today and inspire the future of healthcare.",
+            "content": "Present your most recent work in gynecologic oncology, reproductive medicine, maternal-fetal health, and minimally invasive surgery at Gynecology 2026. Submit you’re abstract and present your study to an global group of specialists.",
             "headding": "Submit Your Abstract"
         },
         "sessions": {
             "category": "sessions",
-            "content": "At Nursing-2026, our scientific sessions are designed to bring together leading nurses, healthcare professionals, researchers, and educators from around the world. Each session highlights the latest advancements in nursing practice, education, research, and leadership, while fostering collaboration and knowledge-sharing across specialties.",
+            "content": "At Gynecology 2026, the sessions will be concentrated on the current developments in reproductive medicine, maternal-fetal care, gynecologic oncology, and minimally invasive surgery. Speakers will also touch upon major themes such as endometriosis, PCOS, menopause, and adolescent health. These sessions are designed to promote innovation, collaboration, and knowledge-sharing for developing women's reproductive healthcare globally.",
             "headding": "Sessions"
         },
         "footer_content": {
             "category": "footer_content",
-            "content": "Welcome to Nursing 2026 Conference, where international nursing experts, researchers, and healthcare leaders come together to exchange innovations, foster collaboration, and drive patient care and healthcare excellence for the future.",
+            "content": "Welcome to Gynecology 2026, where global gynecologists, obstetricians, healthcare professionals, researchers, and leaders come together to share innovations, foster collaboration, and advance women’s reproductive health, maternal care, and gynecological practices for a healthier future.",
             "headding": "Footer content"
         },
         "offers_content": {
@@ -72,9 +72,9 @@
         "3": {
             "banner_conent_id": "3",
             "image": "images/banner.jpg",
-            "headding": "Empowering Nurses: Innovations, Leadership, and Future Challenges in Healthcare",
+            "headding": "Redefining gynecological health through innovation, equity, and care",
             "tag_line": "Gynecology-NWGC August 06-07, 2026 in Singapore",
-            "content": "Find out all the information regarding Nursing-2026 in our official conference brochure. The brochure contains all the information you need from keynote speakers and scientific sessions to registration packages and networking.",
+            "content": "Download the official brochure for <b>Gynecology 2026</b>, taking place on August 06-07, 2026, in Singapore. Explore detailed information on conference themes, scientific sessions, keynote speakers, and opportunities for participation. The brochure further contains abstract submission instructions, registration information, sponsorship, and highlights of the venue. Download now and be a part of improving women's reproductive health and gynecological care globally.",
             "page": "index",
             "status": "1",
             "cid": "10029"
@@ -92,54 +92,54 @@
     },
     "sessions": [
         {
-            "text": "1. AI in Nursing",
-            "link": "ai-in-nursing",
-            "session_short_name": "AI in Nursing"
+            "text": "1.\tAI and Big Data in Gynecology",
+            "link": "advanced-nursing-practice-and-clinical-innovations",
+            "session_short_name": "Advanced Nursing Practice and Clinical Innovations"
         },
         {
-            "text": "2. Digital Health",
-            "link": "digital-health",
-            "session_short_name": "Digital Health"
+            "text": "2.\t3D Printing & Bioengineering in Gynecology",
+            "link": "nursing-education-and-workforce-development",
+            "session_short_name": "Nursing Education and Workforce Development"
         },
         {
-            "text": "3. Telehealth",
-            "link": "telehealth",
-            "session_short_name": "Telehealth"
+            "text": "3.\tThe Future of Telemedicine in Women’s Health",
+            "link": "patient-safety-and-quality-care",
+            "session_short_name": "Patient Safety and Quality Care"
         },
         {
-            "text": "4. Sustainable Nursing",
-            "link": "sustainable-nursing",
-            "session_short_name": "Sustainable Nursing"
+            "text": "4.\tPrecision Medicine in Gynecologic Oncology",
+            "link": "mental-health-nursing",
+            "session_short_name": "Mental Health Nursing"
         },
         {
-            "text": "5. Mental Health",
-            "link": "mental-health",
-            "session_short_name": "Mental Health"
+            "text": "5.\tEndometriosis & Chronic Pelvic Pain",
+            "link": "community-and-public-health-nursing",
+            "session_short_name": "Community and Public Health Nursing"
         },
         {
-            "text": "6. Genomics",
-            "link": "genomics",
-            "session_short_name": "Genomics"
+            "text": "6.\tFertility Preservation & Reproductive Innovations",
+            "link": "pediatric-and-geriatric-nursing",
+            "session_short_name": "Pediatric and Geriatric Nursing"
         },
         {
-            "text": "7. Nursing Leadership",
-            "link": "nursing-leadership",
-            "session_short_name": "Nursing Leadership"
+            "text": "7.\tMicro biome & Gynecology",
+            "link": "nursing-informatics-and-technology-integration",
+            "session_short_name": "Nursing Informatics and Technology  Integration"
         },
         {
-            "text": "8. Simulation in Education",
-            "link": "simulation-in-education",
-            "session_short_name": "Simulation in Education"
+            "text": "8.\tMenopause & Longevity",
+            "link": "global-health-and-nursing",
+            "session_short_name": "Global Health and Nursing"
         },
         {
-            "text": "9. Global Health",
-            "link": "global-health",
-            "session_short_name": "Global Health"
+            "text": "9.\tSustainability in Women’s Health",
+            "link": "nursing-leadership-and-management",
+            "session_short_name": "Nursing leadership and Management"
         },
         {
-            "text": "10. Nursing Informatics",
-            "link": "nursing-informatics",
-            "session_short_name": "Nursing Informatics"
+            "text": "10.\tAdvances in Non-Hormonal Birth Control",
+            "link": "leading-diverse-nursing-force",
+            "session_short_name": "Leading diverse nursing force"
         }
     ],
     "important_dates": [
