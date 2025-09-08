@@ -1,62 +1,62 @@
 'use client';
 
-// import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Link from 'next/link'
 import Image from 'next/image'
 
 const MediaCollaborators = () => {
-    // const sliderRef = useRef<HTMLUListElement | null>(null);
-    // const animationFrameId = useRef<number | null>(null);
-    // let scrollPosition = 0;
+  const sliderRef = useRef<HTMLUListElement | null>(null);
+    const animationFrameId = useRef<number | null>(null);
+    let scrollPosition = 0;
 
-    // useEffect(() => {
-    //     const slider = sliderRef.current;
-    //     if (!slider) return;
+    useEffect(() => {
+        const slider = sliderRef.current;
+        if (!slider) return;
 
-    //     const slideElement = slider.querySelector('.slideimg') as HTMLElement;
-    //     if (!slideElement) return;
+        const slideElement = slider.querySelector('.slideimg') as HTMLElement;
+        if (!slideElement) return;
 
-    //     // const slideWidth = slideElement.offsetWidth; 
+        // const slideWidth = slideElement.offsetWidth; 
 
-    //     // Clone slides for seamless loop
-    //     slider.innerHTML += slider.innerHTML;
+        // Clone slides for seamless loop
+        slider.innerHTML += slider.innerHTML;
 
-    //     // Auto-slide functionality
-    //     const autoSlide = () => {
-    //         scrollPosition -= 1;
+        // Auto-slide functionality
+        const autoSlide = () => {
+            scrollPosition -= 1;
 
-    //         if (Math.abs(scrollPosition) >= slider.scrollWidth / 2) {
-    //             scrollPosition = 0;
-    //         }
+            if (Math.abs(scrollPosition) >= slider.scrollWidth / 2) {
+                scrollPosition = 0;
+            }
 
-    //         slider.style.transform = `translateX(${scrollPosition}px)`;
-    //         animationFrameId.current = requestAnimationFrame(autoSlide);
-    //     };
+            slider.style.transform = `translateX(${scrollPosition}px)`;
+            animationFrameId.current = requestAnimationFrame(autoSlide);
+        };
 
-    //     autoSlide(); // Start auto-slide
+        autoSlide(); // Start auto-slide
 
-    //     const handleMouseEnter = () => {
-    //         if (animationFrameId.current) {
-    //             cancelAnimationFrame(animationFrameId.current);
-    //         }
-    //     };
+        const handleMouseEnter = () => {
+            if (animationFrameId.current) {
+                cancelAnimationFrame(animationFrameId.current);
+            }
+        };
 
-    //     const handleMouseLeave = () => {
-    //         autoSlide();
-    //     };
+        const handleMouseLeave = () => {
+            autoSlide();
+        };
 
-    //     slider.addEventListener("mouseenter", handleMouseEnter);
-    //     slider.addEventListener("mouseleave", handleMouseLeave);
+        slider.addEventListener("mouseenter", handleMouseEnter);
+        slider.addEventListener("mouseleave", handleMouseLeave);
 
-    //     // Cleanup on unmount
-    //     return () => {
-    //         if (animationFrameId.current) {
-    //             cancelAnimationFrame(animationFrameId.current);
-    //         }
-    //         slider.removeEventListener("mouseenter", handleMouseEnter);
-    //         slider.removeEventListener("mouseleave", handleMouseLeave);
-    //     };
-    // }, []);
+        // Cleanup on unmount
+        return () => {
+            if (animationFrameId.current) {
+                cancelAnimationFrame(animationFrameId.current);
+            }
+            slider.removeEventListener("mouseenter", handleMouseEnter);
+            slider.removeEventListener("mouseleave", handleMouseLeave);
+        };
+    }, []);
 
     return (
         <div className="media-collaborators-block">
@@ -78,7 +78,7 @@ const MediaCollaborators = () => {
                     </div>
                 </div>
                 <div className="slider-container">
-                    <ul className="slider">
+                    <ul className="slider" ref={sliderRef}>
                         {/* Original Image Slides (without duplication) */}
                         <li className="slideimg">
                             <Link href="http://cightech.com/" title="Cightech" target="_blank">
@@ -101,6 +101,18 @@ const MediaCollaborators = () => {
                         <li className="slideimg">
                             <Link href="https://internationalconferencealerts.com/" title="International Conference Alerts" target="_blank">
                                 <Image src="/images/images/intern_conf_alerts.webp" alt="International Conference Alerts" title="International Conference Alerts" width={180} height={100}/>
+                            </Link>
+                        </li>
+
+                        <li className="slideimg">
+                            <Link href="https://kindcongress.com/event/msnc-2026/" title="Kind Congress" target="_blank">
+                                <Image src="/images/images/kind_cong.webp" alt="Kind Congress" title="Kind Congress" width={180} height={100} />
+                            </Link>
+                        </li>
+
+                        <li className="slideimg">
+                            <Link href="https://www.conferencealerts.in/events/1666959" title="Conference Alerts" target="_blank">
+                                <Image src="/images/images/conference_alerts.webp" alt="Conference Alerts" title="Conference Alerts" width={180} height={100} />
                             </Link>
                         </li>
                     </ul>

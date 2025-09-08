@@ -9324,9 +9324,9 @@ li {
 }
 
 @media only screen and (min-width:320px) and (max-width: 576px) {
-	.media-collaborators-block .pnc-partners .slider-container ul.slider {
+	/* .media-collaborators-block .pnc-partners .slider-container ul.slider {
 		flex-direction: column;
-	}
+	} */
 
 	.media-collaborators-block .faq_wrap,
 	.pnc-partners .faq_wrap {
