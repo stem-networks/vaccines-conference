@@ -115,6 +115,12 @@ const MediaCollaborators = () => {
                                 <Image src="/images/images/conference_alerts.webp" alt="Conference Alerts" title="Conference Alerts" width={180} height={100} />
                             </Link>
                         </li>
+
+                        <li className="slideimg">
+                            <Link href="https://www.iconf.org/conference/msnc-2026" title="i-Conference Global" target="_blank">
+                                <Image src="/images/images/i_conference.webp" alt="i-Conference Global" title="i-Conference Global" width={180} height={100} />
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>
