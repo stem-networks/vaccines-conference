@@ -5,40 +5,15 @@
             "content": "Join us for an unparalleled networking experience – register now to connect with industry professionals and leaders!",
             "headding": "Download Brochure"
         },
-        "important_dates": {
-            "category": "important_dates",
-            "content": "Stay ahead by marking your calendars with these crucial deadlines for the upcoming MSNC-2026. Timely registration and submissions will ensure you make the most of this premier event.",
-            "headding": "Important dates"
-        },
-        "Explore_Our_Comprehensive_Networking_Services": {
-            "category": "Explore_Our_Comprehensive_Networking_Services",
-            "content": "Unlock new opportunities and build valuable connections with our comprehensive networking services, tailored to enhance your conference experience.",
-            "headding": "Explore Our comprehensive Networking Services"
-        },
-        "Be_A_Volunteer": {
-            "category": "Be_A_Volunteer",
-            "content": "Would you like to be a part of an energetic team leading in material science? Be a Material Science Conference volunteer! Help and connections will empower your future, and contribute to shaping the future of material science. Join us for an enduring mark on the technologies of tomorrow.",
-            "headding": "Be A Volunteer"
-        },
-        "Submit_Your_Abstract": {
-            "category": "Submit_Your_Abstract",
-            "content": "Submit your abstract to MSNC 2026 and share your research in materials science and nanotechnology. Contribute to shaping the future of the industry.",
-            "headding": "Submit Your Abstract"
-        },
         "sessions": {
             "category": "sessions",
-            "content": "Come experience what our leading scientists are presenting covering new frontier areas including nanotechnology, smart materials, and sustainable solutions. This endeavour proposes to interface with the pertinent Questions defining the contours of Material Science.",
+            "content": "Learn how vaccines are the cornerstones of global health through current sessions on next-generation vaccines, innovation, and boosters of vaccines as well as the challenges of vaccine distribution and hesitancy.",
             "headding": "Sessions"
-        },
-        "footer_content": {
-            "category": "footer_content",
-            "content": "Welcome to our Materials Science Conference (MSNC)-2026, where dedicated professionals accumulate to discover the ultra-modern advancements and high-quality practices in healthcare.",
-            "headding": "Footer content"
         },
         "offers_content": {
             "1": {
                 "category": "offers_content",
-                "content": "<div class=\"col-md-12 wow fadeInUp animated\" data-wow-delay=\"200ms\" data-wow-duration=\"1000ms\" style=\"visibility: visible; animation-duration: 1000ms; animation-delay: 200ms; animation-name: fadeInUp;\">\r\n          <h2>Book by Sep. 2024 &amp; Save $1651!</h2>\r\n          <h3>BRING A COLLEAGUE SAVE $200 TOTAL, BRING MORE, SAVE MORE</h3>\r\n          <a href=\"/register\">Register now</a>\r\n        </div>",
+                "content": "<div class=\"col-md-12 wow fadeInUp animated\" data-wow-delay=\"200ms\" data-wow-duration=\"1000ms\" style=\"visibility: visible; animation-duration: 1000ms; animation-delay: 200ms; animation-name: fadeInUp;\">\r\n          <h2>Book by MAY. 2023 &amp; Save $1651!</h2>\r\n          <h3>BRING A COLLEAGUE SAVE $200 TOTAL, BRING MORE, SAVE MORE</h3>\r\n          <a href=\"/register\">Register now</a>\r\n        </div>",
                 "headding": "Offers Content"
             },
             "2": {
@@ -66,70 +41,95 @@
                 "content": "<div class=\"col-md-12 wow fadeInUp animated\" data-wow-delay=\"200ms\" data-wow-duration=\"1000ms\" style=\"visibility: visible; animation-duration: 1000ms; animation-delay: 200ms; animation-name: fadeInUp;\">\r\n          <h2>Book by Nov 2024 &amp; Save huge!</h2>\r\n          <h3>BRING A COLLEAGUE SAVE $200 TOTAL, BRING MORE, SAVE MORE</h3>\r\n          <a href=\"/register\" title=\"Register\">Register now</a>\r\n        </div>",
                 "headding": "Offers content"
             }
+        },
+        "important_dates": {
+            "category": "important_dates",
+            "content": "Stay on track with our key dates to ensure you don't miss any important deadlines or events related to the conference.",
+            "headding": "Important dates"
+        },
+        "Explore_Our_Comprehensive_Networking_Services": {
+            "category": "Explore_Our_Comprehensive_Networking_Services",
+            "content": "Unlock new opportunities and build valuable connections with our comprehensive networking services, tailored to enhance your conference experience.",
+            "headding": "Explore Our comprehensive Networking Services"
+        },
+        "Be_A_Volunteer": {
+            "category": "Be_A_Volunteer",
+            "content": "<b>Help Drive Vaccine Discoveries – Volunteer for VVIC-2026!</b><br/>\nVolunteer at the Virology Conference and play an active role in advancing vaccine. Help us by facilitating discussions, network with professionals, and support global health progress. Apply today and make a lasting impact!",
+            "headding": "Be A Volunteer"
+        },
+        "Submit_Your_Abstract": {
+            "category": "Submit_Your_Abstract",
+            "content": "Participate in the global conversation. Share your vision, interact with the best professionals, and influence the future with health solutions. Submit your abstract now.",
+            "headding": "Submit Your Abstract"
+        },
+        "footer_content": {
+            "category": "footer_content",
+            "content": "Engage in the Virology Conference where the world's leading experts in vaccine technology and global researchers meet to discuss and generate ideas that advance the success of immunization.",
+            "headding": "Footer content"
         }
     },
     "banner_conent": {
-        "9": {
-            "banner_conent_id": "9",
+        "4": {
+            "banner_conent_id": "4",
             "image": "images/banner.jpg",
-            "headding": "Pioneering Advances in Materials Science and Innovation",
-            "tag_line": "MSNC-April 16-17, 2026 in Barcelona, Spain",
-            "content": "Join the world's most in-demand materials science experts at the <b>Materials Science Conference</b>. Learn keynote sessions, speaker insights, and innovation. <b>Download our brochure</b> to see what's more about this conference and book your place now!",
+            "headding": "Current Challenges and Future Directions in Vaccine\nDevelopment",
+            "tag_line": "Virology-VVIC September 22-23, 2026 in Berlin, Germany",
+            "content": "Discover the latest vaccine research and global health advancements at the Virology Conference. This summit provides a comprehensive platform for vaccine technologies and discusses strategies to enhance immunization impact worldwide. Secure your event brochure today.",
             "page": "index",
             "status": "1",
-            "cid": "10032"
+            "cid": "10040"
         }
     },
     "sessions": [
         {
-            "text": "1. Biomaterials",
-            "link": "biomaterials",
-            "session_short_name": "Biomaterials"
+            "text": "1. Vaccines targeting immune evasion pathways",
+            "link": "vaccines-targeting-immune-evasion-pathways",
+            "session_short_name": "Vaccines targeting immune evasion pathways"
         },
         {
-            "text": "2.\tApplications for Biomedical Devices",
-            "link": "applications-for-biomedical-devices",
-            "session_short_name": "Applications for Biomedical Devices"
+            "text": "2.\tNext-Generation Vaccine Platforms",
+            "link": "next-generation-vaccine-platforms",
+            "session_short_name": "Next-Generation Vaccine Platforms"
         },
         {
-            "text": "3.\tMaterial for Textile",
-            "link": "material-for-textile",
-            "session_short_name": "Material for Textile"
+            "text": "3.\tVaccine Safety and Efficacy",
+            "link": "vaccine-safety-and-efficacy",
+            "session_short_name": "Vaccine Safety and Efficacy"
         },
         {
-            "text": "4.\tEmerging Areas of Materials Science",
-            "link": "drug-delivery",
-            "session_short_name": "Drug Delivery"
+            "text": "4.\tInnovations in Immunotherapy",
+            "link": "innovations-in-immunotherapy",
+            "session_short_name": "Innovations in Immunotherapy"
         },
         {
-            "text": "5.\tEmerging Materials for Energy Storage and Conversion",
-            "link": "emerging-materials-for-energy-storage-and-conversion",
-            "session_short_name": "Emerging Materials for Energy Storage and Conversion"
+            "text": "5.\tVaccine Development for Emerging Infectious Diseases",
+            "link": "vaccine-development-for-emerging-infectious-diseases",
+            "session_short_name": "Vaccine Development for Emerging Infectious Diseases"
         },
         {
-            "text": "6. Material Recycling",
-            "link": "material-recycling",
-            "session_short_name": "Material Recycling"
+            "text": "6.\tGlobal Immunization Policies and Strategies",
+            "link": "global-immunization-policies-and-strategies",
+            "session_short_name": "Global Immunization Policies and Strategies"
         },
         {
-            "text": "7. Nano devices and Applications",
-            "link": "nano-devices-and-applications",
-            "session_short_name": "Nano devices and Applications"
+            "text": "7. Equitable Vaccine Access and Distribution",
+            "link": "equitable-vaccine-access-and-distribution",
+            "session_short_name": "Equitable Vaccine Access and Distribution"
         },
         {
-            "text": "8.Mining and Metallurgy",
-            "link": "mining-and-metallurgy",
-            "session_short_name": "Mining and Metallurgy"
+            "text": "8.\tVaccine Hesitancy and Public Trust ",
+            "link": "vaccine-hesitancy-and-public-trust",
+            "session_short_name": "Vaccine Hesitancy and Public Trust "
         },
         {
-            "text": "9.\tInnovations in Surface Science",
-            "link": "innovations-in-surface-science-and-engineering",
-            "session_short_name": "Innovations in Surface Science and Engineering"
+            "text": "9. Pediatric Vaccines and Canner Vaccines",
+            "link": "pediatric-vaccines-and-canner-vaccines",
+            "session_short_name": "Pediatric Vaccines and Canner Vaccines"
         },
         {
-            "text": "10.\tAdvanced Semiconductor Materials",
-            "link": "advanced-semiconductor-materials",
-            "session_short_name": "Advanced Semiconductor Materials"
+            "text": "10. Technological Innovations in Vaccine Manufacturing",
+            "link": "technological-innovations-in-vaccine-manufacturing",
+            "session_short_name": "Technological Innovations in Vaccine Manufacturing"
         }
     ],
     "important_dates": [
@@ -143,21 +143,21 @@
         }
     ],
     "venue_images": {
-        "9": {
+        "41": {
             "image": "images/g1.webp",
-            "alt_text": "Casa Batlló & Casa Milà"
+            "alt_text": "Lauterbrunnen Valley"
         },
-        "10": {
+        "42": {
             "image": "images/g2.webp",
-            "alt_text": "Camp Nou"
+            "alt_text": "Lake Lucerne Switzerland"
         },
-        "11": {
+        "43": {
             "image": "images/g3.webp",
-            "alt_text": "Barceloneta Beach"
+            "alt_text": "Zermatt & matterhorn"
         },
-        "12": {
+        "44": {
             "image": "images/g4.webp",
-            "alt_text": "Gothic Quarter"
+            "alt_text": "ST moritz"
         }
     }
 }

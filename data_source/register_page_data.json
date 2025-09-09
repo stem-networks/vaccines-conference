@@ -1,7 +1,7 @@
 {
     "accommodation_prices": [
         {
-            "id": "7",
+            "id": "2",
             "single": "200",
             "doubl": "270",
             "tri": "0",
@@ -9,58 +9,58 @@
             "created_dt": "2024-07-15 15:05:58",
             "updated_dt": "2024-05-10 12:45:31",
             "status": "1",
-            "cid": "10032"
+            "cid": "10040"
         }
     ],
     "checkdates_text": {
         "1": [
-            "14-04-2026 (Monday)",
-            "15-04-2026 (Tuesday)",
-            "16-04-2026 (Wednesday)",
-            "17-04-2026 (Thursday)"
+            "07-10-2025 (Tuesday)",
+            "08-10-2025 (Wednesday)",
+            "09-10-2025 (Thursday)",
+            "10-10-2025 (Friday)"
         ],
         "2": [
-            "16-04-2026 (Wednesday)",
-            "17-04-2026 (Thursday)",
-            "18-04-2026 (Friday)",
-            "19-04-2026 (Saturday)"
+            "09-10-2025 (Thursday)",
+            "10-10-2025 (Friday)",
+            "11-10-2025 (Saturday)",
+            "12-10-2025 (Sunday)"
         ]
     },
     "checkdates": {
         "1": [
-            "14-04-2026",
-            "15-04-2026",
-            "16-04-2026",
-            "17-04-2026"
+            "20-09-2026",
+            "21-09-2026",
+            "22-09-2026",
+            "23-09-2026"
         ],
         "2": [
-            "16-04-2026",
-            "17-04-2026",
-            "18-04-2026",
-            "19-04-2026"
+            "22-09-2026",
+            "23-09-2026",
+            "24-09-2026",
+            "25-09-2026"
         ]
     },
-    "conference_date": "March 17-19, 2025",
+    "conference_date": "June 01-02, 2025",
     "registration_open_date": {
         "register_dt": "15-03-2024",
-        "id": "7",
-        "conference_date": "March 17-19, 2025"
+        "id": "5",
+        "conference_date": "June 01-02, 2025"
     },
     "RegDeadline": [
         {
-            "id": "46",
+            "id": "32",
             "title": "Early Bird Registration",
             "deadline_dt": "17-07-2024",
             "page_url": "early-bird-registration"
         },
         {
-            "id": "50",
+            "id": "36",
             "title": "Mid Term Registration",
             "deadline_dt": "15-10-2024",
             "page_url": "mid-term-registration"
         },
         {
-            "id": "45",
+            "id": "31",
             "title": "On Spot Registration",
             "deadline_dt": "17-03-2025",
             "page_url": "on-spot-registration"

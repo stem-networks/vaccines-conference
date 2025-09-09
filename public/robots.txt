@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: https://materialssciencesummit.com/sitemap.xml
+Sitemap: https://vaccines-conference.com/sitemap.xml

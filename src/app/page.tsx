@@ -135,14 +135,14 @@ const Home = async () => {
         generalbannerInfo={general}
         onelinerBannerInfo={indexPageData}
       />
-      <Members />
+      {/* <Members />  */}
       <SessionsComponent
         generalInfo={general_info}
         sessions={sessions}
         sessionContent={sessionContent}
       />
       <MainSlider generalInfo={general} registerInfo={registerData} />
-      <Speakers />
+      {/* <Speakers />  */}
       <ImportantDates onelinerInfo={indexPageData} />
       <FaqsMain commonInfo={commonContent} />
       <Venue onelinerVenueInfo={indexPageData} />
