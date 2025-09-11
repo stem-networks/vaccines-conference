@@ -796,7 +796,7 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
             submit_status: "1", // <-- mark as submitted
           };
 
-          const cmsResult = await sendFullFormData(updatedAutoData, "1");
+          const cmsResult = await sendFullFormData(updatedAutoData);
           if (!cmsResult) {
             console.warn("send-to-cms returned no data or failed. Check server logs.");
           }
