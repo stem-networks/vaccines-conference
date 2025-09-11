@@ -23,7 +23,7 @@ interface SubItem {
 }
 interface HeaderProps {
   generalData: ApiResponse;
-  registerData : RegistrationInfo
+  registerData: RegistrationInfo
 }
 
 const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
@@ -31,9 +31,15 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
   const general = generalData?.data || {};
   const navItems = generalData?.display_features || {}
 
-   
-  const presenterFee =    registerData?.increment_price["Presenter (In-Person)"]?.total || "0";
-    
+
+  // const presenterFee = registerData?.increment_price["Presenter (In-Person)"]?.total || "0";
+  const [presenterFee, setPresenterFee] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fee = registerData?.increment_price["Presenter (In-Person)"]?.total || null;
+    setPresenterFee(fee);
+  }, [registerData])
+
   const [isNavbarCollapsed, setIsNavbarCollapsed] = useState(true);
   const [dropdownStates, setDropdownStates] = useState<Record<string, boolean>>(
     {}
@@ -41,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
 
   const pathname = usePathname();
 
- 
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -113,7 +119,7 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                   >
                     Register Now
                   </Link>
-                  <span> For Only ${presenterFee}</span>
+                  {presenterFee && <span> For Only ${presenterFee}</span>}
                 </li>
                 <li className="text-right">{general.venue_p1 || ""}</li>
               </ul>
@@ -142,34 +148,44 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                 </Link>
               </div>
 
-              <div className="venue-header-block">
-                {general.venue_p1 && general.venue_p2 && (
-                  <div className="map_wrap156" style={{ textAlign: "start" }}>
+              {/* <div className="venue-header-block">
+                {general.venue_p1 ? (
+                  <div className="map_wrap156" style={{ textAlign: 'start' }}>
                     <Image
                       src="/images/images/map.jpg"
                       alt={general.clname || ""}
+                      width={100}
+                      height={70}
                       className="map"
                       title={general.clname || ""}
-                      width={100}
-                      height={60}
                     />
-                    {general.venue_p1 && (
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: general.venue_p1.replace(",", ",<br />"),
-                        }}
-                      />
-                    )}
-                    <br />
-                    {general.venue_p2 || ""}
+
+                    {(() => {
+                      const addressParts = [
+                        general.v1,
+                        general.v2,
+                      ].filter(Boolean) as string[];
+
+                      return addressParts.length > 0 ? (
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: addressParts.join("<br />"),
+                          }}
+                        />
+                      ) : null;
+                    })()}
                   </div>
-                )}
+                ) : null}
               </div>
+
+              <div className='approved-provider-block'>
+                <Image src="/images/images/cpd.jpg" alt="CPD Accredited Conference" className='approved-prov-img' title="CPD Accredited Conference" width={360} height={130} />
+              </div> */}
 
               <div className="img_text5">
                 <Link href="/register" title={general.clname}>
                   <div className="june_wrap55">
-                    <h1>{general.clname}</h1>
+                    <h1>{general.clname}-{general.csname} {general.year}</h1>
                     <span className="main-head-box"></span>
                     <span>Book Your Slot!</span>
                   </div>
@@ -209,9 +225,8 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                   </button>
                 </div>
                 <div
-                  className={`navbar-collapse collapse clearfix ${
-                    isNavbarCollapsed ? "" : "in"
-                  }`}
+                  className={`navbar-collapse collapse clearfix ${isNavbarCollapsed ? "" : "in"
+                    }`}
                 >
                   <ul className="navigation clearfix">
                     {navItems.map((item, index) => (
@@ -242,13 +257,12 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                               )}
                             </Link>
                             <ul
-                              className={`dropdown-menu ${
-                                dropdownStates[
-                                  item.title.toLowerCase().replace(" ", "")
-                                ]
-                                  ? "show"
-                                  : ""
-                              }`}
+                              className={`dropdown-menu ${dropdownStates[
+                                item.title.toLowerCase().replace(" ", "")
+                              ]
+                                ? "show"
+                                : ""
+                                }`}
                             >
                               {item.subItems.map(
                                 (subItem: SubItem, subIndex: number) => (
@@ -318,9 +332,8 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                   </button>
                 </div>
                 <div
-                  className={`navbar-collapse collapse clearfix ${
-                    isNavbarCollapsed ? "" : "in"
-                  }`}
+                  className={`navbar-collapse collapse clearfix ${isNavbarCollapsed ? "" : "in"
+                    }`}
                 >
                   <ul className="navigation clearfix">
                     {navItems.map((item, index) => (
@@ -351,13 +364,12 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                               )}
                             </Link>
                             <ul
-                              className={`dropdown-menu ${
-                                dropdownStates[
-                                  item.title.toLowerCase().replace(" ", "")
-                                ]
-                                  ? "show"
-                                  : ""
-                              }`}
+                              className={`dropdown-menu ${dropdownStates[
+                                item.title.toLowerCase().replace(" ", "")
+                              ]
+                                ? "show"
+                                : ""
+                                }`}
                             >
                               {item.subItems.map(
                                 (subItem: SubItem, subIndex: number) => (
