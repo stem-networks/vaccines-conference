@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
+Allow: /
 
-Sitemap: https://nursing-meetings.com/sitemap.xml
+Sitemap: https://gynecology-conference.com/sitemap.xml
