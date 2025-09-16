@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
+Allow: /
 
-Sitemap: https://vaccines-conference.com/sitemap.xml
+Sitemap: https://virology-conference.com/sitemap.xml

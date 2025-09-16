@@ -8,553 +8,473 @@
 
 
 <url>
-  <loc>https://vaccines-conference.com/</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/register</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/register</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/sessions</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/sessions</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/scientific-program</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/guidelines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/guidelines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/faqs</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/faqs</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/call-for-abstract-submission</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/call-for-abstract-submission</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/list-of-topics</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/committee</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/privacy-policy</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/list-of-topics</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/privacy-policy</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/vaccination-and-immunization</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/human-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/vaccines-and-types-of-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/vaccination-strategies</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/pediatric-vaccination</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/vaccine-safety-&amp;-efficacy</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/vaccine-regulation</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/vaccine-research-&amp;-development</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/vaccine-production-supply-&amp;-logistics</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/dna-vaccines-and-rna-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/messenger-rna-(mrna)-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/inactivated-live-attenuated-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/protein-based-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/dna-&amp;-synthetic-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vaccines-conference.com/combination-&amp;-conjugate-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccination-and-immunization</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/thermo-stabilized-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/human-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/next-generation-vaccine-delivery-technologies</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-and-types-of-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vectors-adjuvants-&amp;-delivery-systems</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccination-strategies</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/influenza-and-respiratory-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/pediatric-vaccination</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/hiv-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccine-regulation</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/hiv-aids-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/dna-vaccines-and-rna-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/coronavirus-(covid-19)-&amp;-pandemic-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/messenger-rna-(mrna)-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/cancer-vaccines-and-immunotherapy</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/inactivated-live-attenuated-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/conjugate-vaccine</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/protein-based-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/veterinary-vaccine</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/thermo-stabilized-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-for-pregnant-women-&amp;-neonates</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/next-generation-vaccine-delivery-technologies</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-for-older-adults</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/influenza-and-respiratory-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/geriatric-immunization</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/hiv-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/travel-&amp;-edible-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/hiv-aids-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-for-unconventional-diseases</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/cancer-vaccines-and-immunotherapy</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-for-vector-borne-diseases</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/conjugate-vaccine</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-against-viral-and-bacterial-diseases</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/veterinary-vaccine</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-for-respiratory-diseases</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-for-older-adults</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/mucosal-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/geriatric-immunization</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/hepatitis-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-for-unconventional-diseases</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/animal-&amp;-plant-derived-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-for-vector-borne-diseases</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/fish-&amp;-poultry-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-against-viral-and-bacterial-diseases</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/alzheimer-vaccine</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-for-respiratory-diseases</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/immune-profiling</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/mucosal-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/cellular-immunology-&amp;-latest-innovations</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/hepatitis-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/immunological-memory-and-vaccine-boosters</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/alzheimer-vaccine</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/infectious-and-non-infectious-diseases</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/immune-profiling</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/therapeutic-vaccines-for-chronic-diseases</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/immunological-memory-and-vaccine-boosters</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/cancer-malaria-&amp;-tb-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/infectious-and-non-infectious-diseases</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-for-immune-mediated-diseases</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/therapeutic-vaccines-for-chronic-diseases</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-against-drugs</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-for-immune-mediated-diseases</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccine-strategies-for-autoimmune-diseases</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-against-drugs</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/ebola-vaccine</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccine-strategies-for-autoimmune-diseases</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/antimicrobial-resistance-(amr)</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/ebola-vaccine</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/ai-approaches-in-vaccine-development</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/antimicrobial-resistance-(amr)</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/nano-vaccine-technology</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/ai-approaches-in-vaccine-development</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/polio-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/nano-vaccine-technology</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-epidemiology</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/polio-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccine-development-for-zoonotic-diseases</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-epidemiology</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/hpv-dpt-polio-and-mmr-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccine-development-for-zoonotic-diseases</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/pneumococcal-and-meningococcal-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/hpv-dpt-polio-and-mmr-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/hepatitis-and-varicella-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/pneumococcal-and-meningococcal-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/childhood-infection-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/hepatitis-and-varicella-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/computational-immunology-and-vaccine-modeling</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/childhood-infection-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/biomarkers-and-immune-monitoring-in-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/computational-immunology-and-vaccine-modeling</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccine-adjuvants</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/biomarkers-and-immune-monitoring-in-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccine-production-&amp;-development</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccine-adjuvants</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccine-policy-and-regulatory-affairs</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccine-policy-and-regulatory-affairs</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-for-neglected-tropical-diseases</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-for-neglected-tropical-diseases</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/synthetic-vaccine-platforms</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/synthetic-vaccine-platforms</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/universal-influenza-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/universal-influenza-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccine-cold-chain-management</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccine-cold-chain-management</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/gender-specific-vaccination-approaches</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/gender-specific-vaccination-approaches</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/monoclonal-antibodies-as-vaccine-alternatives</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/monoclonal-antibodies-as-vaccine-alternatives</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/passive-immunization-and-antibody-therapies</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/passive-immunization-and-antibody-therapies</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-for-parasitic-diseases</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-for-parasitic-diseases</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/cytomegalovirus-(cmv)-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/cytomegalovirus-(cmv)-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccination-in-conflict-zones</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccination-in-conflict-zones</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/social-determinants-of-vaccine-uptake</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/social-determinants-of-vaccine-uptake</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccine-hesitancy-and-public-health-communication</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccine-hesitancy-and-public-health-communication</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccination-coverage-in-low-resource-settings</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccination-coverage-in-low-resource-settings</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-for-neurological-diseases</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-for-neurological-diseases</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/measles-and-rubella-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/measles-and-rubella-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/glycoconjugate-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/glycoconjugate-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-and-antiviral-therapies</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-and-antiviral-therapies</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/immune-tolerance-and-vaccine-development</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/immune-tolerance-and-vaccine-development</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/plant-based-vaccine-technologies</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/plant-based-vaccine-technologies</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccine-effectiveness-in-immunocompromised-populations</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccine-effectiveness-in-immunocompromised-populations</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccine-induced-autoimmunity</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccine-induced-autoimmunity</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/live-recombinant-vaccines</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/live-recombinant-vaccines</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/adolescent-vaccination-strategies</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/adolescent-vaccination-strategies</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/the-role-of-vaccination-in-one-health</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/the-role-of-vaccination-in-one-health</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccination-impact-on-global-health-security</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccination-impact-on-global-health-security</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/t-cell-responses-in-vaccine-design</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/t-cell-responses-in-vaccine-design</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/climate-change-and-vaccine-distribution</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/climate-change-and-vaccine-distribution</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/human-challenge-trials-in-vaccine-development</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/human-challenge-trials-in-vaccine-development</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccine-distribution-in-humanitarian-crises</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccine-distribution-in-humanitarian-crises</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccine-efficacy-against-emerging-variants</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccine-efficacy-against-emerging-variants</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/oral-vaccines-for-global-use</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/oral-vaccines-for-global-use</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/biodefense-and-vaccination-strategies</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/biodefense-and-vaccination-strategies</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccination-in-refugee-populations</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccination-in-refugee-populations</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/ethics-of-mandatory-vaccination-policies</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/ethics-of-mandatory-vaccination-policies</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/interventional-immunization-for-chronic-illnesses</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/interventional-immunization-for-chronic-illnesses</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/sustainable-vaccine-development-practices</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/sustainable-vaccine-development-practices</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vaccines-conference.com/vaccines-for-zika-and-other-emerging-viruses</loc>
-  <lastmod>2025-05-05T10:40:52+00:00</lastmod>
+  <loc>https://virology-conference.com/vaccines-for-zika-and-other-emerging-viruses</loc>
+  <lastmod>2025-09-16T04:20:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
