@@ -5346,10 +5346,9 @@ li {
 	text-transform: uppercase;
 }
 
-.img_text5 {
+/* .img_text5 {
 	text-align: right;
-	/* margin: auto 0; */
-}
+} */
 
 .img_text5 img {
 	max-width: 260px;

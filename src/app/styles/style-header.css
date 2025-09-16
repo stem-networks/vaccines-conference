@@ -5340,7 +5340,7 @@ li {
 
 .img_text5 {
 	text-align: right;
-	/* margin: auto 0; */
+	margin: auto 0;
 }
 
 .img_text5 img {
@@ -5363,14 +5363,14 @@ li {
 .map_wrap156 {
 	padding-left: 100px;
 	font-size: 15.5px;
-	padding-top: 18px;
+	padding-top: 10px;
 	line-height: 24px;
 }
 
 .map_wrap156 .map {
 	position: absolute;
 	left: 25px;
-	top: 16.5px;
+	top: 25px;
 	max-width: 63px;
 	height: auto;
 }
@@ -5825,7 +5825,7 @@ li {
 	vertical-align: top;
 	display: inline-block;
 	/* margin: -28px 0px 0px -13px; */
-	margin: -51px 0px 0px -3px;
+	margin: -51px 0px 0px -13px;
 }
 
 .set_gray_wrap2 img {
@@ -6409,7 +6409,7 @@ li {
 }
 
 .june_wrap55 h1 {
-	font-size: 23px;
+	font-size: 25px;
 	color: #737373;
 	font-weight: 400;
 }
@@ -8682,7 +8682,7 @@ li {
 .speakers-section {
 	text-align: center;
 	padding: 20px;
-	margin-top: 60px;
+	/* margin-top: 60px; */
 }
 
 .speakers-section .speaker-row {
@@ -8831,7 +8831,8 @@ li {
 /* Planning committee block */
 
 .members-main-block {
-	background-color: var(--primary-color);
+	background-color: var(--offerbg-color);
+	/* margin-top: 70px; */
 }
 
 .members-main-block .blog {
@@ -8848,7 +8849,7 @@ li {
 }
 
 .members-main-block h2 {
-	color: var(--fourth-color) !important;
+	color: var(--secondary-color) !important;
 	line-height: 1.6em;
 }
 
@@ -8858,7 +8859,7 @@ li {
 }
 
 .members-main-block .member-row-gap {
-	margin-top: 80px;
+	margin-top: 70px;
 }
 
 .members-main-block .blog img {
@@ -8876,7 +8877,7 @@ li {
 }
 
 .members-main-block .blog .member-country {
-	border-bottom: 1px solid var(--fourth-color);
+	border-bottom: 1px solid var(--members-color);
 	;
 	padding-bottom: 5px;
 }
@@ -9093,7 +9094,7 @@ li {
 
 /* Welcome Message */
 
-.welcome-message-main-block {
+/* .welcome-message-main-block {
 	margin: 50px 0px;
 }
 
@@ -9101,11 +9102,8 @@ li {
 	background: url(/images/images/welcomebg.webp);
 	background-repeat: no-repeat;
 	background-size: cover;
-	/* background-position: top left; */
 	padding: 42px 0px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	/* width: 100%;
-	height: 100%; */
 	border-radius: 50px;
 }
 
@@ -9124,10 +9122,9 @@ li {
 .welcomemsg-section .grid-container {
 	display: grid;
 	grid-template-columns: 4fr 8fr;
-	/* align-items: center; */
 	margin: 0 30px 0 44px;
 	gap: 20px;
-}
+} */
 
 /* .welcomemsg-section .content-info {
 	width: 90%;
@@ -9135,7 +9132,7 @@ li {
 	color: var(--black-color);
 } */
 
-.welcomemsg-section .content-info {
+/* .welcomemsg-section .content-info {
 	width: 90%;
 	margin: 0 auto 0 0;
 	color: var(--black-color);
@@ -9143,7 +9140,6 @@ li {
 }
 
 .welcomemsg-section .content-info .content-nfo-scroll {
-	/* height: 236px; */
 	height: 250px;
 	overflow-y: auto;
 	padding: 5px 10px 0 0px;
@@ -9151,7 +9147,6 @@ li {
 
 .welcomemsg-section .content-info .content-nfo-scroll::-webkit-scrollbar {
 	width: 10px;
-	/* Adjust the width of the scrollbar */
 }
 
 .welcomemsg-section .content-info .content-nfo-scroll::-webkit-scrollbar-thumb {
@@ -9161,13 +9156,11 @@ li {
 
 .welcomemsg-section .content-info .content-nfo-scroll::-webkit-scrollbar-track {
 	background: #f1f1f1;
-	/* Background color for scrollbar track */
 }
 
 
 
 .welcomemsg-section .author-info {
-	/* text-align: center; */
 	display: flex;
 	flex-direction: column;
 	justify-content: start;
@@ -9210,7 +9203,6 @@ li {
 
 .welcomemsg-section .signature {
 	margin-top: 20px;
-	/* text-align: right; */
 	display: flex;
 	justify-content: end;
 	flex-direction: column;
@@ -9218,9 +9210,6 @@ li {
 }
 
 .welcomemsg-section .signature-img {
-	/* width: 130px;
-	height: 100px;
-	object-fit: contain; */
 	width: 100px;
 	height: auto;
 	min-height: 50px;
@@ -9312,7 +9301,7 @@ li {
 	.welcomemsg-section .welcome-title {
 		margin-left: 0px !important;
 	}
-}
+} */
 
 
 /* Media Collaborators */
@@ -9536,12 +9525,12 @@ input[text]:focus {
 	margin-left: 3px;
 	font-size: 15px;
 	/* font-weight: 400; */
-	color: var(--fourth-color);
+	color: var(--third-color);
 }
 
 .marquee-wrapper .marquee-item i {
 	font-size: 17px;
-	color: var(--primary-color);
+	color: var(--secondary-color);
 	margin-right: 5px;
 }
 
@@ -9777,7 +9766,7 @@ input[text]:focus {
 }
 
 .venue-page .content1 {
-	margin-bottom: 40px;
+	margin-bottom: 60px;
 	margin-top: 30px;
 }
 
@@ -11361,4 +11350,16 @@ input[text]:focus {
 	100% {
 		transform: rotate(360deg);
 	}
+}
+
+/* Abstract closed Block  */
+.closed-block-abstract {
+	color: #cf0000;
+	font-size: 23px;
+	font-weight: 600;
+	text-align: center;
+	/* padding: 0px 0px 0 30px; */
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 }
