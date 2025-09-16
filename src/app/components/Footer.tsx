@@ -385,9 +385,9 @@ const Footer: React.FC<FooterProps> = ({ generalData, indexPageData }) => {
           <Link href="/privacy-policy" title="Privacy Policy">
             Privacy Policy
           </Link>
-          <Link href="#" title="Contact Us">
+          {/* <Link href="#" title="Contact Us">
             Contact Us
-          </Link>
+          </Link> */}
         </div>
         <div className="last_st3">
           Copyright ©{" "}

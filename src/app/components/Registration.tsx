@@ -1490,7 +1490,7 @@ const Registration: React.FC<RegisterProps> = ({
                                     <td className="mak1">
                                       <s>{item.standard_price}</s>
                                     </td>
-                                    <td className="mak1">{item.min}%</td>
+                                    <td className="mak1">-</td>
                                     <td className="mak1 active">
                                       ${item.total}{" "}
                                       <span className="tick-mark">✓</span>
