@@ -379,7 +379,7 @@ const Footer: React.FC<FooterProps> = ({ generalData, indexPageData }) => {
         style={{ justifyContent: "space-between" }}
       >
         <div className="last_st1">
-          <Link href="#" title="Terms of Use">
+          <Link href="/terms-of-use" title="Terms of Use">
             Terms of Use
           </Link>
           <Link href="/privacy-policy" title="Privacy Policy">
