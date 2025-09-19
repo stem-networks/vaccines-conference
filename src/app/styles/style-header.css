@@ -9525,12 +9525,12 @@ input[text]:focus {
 	margin-left: 3px;
 	font-size: 15px;
 	/* font-weight: 400; */
-	color: var(--third-color);
+	color: var(--fifth-color);
 }
 
 .marquee-wrapper .marquee-item i {
 	font-size: 17px;
-	color: var(--secondary-color);
+	color: var(--third-color);
 	margin-right: 5px;
 }
 
