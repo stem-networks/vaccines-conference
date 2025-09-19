@@ -27,11 +27,10 @@ const Guidelines: React.FC<GuidelinesProps> = ({ guidelinesContent }) => {
       {guidelinesContent ? (
         <div dangerouslySetInnerHTML={{ __html: guidelinesContent }} />
       ) : (
-        <p className="auto-container mt-4 mb-5">No guidelines available at the moment.</p>
+        <p className="auto-container mt-4 mb-5 text-center" style={{margin: '10px auto'}}>No guidelines available at the moment.</p>
       )}
     </div>
   )
 }
 
 export default Guidelines;
-
