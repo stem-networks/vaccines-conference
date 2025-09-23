@@ -72,6 +72,7 @@ export async function generateMetadata(): Promise<Metadata> {
       keywords: pageData?.register?.[0]?.meta_keywords || "",
       icons: {
         icon: `${general?.site_url || ""}/images/images/favicon.png`,
+        apple: `${general?.site_url || ""}/images/images/apple-touch-icon.png`, // Add your Apple touch icon path here
       },
       openGraph: {
         images: `${general?.site_url || ""}/images/images/opengraph_image.jpg`,
@@ -83,7 +84,10 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Annual Tech Conference",
       description: "",
       keywords: "",
-      icons: { icon: "/favicon.ico" },
+      icons: {
+        icon: "/favicon.ico",
+        apple: "/apple-touch-icon.png", // fallback Apple touch icon
+      },
     };
   }
 }
