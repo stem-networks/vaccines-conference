@@ -261,7 +261,7 @@ const Footer: React.FC<FooterProps> = ({ generalData, indexPageData }) => {
 
           <div className="menu_footer">
             <h4>Quick Links</h4>
-            <ul>
+            <ul className="tmp-link-animation">
               <li>
                 <Link href="/" title="Home">
                   Home

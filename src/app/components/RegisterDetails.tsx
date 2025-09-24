@@ -748,7 +748,7 @@ const RegisterDetails = ({ generalInfo }: RegisterDetailsClientProps) => {
                             </tr>
                           )}
 
-                        {(dataToShow?.accompanying_price ?? 0) > 0 && (
+                        {/* {(dataToShow?.accompanying_price ?? 0) > 0 && (
                           <tr>
                             <td className="re_p3 brb-none">
                               No of Accompanying Persons ($
@@ -776,6 +776,28 @@ const RegisterDetails = ({ generalInfo }: RegisterDetailsClientProps) => {
                                 (dataToShow?.accompanying ?? 0)}
                             </td>
                           </tr>
+                        )} */}
+
+                        {(dataToShow?.accompanying ?? 0) > 0 && (
+                          <>
+                            <tr>
+                              <td className="re_p3 brb-none">
+                                No of Accompanying Persons ($
+                                {Math.round(dataToShow?.accompanying_price ?? 0)} each Person):
+                              </td>
+                              <td className="re_p3 brb-none text-right fw-600">
+                                {dataToShow?.accompanying}
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td className="re_p3_main">Total Accompanying Persons Price:</td>
+                              <td className="re_p3_main text-right fw-600">
+                                ${(dataToShow?.accompanying_price ?? 0) *
+                                  (dataToShow?.accompanying ?? 0)}
+                              </td>
+                            </tr>
+                          </>
                         )}
 
                         {(dataToShow?.total_price ?? 0) > 0 && (
