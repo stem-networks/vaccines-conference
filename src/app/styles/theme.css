@@ -548,7 +548,7 @@ a {
 }
 
 .menu_footer2 .form .btn-primary:hover {
-	color: var(--black-color);
+	color: var(--primary-color);
 	background-color: var(--white-color) !important;
 	border-color: var(--white-color) !important;
 }
