@@ -1131,8 +1131,8 @@ const Registration: React.FC<RegisterProps> = ({
       </div>
 
       <h2
-        className="abs_wrap5 wow fadeInUp"
-        data-wow-delay="400ms"
+        className="abs_wrap5 wow fadeInUp animated"
+        data-wow-delay="200ms"
         data-wow-duration="1000ms"
       >
         Registration
@@ -1144,9 +1144,9 @@ const Registration: React.FC<RegisterProps> = ({
             {/* Personal Information Section */}
             <div className="row clearfix">
               <div
-                className="col-md-11 mar_center wow fadeInUp"
-                data-wow-delay="400ms"
-                data-wow-duration="1000ms"
+                className="col-md-11 mar_center wow fadeInUp animated"
+                data-wow-delay="300ms"
+                data-wow-duration="1200ms"
               >
                 <div className="row clearfix">
                   <div className="col-md-1"></div>
@@ -1333,9 +1333,9 @@ const Registration: React.FC<RegisterProps> = ({
             <div className="row clearfix" style={{ width: "100%" }}>
               <div className="col-md-12 mar_center">
                 <div
-                  className="tabl_wrap155 wow fadeInUp"
-                  data-wow-delay="400ms"
-                  data-wow-duration="1000ms"
+                  className="tabl_wrap155 wow fadeInUp animated"
+                  data-wow-delay="500ms"
+                  data-wow-duration="1200ms"
                 >
                   <div className="tabs">
                     <button
@@ -1514,9 +1514,9 @@ const Registration: React.FC<RegisterProps> = ({
                 {/* Accommodation Section (only for in-person) */}
                 {activeTab === "tab1" && (
                   <div
-                    className="acc_wrap1556 wow fadeInUp"
-                    data-wow-delay="400ms"
-                    data-wow-duration="1000ms"
+                    className="acc_wrap1556 wow fadeInUp animated"
+                    data-wow-delay="600ms"
+                    data-wow-duration="1200ms"
                   >
                     <h2>Accommodation (Per Night)</h2>
                     <div className="row clearfix accomodation-block">
@@ -1634,7 +1634,7 @@ const Registration: React.FC<RegisterProps> = ({
                 )}
 
                 {/* Participants Section */}
-                <div className="row clearfix mt_p551 container">
+                <div className="row clearfix mt_p551 container wow fadeInUp animated" data-wow-delay="700ms" data-wow-duration="1200ms">
                   <div className="col-md-6 new_po5">
                     <label>
                       No. of Participants
@@ -1679,9 +1679,8 @@ const Registration: React.FC<RegisterProps> = ({
 
                 {/* Price Summary Section */}
                 <div
-                  className="count_total_wrap wow fadeInUp"
-                  data-wow-delay="400ms"
-                  data-wow-duration="1000ms"
+                  className="count_total_wrap wow fadeInUp animated"
+                  data-wow-delay="800ms" data-wow-duration="1200ms"
                 >
                   <div className="sup_wrap_blue">
                     <table>
@@ -1800,9 +1799,8 @@ const Registration: React.FC<RegisterProps> = ({
 
             {/* Form Buttons */}
             <div
-              className="process_wrap12 wow fadeInUp"
-              data-wow-delay="400ms"
-              data-wow-duration="1000ms"
+              className="process_wrap12 wow fadeInUp animated"
+              data-wow-delay="900ms" data-wow-duration="1200ms"
             >
               <h5>
                 By clicking &quot;Proceed to pay&quot;, you agree to the privacy
@@ -1831,11 +1829,11 @@ const Registration: React.FC<RegisterProps> = ({
         </div>
       </div>
 
-      <div className="cont_fram_wrap wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
+      <div className="cont_fram_wrap">
         <div className="auto-container">
           <div className="row clearfix">
             <div className="col-md-11 mar_center">
-              <div className="confr_sty1">
+              <div className="confr_sty1 wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1200ms">
                 <h3 className="mb_156">Registration Benefits for In-Person Attendees:</h3>
                 <h4>As an in-person attendee at our conference, you will enjoy the following benefits:</h4>
                 <ul>
@@ -1851,7 +1849,7 @@ const Registration: React.FC<RegisterProps> = ({
                         papers in Oral or Poster sessions.</h4> */}
               </div>
 
-              <div className="confr_sty1">
+              <div className="confr_sty1 wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1200ms">
                 <h3>Registration Benefits for Virtual Attendees: </h3>
                 <h4>If you attend the conference virtually, you will receive the following benefits:</h4>
                 <ul>
@@ -1866,7 +1864,7 @@ const Registration: React.FC<RegisterProps> = ({
                 </ul>
               </div>
 
-              <div className="confr_sty1">
+              <div className="confr_sty1 wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1200ms">
                 <h3>Cancellation Policy:</h3>
                 <ul>
                   <li>A full refund, minus a processing fee, will be issued for cancellations made 60 days before the conference begins.</li>

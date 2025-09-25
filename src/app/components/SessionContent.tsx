@@ -36,15 +36,14 @@ const SessionsComponent = ({
         <div className="row clearfix session-img">
           <div
             className="col-md-12 session_wrap_style1 wow fadeInUp"
-            data-wow-delay="400ms"
-            data-wow-duration="1500ms"
+            data-wow-delay="200ms" data-wow-duration="1400ms"
           >
             <h2>Sessions</h2>
             <p>{sessionContent}</p>
           </div>
 
           <div
-            className="col-md-4 sq_mobhide session_wra155 wow fadeInUp"
+            className="col-md-4 sq_mobhide session_wra155 wow fadeInLeft"
             data-wow-delay="400ms"
             data-wow-duration="1600ms"
           >
@@ -61,15 +60,15 @@ const SessionsComponent = ({
           </div>
 
           <div
-            className="col-md-8 mar_mk55 wow fadeInUp"
-            data-wow-delay="400ms"
-            data-wow-duration="1800ms"
+            className="col-md-8 mar_mk55 wow fadeInRight"
+            data-wow-delay="600ms"
+            data-wow-duration="1700ms"
           >
             <div className="session-right-block">
               <div className="add_wrap_session">
                 <ul>
                   {firstList.map((session, index) => (
-                    <li key={index}>
+                    <li className="wow fadeInUp" data-wow-delay={`${index * 100 + 700}ms`} key={index}>
                       <span>{session.text || "Upcoming session"}</span>
                     </li>
                   ))}
@@ -78,7 +77,7 @@ const SessionsComponent = ({
               <div className="add_wrap_session">
                 <ul>
                   {secondList.map((session, index) => (
-                    <li key={index}>
+                    <li className="wow fadeInUp" data-wow-delay={`${index * 100 + 700}ms`} key={index}>
                       <span>{session.text || "Upcoming session"}</span>
                     </li>
                   ))}

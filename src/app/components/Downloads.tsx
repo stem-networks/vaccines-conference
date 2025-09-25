@@ -254,7 +254,7 @@ const Downloads: React.FC<DownloadsProps> = ({ generalDownloadsInfo }) => {
                                     <div className="col-md-12">
                                         <h3>Essential <span>Downloads</span></h3>
                                     </div>
-                                    <div className="col-md-4">
+                                    <div className="col-md-4 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
                                         <div className="box_st1">
                                             <Image src={edit} className="pol55" alt="Sample PPT" title="Sample PPT" loading="lazy" />
                                             <h3>Sample PPT</h3>
@@ -271,7 +271,7 @@ const Downloads: React.FC<DownloadsProps> = ({ generalDownloadsInfo }) => {
                                         <div className="blue_wrap55"></div>
                                     </div>
 
-                                    <div className="col-md-4">
+                                    <div className="col-md-4 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1000ms">
                                         <div className="box_st1">
                                             <Image src={edit} className="pol55" alt="Brochure" title="Brochure" loading="lazy" />
                                             <h3>Brochure</h3>
@@ -283,7 +283,7 @@ const Downloads: React.FC<DownloadsProps> = ({ generalDownloadsInfo }) => {
                                         <div className="blue_wrap55"></div>
                                     </div>
 
-                                    <div className="col-md-4">
+                                    <div className="col-md-4 wow fadeInUp" data-wow-delay="800ms" data-wow-duration="1000ms">
                                         <div className="box_st1">
                                             <Image src={edit} className="pol55" alt="Sample Abstract" title="Sample Abstract" loading="lazy" />
                                             <h3>Sample Abstract</h3>

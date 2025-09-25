@@ -2,6 +2,7 @@
 
 @import url('../app/styles/animate.css');
 @import url('../app/styles/bootstrap.css');
+@import url('../app/styles/bootstrap.min.css');
 @import url('../app/styles/common.css');
 @import url('../app/styles/flaticon.css');
 @import url('../app/styles/style.css');
@@ -14,5 +15,4 @@
 @import url('../app/styles/jquery.fancybox.css');
 @import url('../app/styles/hover.css');
 @import url('../app/styles/font-awesome.css');
-
-
+@import "animate.css/animate.min.css";

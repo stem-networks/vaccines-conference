@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { FAQItem } from '../../types';
 
 interface Props {
-//   generalInfo: any;
+  //   generalInfo: any;
   faqsContent: FAQItem[];
 }
 
-const Faqs: React.FC<Props> = ({  faqsContent }) => {
+const Faqs: React.FC<Props> = ({ faqsContent }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
@@ -23,7 +23,7 @@ const Faqs: React.FC<Props> = ({  faqsContent }) => {
       <div className="brand_wrap">
         <div className="auto-container">
           <div className="row">
-            <div className="col-md-12">
+            <div className="col-md-12 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
               <Link href="/" title="Navigate to Homepage">Home</Link> <i className="fa fa-angle-right"></i>
               <span>FAQs</span>
             </div>
@@ -47,7 +47,7 @@ const Faqs: React.FC<Props> = ({  faqsContent }) => {
                             <li
                               key={faq.faq_id}
                               className={`accordion block wow fadeInUp ${activeIndex === index ? 'active-block' : ''}`}
-                              data-wow-delay={`${index * 200}ms`}
+                              data-wow-delay={`${index * 200 + 400}ms`}  // staggered delay
                               data-wow-duration="1500ms"
                             >
                               <div className={`acc-btn ${activeIndex === index ? 'active' : ''}`} onClick={() => toggleAccordion(index)}>

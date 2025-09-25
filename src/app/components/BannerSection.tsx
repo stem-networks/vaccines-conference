@@ -409,12 +409,12 @@ const BannerSection: React.FC<BannerSectionProps> = ({
             >
               <hr />
               <h3
-                className="banner-heading-content"
+                className="banner-heading-content wow fadeInUp" data-wow-delay="200ms"
                 dangerouslySetInnerHTML={{ __html: headding || "" }}
               />
-              <h2 className="banner-heading-tagline">{tag_line || ""}</h2>
-              <p>{content || ""}</p>
-              <button
+              <h2 className="banner-heading-tagline wow fadeInUp" data-wow-delay="400ms">{tag_line || ""}</h2>
+              <p className="wow fadeInUp" data-wow-delay="600ms" dangerouslySetInnerHTML={{ __html: content || "" }} />
+              <button className="wow zoomIn" data-wow-delay="800ms"
                 type="button"
                 title={`${general?.clogotext}_Brochure`}
                 onClick={() => openBrochureModal('brochure')}

@@ -30,7 +30,7 @@ const ImportantDates = ({ onelinerInfo }: ImportantDatesProps) => {
                                 <div className="col-md-3"></div>
                                 <div
                                     className="col-md-3 col-sm-6 wow fadeInUp"
-                                    data-wow-delay="200ms"
+                                    data-wow-delay="300ms"
                                     data-wow-duration="1000ms"
                                 >
                                     <div className="date-mainblock-color1">
@@ -63,7 +63,7 @@ const ImportantDates = ({ onelinerInfo }: ImportantDatesProps) => {
                                 </div>
                                 <div
                                     className="col-md-3 col-sm-6 wow fadeInUp"
-                                    data-wow-delay="400ms"
+                                    data-wow-delay="500ms"
                                     data-wow-duration="1200ms"
                                 >
                                     <div className="date-mainblock-color2">
