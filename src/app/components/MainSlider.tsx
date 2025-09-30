@@ -344,16 +344,16 @@ const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
                     <div className="auto-container clearfix" aria-hidden="false">
                         <div className="row clearfix">
                             <div
-                                className="col-md-12 wow fadeInUp animated"
-                                data-wow-delay="200ms"
-                                data-wow-duration="1000ms"
+                                className="col-md-12"
                             >
-                                <h2>Book Today &amp; Save huge!</h2>
+                                <h2 className="wow fadeInDown" data-wow-delay="0ms" data-wow-duration="1000ms">Book Today &amp; Save huge!</h2>
                                 {/* {listenerTotal.inPerson > 0 && presenterTotal.inPerson > 0 && ( */}
-                                <h3>Listener @ ${listenerTotal.inPerson} | Presenter @ ${presenterTotal.inPerson}</h3>
+                                <h3 className="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">Listener @ ${listenerTotal.inPerson} | Presenter @ ${presenterTotal.inPerson}</h3>
                                 {/* )} */}
 
-                                <Link href="/register" title="Register" tabIndex={0}>
+                                <Link href="/register" title="Register" tabIndex={0} className="wow zoomIn"
+                                    data-wow-delay="400ms"
+                                    data-wow-duration="1000ms">
                                     Register now
                                 </Link>
                             </div>
@@ -364,16 +364,16 @@ const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
                     <div className="auto-container clearfix" aria-hidden="false">
                         <div className="row clearfix">
                             <div
-                                className="col-md-12 wow fadeInUp animated"
-                                data-wow-delay="200ms"
-                                data-wow-duration="1000ms"
+                                className="col-md-12"
                             >
-                                <h2>Engage, Influence, Inspire</h2>
-                                <h3>Become a Sponsor and Leave a Lasting Impression!</h3>
+                                <h2 className="wow fadeInDown" data-wow-delay="0ms" data-wow-duration="1000ms">Engage, Influence, Inspire</h2>
+                                <h3 className="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">Become a Sponsor and Leave a Lasting Impression!</h3>
                                 <button
                                     type="button"
                                     title="Contact"
-                                    className="index-contact"
+                                    className="index-contact wow zoomIn"
+                                    data-wow-delay="400ms"
+                                    data-wow-duration="1000ms"
                                     tabIndex={0}
                                     onClick={() => toggleModal2("sponsor", "Sponsorship Form")}
                                 >
@@ -387,16 +387,16 @@ const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
                     <div className="auto-container clearfix" aria-hidden="false">
                         <div className="row clearfix">
                             <div
-                                className="col-md-12 wow fadeInUp animated"
-                                data-wow-delay="200ms"
-                                data-wow-duration="1000ms"
+                                className="col-md-12"
                             >
-                                <h2>Make your brand stand out</h2>
-                                <h3>Become an exhibitor at our International Conference</h3>
+                                <h2 className="wow fadeInDown" data-wow-delay="0ms" data-wow-duration="1000ms">Make your brand stand out</h2>
+                                <h3 className="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">Become an exhibitor at our International Conference</h3>
                                 <button
                                     type="button"
                                     title="Contact"
-                                    className="index-contact"
+                                    className="index-contact wow zoomIn"
+                                    data-wow-delay="400ms"
+                                    data-wow-duration="1000ms"
                                     tabIndex={0}
                                     onClick={() => toggleModal2('exhibitor', 'Exhibitor Form')}
                                 >

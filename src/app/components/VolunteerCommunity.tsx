@@ -383,7 +383,7 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
 
       <div
         className="cont_wrap_add  wow fadeInUp"
-        data-wow-delay="400ms"
+        data-wow-delay="600ms"
         data-wow-duration="1000ms"
       >
         <div className="auto-container clearfix">
@@ -391,7 +391,7 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
             <div className="col-md-9 mar_wrap1579">
               <div className="call_cont_st1">
                 <div className="wr_sty1">
-                  <div className="logo_cont15">
+                  <div className="logo_cont15 wow fadeInUp" data-wow-delay="700ms" data-wow-duration="1000ms">
                     <Image
                       src="/images/images/logo-hd-1.svg"
                       alt={general.clname ? general.clname : ""}
@@ -401,7 +401,7 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
                       height={80}
                     />
                   </div>
-                  <div className="cont_head_st1">
+                  <div className="cont_head_st1 wow fadeInUp" data-wow-delay="800ms" data-wow-duration="1000ms">
                     <h3>
                       Discover Whats Next in{" "}
                       {general.clname ? general.clname : ""}
@@ -415,6 +415,7 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
                   <form
                     id="joinourcommunityform"
                     onSubmit={handleCommunitySubmit}
+                    className="wow fadeInUp" data-wow-delay="900ms" data-wow-duration="1000ms"
                   >
                     <div className="row">
                       <div className="col-md-12 cont_wrap14666">
@@ -525,7 +526,7 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
                     </div>
                   </form>
                 </div>
-                <div className="wr_sty2">
+                <div className="wr_sty2 wow-fadeInUp" data-wow-delay="1000ms" data-wow-duration="1000ms">
                   <div className="img_wrap156">
                     <Image
                       src="/images/images/mess1.png"

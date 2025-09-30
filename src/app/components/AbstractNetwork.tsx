@@ -31,14 +31,14 @@ const AbstractNetwork: React.FC<AbstractNetworkProps> = ({ generalAbstractInfo, 
     return (
         <div>
             <div className="spek_wrap">
-                <div className="set_gray_wrap1 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
+                <div className="set_gray_wrap1 wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1000ms">
                     <div className="add_style1">
                         <hr />
                         <h3> {onelinerAbstract ? onelinerAbstract : ""}</h3>
                         <Link href="/call-for-abstract-submission" title='Submit Your Abstract'>Submit Your Abstract</Link>
                     </div>
                 </div>
-                <div className="set_gray_wrap2 wow fadeInUp" data-wow-delay="500ms" data-wow-duration="1000ms"><Image
+                <div className="set_gray_wrap2 wow fadeInRight" data-wow-delay="500ms" data-wow-duration="1000ms"><Image
                     src={img4} alt={general.clname ? general.clname : ""} title={general.clname ? general.clname : ""} loading="lazy" /></div>
             </div>
 
@@ -84,25 +84,25 @@ const AbstractNetwork: React.FC<AbstractNetworkProps> = ({ generalAbstractInfo, 
                         <div className="col-md-12 wow fadeInUp" data-wow-delay="1000ms" data-wow-duration="1000ms">
                             <hr />
                         </div>
-                        <div className="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1100ms" data-wow-duration="1000ms">
+                        <div className="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1200ms" data-wow-duration="1000ms">
                             <div className="wrap_iocn1 top156">
                                 <Image src={icon4} alt="New learnings" title="New learnings" loading="lazy" />
                                 <p>New learnings</p>
                             </div>
                         </div>
-                        <div className="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1200ms" data-wow-duration="1000ms">
+                        <div className="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1400ms" data-wow-duration="1000ms">
                             <div className="wrap_iocn1">
                                 <Image src={icon5} alt="Contribute to research advancements" title="Contribute to research advancements" loading="lazy" />
                                 <p>Contribute to research advancements</p>
                             </div>
                         </div>
-                        <div className="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1300ms" data-wow-duration="1000ms">
+                        <div className="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1600ms" data-wow-duration="1000ms">
                             <div className="wrap_iocn1">
                                 <Image src={icon6} alt="Exchange of ideas" title="Exchange of ideas" loading="lazy" />
                                 <p>Exchange of ideas</p>
                             </div>
                         </div>
-                        <div className="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1400ms" data-wow-duration="1000ms">
+                        <div className="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1800ms" data-wow-duration="1000ms">
                             <div className="wrap_iocn2 top156">
                                 <Image src={icon7} alt="Knowledge sharing" title="Knowledge sharing" loading="lazy" />
                                 <p>Knowledge sharing</p>
