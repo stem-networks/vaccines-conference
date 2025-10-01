@@ -15,5 +15,4 @@
 @import url('../app/styles/jquery.fancybox.css');
 @import url('../app/styles/hover.css');
 @import url('../app/styles/font-awesome.css');
-
-
+@import "animate.css/animate.min.css";

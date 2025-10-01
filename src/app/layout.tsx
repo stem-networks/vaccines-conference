@@ -22,6 +22,7 @@ import {
 } from "@/lib/fallbacks";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 import MediaCollaborators from "./components/MediaCollaborators";
+import WowProvider from "./components/WowProvider";
 
 async function safeFetch<T>(fn: () => Promise<T>, fallback: T): Promise<T> {
   try {
@@ -254,6 +255,7 @@ export default async function RootLayout({
           </noscript>
         )}
 
+        <WowProvider />
         {/* Toast container - only one instance needed */}
         <ToastContainer
           position="top-right"
@@ -264,10 +266,10 @@ export default async function RootLayout({
         />
         <Header generalData={generaldata} registerData={registerData} />
         {children}
-        <MediaCollaborators /> 
+        <MediaCollaborators />
         <PartneredContent />
         <Footer indexPageData={indexPageData} generalData={generaldata} />
-        <WhatsAppWidget />  
+        <WhatsAppWidget />
       </body>
     </html>
   );

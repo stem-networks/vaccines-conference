@@ -919,7 +919,7 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
         </div>
       </div>
       <h2
-        className="abs_wrap5 wow fadeInUp"
+        className="abs_wrap5 wow fadeInUp animated"
         data-wow-delay="400ms"
         data-wow-duration="1000ms"
       >
@@ -935,9 +935,9 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
               method="POST"
             >
               <div
-                className="col-md-8 wow fadeInUp"
+                className="col-md-8 wow fadeInLeft animated"
                 data-wow-delay="400ms"
-                data-wow-duration="1000ms"
+                data-wow-duration="1200ms"
               >
                 <div className="row clearfix">
                   <div className="col-md-6 left15">
@@ -1279,9 +1279,9 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
               </div>
             </form>
             <div
-              className="col-md-4 wow fadeInUp"
-              data-wow-delay="400ms"
-              data-wow-duration="1500ms"
+              className="col-md-4 wow fadeInRight animated"
+              data-wow-delay="600ms"
+              data-wow-duration="1200ms"
             >
               <div className="sq_abmainbox">
                 <div className="sq_abbox1"></div>
