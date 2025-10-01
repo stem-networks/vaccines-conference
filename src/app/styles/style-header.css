@@ -11533,3 +11533,8 @@ input[text]:focus {
 		text-align: left;
 	}
 }
+
+/* Abstract Heading  */
+.spek_wrap h3 {
+	font-size: 33px;         
+}
