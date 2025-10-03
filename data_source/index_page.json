@@ -155,11 +155,11 @@
     "venue_images": {
         "1": {
             "image": "images/g1.webp",
-            "alt_text": "Marina Bay Sands"
+            "alt_text": "Orchard Road"
         },
         "2": {
             "image": "images/g2.webp",
-            "alt_text": "Clarke Quay"
+            "alt_text": "Chinatown"
         },
         "3": {
             "image": "images/g3.webp",
