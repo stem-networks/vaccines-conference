@@ -762,7 +762,7 @@ a {
 
 	.main-menu .navbar-header .navbar-toggle {
 		background: var(--primary-color);
-		margin-top: 5px !important;
+		/* margin-top: 5px !important; */
 	}
 
 	.main-menu .navbar-header .navbar-toggle .icon-bar {

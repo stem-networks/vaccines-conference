@@ -145,19 +145,19 @@
     "venue_images": {
         "41": {
             "image": "images/g1.webp",
-            "alt_text": "Lauterbrunnen Valley"
+            "alt_text": "Tiergarten Park"
         },
         "42": {
             "image": "images/g2.webp",
-            "alt_text": "Lake Lucerne Switzerland"
+            "alt_text": "Potsdamer Platz"
         },
         "43": {
             "image": "images/g3.webp",
-            "alt_text": "Zermatt & matterhorn"
+            "alt_text": "Berlin Wall Memorial"
         },
         "44": {
             "image": "images/g4.webp",
-            "alt_text": "ST moritz"
+            "alt_text": "Charlottenburg Palace"
         }
     }
 }
