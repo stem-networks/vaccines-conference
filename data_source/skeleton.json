@@ -118,12 +118,23 @@
         "content": "Read the Gynecology Conference 2026 (NWGC) Singapore Privacy Policy. Find out how we keep your information safe, your privacy ensured, and are transparent in dealing with information.",
         "meta_keywords": "Privacy Policy Gynecology Conference, Data Protection Women’s Health Event, Gynecology Conference Privacy, Personal Data Singapore Conference, Gynecology Data Security, Conference Privacy Policy"
       }
+    ],
+    "previous_conference": [
+      {
+        "title": "Previous Conference | Gynecology and Obstetrics Conference | Singapore | NWGC 2026 | Gynecology Conferences",
+        "content": "Explore highlights from our previous Gynecology and Obstetrics Conferences. Discover influential sessions, groundbreaking reproductive health research, expert speakers, and global collaborations that shaped past events, paving the way for NWGC 2026 in Singapore.",
+        "meta_keywords": "Previous Gynecology Conference, Obstetrics Past Events, Women’s Reproductive Health Conference Highlights, Gynecology and Fertility Conference History, Global Obstetrics Congress Recap, Maternal Health Conference Archives, Past Gynecology and Women’s Health Meetings, Reproductive Medicine Research Events, International Gynecology Conference History, Previous Obstetrics and Gynecology Conferences"
+      }
     ]
   },
   "display_features": [
     {
       "title": "Sessions",
       "link": "/sessions"
+    },
+    {
+      "title": "Previous Conference",
+      "link": "/previous-conference"
     },
     {
       "title": "Guidelines",

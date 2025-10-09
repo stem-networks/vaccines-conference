@@ -10404,3 +10404,96 @@ input[text]:focus {
 		text-align: left;
 	}
 }
+
+/* Past Conference Page  */
+/* Gallery Of Event Page  */
+
+.gallery-event-block {
+	margin: 60px 0;
+}
+
+.gallery-event-block .gallery-images-block {
+	/* display: flex;
+	justify-content: start; */
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	flex-wrap: wrap;
+	/* 4 columns on large screens */
+	margin-top: 50px;
+}
+
+.gallery-event-block .each-indiv-images-block {
+	display: flex;
+	justify-content: start;
+	flex-wrap: wrap;
+	/* flex-direction: column; */
+	gap: 10px;
+	padding: 10px;
+}
+
+.gallery-event-block .image-wrapper {
+	position: relative;
+	display: inline-block;
+}
+
+.gallery-event-block .image-wrapper img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 15px;
+	object-fit: cover;
+}
+
+.gallery-event-block .download-icon {
+	position: absolute;
+	bottom: 30px;
+	right: 8px;
+	background: rgba(0, 0, 0, 0.7);
+	color: #fff;
+	padding: 5px;
+	border-radius: 50%;
+	text-decoration: none;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.3s ease;
+}
+
+.gallery-event-block .download-icon:hover {
+	background: #fff;
+	color: rgba(0, 0, 0, 0.7);
+	transition: background 0.3s ease-in;
+}
+
+/* 📱 Responsive breakpoints */
+@media (max-width: 1200px) {
+	.gallery-event-block .gallery-images-block {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media (max-width: 991px) {
+	.gallery-event-block .gallery-images-block {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 480px) {
+	.gallery-event-block .gallery-images-block {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.gallery-event-block .gallery-images-block {
+		flex-wrap: nowrap;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.gallery-event-block .download-icon {
+		bottom: 11px;
+		font-size: 11px;
+	}
+}
