@@ -6,7 +6,30 @@ export async function POST(req: Request) {
   try {
     const data = await req.json();
 
-    const { enquiryname, enquiryemail, enquiryquery = '' } = data;
+    const { enquiryname, enquiryemail, enquiryquery = '', captchaToken } = data;
+
+    // 1️⃣ Validate captcha token
+    if (!captchaToken || typeof captchaToken !== "string" || captchaToken.trim() === "") {
+      return NextResponse.json(
+        { success: false, error: "Captcha token missing" },
+        { status: 400 }
+      );
+    }
+
+
+    const secret = process.env.RECAPTCHA_SECRET_KEY || "";
+    const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${captchaToken}`;
+
+    const verifyRes = await fetch(verifyUrl, { method: "POST" });
+    const verifyData = await verifyRes.json();
+
+    if (!verifyData.success) {
+      console.error("Captcha verification failed:", verifyData);
+      return NextResponse.json(
+        { success: false, error: "Captcha verification failed" },
+        { status: 403 }
+      );
+    }
 
     const cid = process.env.CID || '';
 

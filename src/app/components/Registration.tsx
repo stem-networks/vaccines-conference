@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { ApiResponse, RegistrationInfo } from "@/types";
 import countries from "../../data/countries";
 import { toast } from "react-toastify";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface AccommodationPrices {
   single: string;
@@ -129,6 +130,22 @@ const Registration: React.FC<RegisterProps> = ({
   const countryRef = useRef<HTMLSelectElement>(null);
   const checkInRef = useRef<HTMLSelectElement>(null);
   const checkOutRef = useRef<HTMLSelectElement>(null);
+
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+
+  // Captcha handlers
+  const handleCaptchaChange = (token: string | null) => {
+    setCaptchaToken(token);
+    if (token) {
+      setErrors((prev) => ({ ...prev, captcha: "" }));
+    }
+  };
+
+  const handleCaptchaExpired = () => {
+    setCaptchaToken(null);
+    toast.warning("Captcha expired. Please verify again.");
+  };
 
   const isValidEmail = (email: string): boolean => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -741,7 +758,25 @@ const Registration: React.FC<RegisterProps> = ({
     } else if (!formData.country) {
       newErrors.country = "Country is required";
       valid = false;
-    } else if (formData.other_info["Selected Accommodation"]) {
+    }
+    // else if (formData.other_info["Selected Accommodation"]) {
+    //   if (
+    //     !formData.other_info["check In Date"] ||
+    //     formData.other_info["check In Date"] === "NA"
+    //   ) {
+    //     newErrors.checkIn = "Check-in Date is required";
+    //     valid = false;
+    //   } else if (
+    //     !formData.other_info["check Out Date"] ||
+    //     formData.other_info["check Out Date"] === "NA"
+    //   ) {
+    //     newErrors.checkOut = "Check-out Date is required";
+    //     valid = false;
+    //   }
+    // }
+
+    // 🟨 Separate block for accommodation (only if above main fields valid)
+    if (valid && formData.other_info["Selected Accommodation"]) {
       if (
         !formData.other_info["check In Date"] ||
         formData.other_info["check In Date"] === "NA"
@@ -755,6 +790,12 @@ const Registration: React.FC<RegisterProps> = ({
         newErrors.checkOut = "Check-out Date is required";
         valid = false;
       }
+    }
+
+    // 🟦 Captcha check (still final)
+    if (valid && !captchaToken) {
+      newErrors.captcha = "Please verify that you are not a robot";
+      valid = false;
     }
 
     if (!valid) {
@@ -815,6 +856,7 @@ const Registration: React.FC<RegisterProps> = ({
       final_amt_input: utf8ToBase64(formData.other_info["Total Price"].toString()),
       web_token: encodedWebToken,
       // description: btoa(formData.description || ""),
+      captchaToken,
     };
 
     try {
@@ -896,6 +938,7 @@ const Registration: React.FC<RegisterProps> = ({
     } catch (error) {
       console.error("Error submitting registration:", error);
       toast.error("Something went wrong while submitting the form.");
+
       await sendErrorToCMS({
         name: formData?.name || "Unknown User",
         email: formData?.email || "Unknown Email",
@@ -1795,6 +1838,18 @@ const Registration: React.FC<RegisterProps> = ({
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div className="mt-2 mb-2 recaptcha-wrapper register-captcha-wrap">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                onChange={handleCaptchaChange}
+                onExpired={handleCaptchaExpired}
+              />
+              {errors.captcha && (
+                <small style={{ color: "red" }}>{errors.captcha}</small>
+              )}
             </div>
 
             {/* Form Buttons */}

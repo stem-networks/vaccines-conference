@@ -1,5 +1,6 @@
 // // app/api/abstract/route.ts
 import { NextResponse } from "next/server";
+import axios from "axios";
 
 export async function POST(req: Request) {
   try {
@@ -13,8 +14,29 @@ export async function POST(req: Request) {
       country,
       intrested,
       abstract_title,
-      upload_abstract_file, // Base64-encoded URL of uploaded file
+      upload_abstract_file,
+      captchaToken, // Base64-encoded URL of uploaded file
     } = data;
+
+   // Validate captcha token
+    if (!captchaToken || typeof captchaToken !== "string" || captchaToken.trim() === "") {
+      return NextResponse.json(
+        { success: false, error: "Captcha token missing" },
+        { status: 400 }
+      );
+    }
+
+    // 🔍 Verify captcha with Google
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+    const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captchaToken}`;
+    const { data: verification } = await axios.post(verifyUrl);
+
+    if (!verification.success) {
+      return NextResponse.json(
+        { success: false, error: "Invalid captcha verification" },
+        { status: 400 }
+      );
+    }
 
     const cid = process.env.CID || "";
 

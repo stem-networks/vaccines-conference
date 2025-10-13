@@ -6,19 +6,21 @@ import { toast } from "react-toastify";
 import Image from "next/image";
 import { ApiResponse, IndexPageData } from "@/types";
 import Link from "next/link";
+import ReCAPTCHA from "react-google-recaptcha";
 
 type FormDataType = {
   firstName: string;
   lastName: string;
   email: string;
   // category: string;
+  captchaToken?: string;
 };
 
 type FormErrorType = {
   firstName?: string;
   lastName?: string;
   email?: string;
-  userAnswer?: string;
+  captchaToken?: string;
 };
 
 type CommunityFormData = {
@@ -26,12 +28,14 @@ type CommunityFormData = {
   fname: string;
   lname: string;
   // category: string;
+  commCaptchaToken?: string; // NEW
 };
 
 type CommunityFormErrors = {
   email?: string;
   fname?: string;
   lname?: string;
+  commCaptchaToken?: string; // NEW
 };
 
 interface VolunteerCommunityProps {
@@ -40,30 +44,30 @@ interface VolunteerCommunityProps {
 }
 
 // Generate random BODMAS expression
-const generateRandomMathExpression = (): {
-  expression: string;
-  correctAnswer: string;
-} => {
-  const operations = ["+", "-", "*"];
-  const randomOperation =
-    operations[Math.floor(Math.random() * operations.length)];
+// const generateRandomMathExpression = (): {
+//   expression: string;
+//   correctAnswer: string;
+// } => {
+//   const operations = ["+", "-", "*"];
+//   const randomOperation =
+//     operations[Math.floor(Math.random() * operations.length)];
 
-  const num1 = Math.floor(Math.random() * 10) + 1;
-  const num2 = Math.floor(Math.random() * 10) + 1;
-  const num3 = Math.floor(Math.random() * 10) + 1;
+//   const num1 = Math.floor(Math.random() * 10) + 1;
+//   const num2 = Math.floor(Math.random() * 10) + 1;
+//   const num3 = Math.floor(Math.random() * 10) + 1;
 
-  const useParentheses = Math.random() < 0.5;
-  let expression: string;
+//   const useParentheses = Math.random() < 0.5;
+//   let expression: string;
 
-  if (useParentheses) {
-    expression = `(${num1} ${randomOperation} ${num2}) ${randomOperation} ${num3}`;
-  } else {
-    expression = `${num1} ${randomOperation} ${num2} ${randomOperation} ${num3}`;
-  }
+//   if (useParentheses) {
+//     expression = `(${num1} ${randomOperation} ${num2}) ${randomOperation} ${num3}`;
+//   } else {
+//     expression = `${num1} ${randomOperation} ${num2} ${randomOperation} ${num3}`;
+//   }
 
-  const correctAnswer = eval(expression).toFixed(2); // returns string
-  return { expression, correctAnswer };
-};
+//   const correctAnswer = eval(expression).toFixed(2); // returns string
+//   return { expression, correctAnswer };
+// };
 
 const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
   generalVolunteerInfo,
@@ -75,10 +79,10 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
 
   // Modal for vounteer
   const [showModal, setShowModal] = useState(false);
-  const [mathExpression, setMathExpression] = useState("");
-  const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
+  // const [mathExpression, setMathExpression] = useState("");
+  // const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
   const [formErrors, setFormErrors] = useState<FormErrorType>({});
-  const [userAnswer, setUserAnswer] = useState("");
+  // const [userAnswer, setUserAnswer] = useState("");
   // const [error, setError] = useState(""); // For general errors
   const [showModal3, setShowModal3] = useState(false); // For success modal
   const [submittingVolunteer, setSubmittingVolunteer] = useState(false);
@@ -87,12 +91,14 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
     firstName: "",
     lastName: "",
     email: "",
+    captchaToken: "",
   });
+  const volcaptchaRef = useRef<ReCAPTCHA>(null);
 
   const firstNameRef = useRef<HTMLInputElement>(null);
   const lastNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
-  const captchaRef = useRef<HTMLInputElement>(null);
+  // const captchaRef = useRef<HTMLInputElement>(null);
   const modalRef = useRef<HTMLDivElement | null>(null);
 
   // form for discover community
@@ -103,8 +109,10 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
       email: "",
       fname: "",
       lname: "",
+      commCaptchaToken: "", // NEW: store recaptcha token
     }
   );
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const [communityFormErrors, setCommunityFormErrors] =
     useState<CommunityFormErrors>({});
@@ -123,6 +131,8 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
       errors.fname = "First name is required";
     } else if (!communityFormData.lname) {
       errors.lname = "Last name is required";
+    } else if (!communityFormData.commCaptchaToken) {
+      errors.commCaptchaToken = "Please verify you are not a robot";
     }
 
     return errors;
@@ -158,6 +168,7 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
           enquiryname: utf8ToBase64(fullName.trim()),
           enquiryemail: utf8ToBase64(communityFormData.email.trim()),
           enquiryquery: utf8ToBase64(""),
+          commCaptchaToken: communityFormData.commCaptchaToken, // send captcha token to API
         };
 
         const response = await fetch("/api/community-submit", {
@@ -172,7 +183,9 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
             email: "",
             fname: "",
             lname: "",
+            commCaptchaToken: ""
           });
+          recaptchaRef.current?.reset();
           setCommunityFormErrors({}); // Clear previous errors
         } else {
           const errorDataCom = await response.json();
@@ -185,7 +198,7 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
       }
     } else {
       // Focus and toast the first field that has an error
-      const order = ["email", "fname", "lname"];
+      const order = ["email", "fname", "lname", "commCaptchaToken"];
       for (const field of order) {
         if (errors[field as keyof CommunityFormErrors]) {
           toast.error(errors[field as keyof CommunityFormErrors]!);
@@ -210,8 +223,8 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
       errors.firstName = "First name is required";
     } else if (!formData.lastName.trim()) {
       errors.lastName = "Last name is required";
-    } else if (!userAnswer.trim()) {
-      errors.userAnswer = "Answer is required";
+    } else if (!formData.captchaToken) {
+      errors.captchaToken = "Please verify you are not a robot";
     }
 
     return errors;
@@ -223,7 +236,7 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
     const errors = validateForm();
     setFormErrors(errors); // Always set inline errors
 
-    const fieldOrder = ["firstName", "lastName", "email", "userAnswer"];
+    const fieldOrder = ["firstName", "lastName", "email", "captchaToken"];
 
     // Show toast + focus only for first error
     for (const field of fieldOrder) {
@@ -241,9 +254,9 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
           case "email":
             emailRef.current?.focus();
             break;
-          case "userAnswer":
-            captchaRef.current?.focus();
-            break;
+          // case "captchaToken":
+          //   volcaptchaRef.current?.focus();
+          //   break;
         }
 
         return;
@@ -251,13 +264,13 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
     }
 
     // Check captcha separately
-    if (parseFloat(userAnswer) !== parseFloat(correctAnswer || "0")) {
-      const captchaError = "Incorrect answer. Please try again.";
-      toast.error(captchaError);
-      setFormErrors({ ...errors, userAnswer: captchaError });
-      captchaRef.current?.focus();
-      return;
-    }
+    // if (parseFloat(userAnswer) !== parseFloat(correctAnswer || "0")) {
+    //   const captchaError = "Incorrect answer. Please try again.";
+    //   toast.error(captchaError);
+    //   setFormErrors({ ...errors, userAnswer: captchaError });
+    //   captchaRef.current?.focus();
+    //   return;
+    // }
 
     setSubmittingVolunteer(true);
 
@@ -268,6 +281,7 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
         enquiryname: utf8ToBase64(fullName.trim()),
         enquiryemail: utf8ToBase64(formData.email.trim()),
         enquiryquery: utf8ToBase64(""),
+        captchaToken: formData.captchaToken,
       };
 
       const response = await fetch("/api/enquiry", {
@@ -285,8 +299,9 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
           firstName: "",
           lastName: "",
           email: "",
+          captchaToken: "",
         });
-        setUserAnswer("");
+        volcaptchaRef.current?.reset();
         setFormErrors({});
         // setError("");
       } else {
@@ -310,11 +325,6 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
   };
 
   const toggleModal = () => {
-    if (!showModal) {
-      const { expression, correctAnswer } = generateRandomMathExpression();
-      setMathExpression(expression);
-      setCorrectAnswer(correctAnswer);
-    }
     setShowModal(!showModal);
   };
 
@@ -322,13 +332,13 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
     setShowModal(false);
   };
 
-  const refreshCaptcha = () => {
-    const { expression, correctAnswer } = generateRandomMathExpression();
-    setMathExpression(expression);
-    setCorrectAnswer(correctAnswer);
-    // Optionally clear input field
-    // setUserAnswer('');
-  };
+  // const refreshCaptcha = () => {
+  //   const { expression, correctAnswer } = generateRandomMathExpression();
+  //   setMathExpression(expression);
+  //   setCorrectAnswer(correctAnswer);
+  //   // Optionally clear input field
+  //   // setUserAnswer('');
+  // };
 
   return (
     <div>
@@ -505,6 +515,20 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
                           </div>
                         )}
                       </div>
+                      <div className="col-md-12 mt-3 recaptcha-wrapper">
+                        <ReCAPTCHA
+                          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} // your site key
+                          onChange={(token) => setCommunityFormData({ ...communityFormData, commCaptchaToken: token || "" })}
+                          onExpired={() => setCommunityFormData({ ...communityFormData, commCaptchaToken: "" })} // add this
+                          ref={recaptchaRef}
+                          size="normal"
+                          theme="light"
+                        />
+                        {communityFormErrors.commCaptchaToken && (
+                          <p style={{ color: "red" }}>{communityFormErrors.commCaptchaToken}</p>
+                        )}
+                      </div>
+
                       <div className="col-md-12">
                         <div className="sbtn">
                           <input
@@ -673,7 +697,7 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
                         )}
                       </div>
                     </div>
-                    <div className="col-12">
+                    {/* <div className="col-12">
                       <p>
                         Verify you’re human: What is <b>{mathExpression}</b>?
                       </p>
@@ -696,6 +720,20 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
                       >
                         Refresh Captcha
                       </button>
+                    </div> */}
+
+                    <div className="col-12 mt-3 volunteer-captcha recaptcha-wrapper">
+                      <ReCAPTCHA
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} // your site key
+                        onChange={(token) => setFormData({ ...formData, captchaToken: token || "" })}
+                        onExpired={() => setFormData({ ...formData, captchaToken: "" })} // add this
+                        ref={volcaptchaRef}
+                        size="normal"
+                        theme="light"
+                      />
+                      {formErrors.captchaToken && (
+                        <p style={{ color: "red" }}>{formErrors.captchaToken}</p>
+                      )}
                     </div>
                   </div>
                   <div className="modal-footer">

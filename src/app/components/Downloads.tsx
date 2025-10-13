@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import Image from 'next/image';
 import { ApiResponse } from '@/types';
 import countries from '../../data/countries';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 // Images 
 import edit from '../../../public/images/images/edit.png';
@@ -17,6 +18,7 @@ interface BrochureFormData {
     country: string;
     message: string;
     interested_in: string;
+    captchaToken?: string; // ✅ add this
 }
 
 interface BrochureFormErrors {
@@ -45,7 +47,8 @@ const Downloads: React.FC<DownloadsProps> = ({ generalDownloadsInfo }) => {
         phone: '',
         country: '',
         message: '',
-        interested_in: 'Oral Presentation'
+        interested_in: 'Oral Presentation',
+        captchaToken: "",
     });
     const [brochureFormErrors, setBrochureFormErrors] = useState<BrochureFormErrors>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -55,6 +58,8 @@ const Downloads: React.FC<DownloadsProps> = ({ generalDownloadsInfo }) => {
     const [showModal5, setShowModal5] = useState(false);
     const [modalType, setModalType] = useState('');
     const modalRef = useRef<HTMLDivElement | null>(null);
+
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const nameRef = useRef<HTMLInputElement>(null);
     const emailRef = useRef<HTMLInputElement>(null);
@@ -117,29 +122,48 @@ const Downloads: React.FC<DownloadsProps> = ({ generalDownloadsInfo }) => {
             setBrochureFormErrors(errors);
 
             const firstErrorField = Object.keys(errors)[0];
-            const firstErrorMessage = errors[firstErrorField as keyof BrochureFormErrors];
+            const firstErrorMessage =
+                errors[firstErrorField as keyof BrochureFormErrors];
             toast.error(firstErrorMessage);
 
             switch (firstErrorField) {
-                case 'first_name':
-                    nameRef.current?.focus(); break;
-                case 'email':
-                    emailRef.current?.focus(); break;
-                case 'phone':
-                    phoneRef.current?.focus(); break;
-                case 'country':
-                    countryRef.current?.focus(); break;
+                case "first_name":
+                    nameRef.current?.focus();
+                    break;
+                case "email":
+                    emailRef.current?.focus();
+                    break;
+                case "phone":
+                    phoneRef.current?.focus();
+                    break;
+                case "country":
+                    countryRef.current?.focus();
+                    break;
             }
+            return;
+        }
+
+        // Only after all regular fields pass, validate captcha
+        if (!brochureFormData.captchaToken) {
+            const captchaError = { captchaToken: "Please verify you are not a robot" };
+            setBrochureFormErrors(captchaError);
+            toast.error(captchaError.captchaToken);
             return;
         }
 
         setBrochureFormErrors({});
         setIsSubmitting(true);
 
-        try {
-            localStorage.setItem('brochureFormSubmitted', Date.now().toString());
+        // if (!recaptchaRef.current) {
+        //   toast.error("Captcha verification unavailable. Please refresh and try again.");
+        //   return;
+        // }
 
-            // Encode payload values using btoa
+        try {
+
+            if (typeof window !== "undefined")
+                localStorage.setItem("brochureFormSubmitted", Date.now().toString());
+
             const payload = {
                 first_name: utf8ToBase64(brochureFormData.first_name.trim()),
                 email: utf8ToBase64(brochureFormData.email.trim()),
@@ -148,35 +172,37 @@ const Downloads: React.FC<DownloadsProps> = ({ generalDownloadsInfo }) => {
                 message: utf8ToBase64(brochureFormData.message.trim()),
                 interested_in: utf8ToBase64(brochureFormData.interested_in.trim()),
                 modalType,
+                captchaToken: brochureFormData.captchaToken,
             };
 
-            const response = await fetch('/api/brochure', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+            const response = await fetch("/api/brochure", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
             });
 
             if (response.ok) {
                 handleDownload();
                 closeBrochureModal();
-
                 setBrochureFormData({
-                    first_name: '',
-                    email: '',
-                    phone: '',
-                    country: '',
-                    message: '',
-                    interested_in: '',
+                    first_name: "",
+                    email: "",
+                    phone: "",
+                    country: "",
+                    message: "",
+                    interested_in: "",
+                    captchaToken: "",
                 });
-
-                // setUserAnswer('');
+                recaptchaRef.current?.reset(); // reset captcha
                 setBrochureFormErrors({});
             } else {
-                toast.error('Failed to submit form. Please try again.');
+                // toast.error("Failed to submit form. Please try again.");
+                const resData = await response.json();
+                toast.error(resData?.error || "Failed to submit form. Please try again.");
             }
         } catch (error) {
-            console.error('Error submitting form:', error);
-            toast.error('An error occurred. Please try again later.');
+            console.error("Error submitting form:", error);
+            toast.error("An error occurred. Please try again later.");
         } finally {
             setIsSubmitting(false);
         }
@@ -307,17 +333,23 @@ const Downloads: React.FC<DownloadsProps> = ({ generalDownloadsInfo }) => {
                         <div className="modal-content2">
                             <div className="modal-header">
                                 <div className="icon-box">
-                                    <i className="bx bx-file" style={{ marginBottom: "35px" }}></i>
+                                    <i
+                                        className="bx bx-file"
+                                        style={{ marginBottom: "35px" }}
+                                    ></i>
                                 </div>
-                                <h4 className="modal-title w-100">{modalType === 'brochure' ? 'Download Brochure' : 'Download Scientific Program'}</h4>
-                                <button type="button" className="close" onClick={closeBrochureModal} style={{ fontSize: "30px" }}>
+                                <h4 className="modal-title w-100"> {modalType === 'brochure' ? 'Download Brochure' : 'Download Scientific Program'}</h4>
+                                <button
+                                    type="button"
+                                    className="close"
+                                    onClick={closeBrochureModal}
+                                    style={{ fontSize: "30px" }}
+                                >
                                     &times;
                                 </button>
                             </div>
                             <div className="modal-body">
-                                <form
-                                    onSubmit={handleSubmitBrochure}
-                                >
+                                <form onSubmit={handleSubmitBrochure}>
                                     <div className="row">
                                         <div className="d-flex name-info">
                                             <div className="col-6 test">
@@ -328,10 +360,19 @@ const Downloads: React.FC<DownloadsProps> = ({ generalDownloadsInfo }) => {
                                                     ref={nameRef}
                                                     placeholder="Enter name"
                                                     value={brochureFormData.first_name}
-                                                    onChange={(e) => setBrochureFormData({ ...brochureFormData, first_name: e.target.value })}
+                                                    onChange={(e) =>
+                                                        setBrochureFormData({
+                                                            ...brochureFormData,
+                                                            first_name: e.target.value,
+                                                        })
+                                                    }
                                                     disabled={isSubmitting} // Disable field during submission
                                                 />
-                                                {brochureFormErrors.first_name && <p style={{ color: 'red', textAlign: 'left' }}>{brochureFormErrors.first_name}</p>}
+                                                {brochureFormErrors.first_name && (
+                                                    <p style={{ color: "red", textAlign: "left" }}>
+                                                        {brochureFormErrors.first_name}
+                                                    </p>
+                                                )}
                                             </div>
                                             <div className="col-6 test2">
                                                 <label>Email Address:*</label>
@@ -341,35 +382,58 @@ const Downloads: React.FC<DownloadsProps> = ({ generalDownloadsInfo }) => {
                                                     ref={emailRef}
                                                     placeholder="Enter email"
                                                     value={brochureFormData.email}
-                                                    onChange={(e) => setBrochureFormData({ ...brochureFormData, email: e.target.value })}
+                                                    onChange={(e) =>
+                                                        setBrochureFormData({
+                                                            ...brochureFormData,
+                                                            email: e.target.value,
+                                                        })
+                                                    }
                                                     disabled={isSubmitting} // Disable field during submission
                                                 />
-                                                {brochureFormErrors.email && <p style={{ color: 'red', textAlign: 'left' }}>{brochureFormErrors.email}</p>}
+                                                {brochureFormErrors.email && (
+                                                    <p style={{ color: "red", textAlign: "left" }}>
+                                                        {brochureFormErrors.email}
+                                                    </p>
+                                                )}
                                             </div>
                                         </div>
-                                        <div className='d-flex name-info'>
-                                            <div className='col-6 test'>
+                                        <div className="d-flex name-info">
+                                            <div className="col-6 test">
                                                 <label>Phone Number:*</label>
                                                 <input
-                                                    type='text'
+                                                    type="text"
                                                     name="phone"
                                                     ref={phoneRef}
-                                                    placeholder='Enter phone number'
+                                                    placeholder="Enter phone number"
                                                     value={brochureFormData.phone}
-                                                    onChange={(e) => setBrochureFormData({ ...brochureFormData, phone: e.target.value })}
+                                                    onChange={(e) =>
+                                                        setBrochureFormData({
+                                                            ...brochureFormData,
+                                                            phone: e.target.value,
+                                                        })
+                                                    }
                                                     disabled={isSubmitting} // Disable field during submission
                                                 />
-                                                {brochureFormErrors.phone && <p style={{ color: 'red', textAlign: 'left' }}>{brochureFormErrors.phone}</p>}
+                                                {brochureFormErrors.phone && (
+                                                    <p style={{ color: "red", textAlign: "left" }}>
+                                                        {brochureFormErrors.phone}
+                                                    </p>
+                                                )}
                                             </div>
-                                            <div className='col-6 test2 country-drop'>
+                                            <div className="col-6 test2 country-drop">
                                                 <label>Country:*</label>
-                                                <div className='country-drop-block'>
+                                                <div className="country-drop-block">
                                                     <select
                                                         className="set156"
                                                         name="country"
                                                         ref={countryRef}
                                                         value={brochureFormData.country}
-                                                        onChange={(e) => setBrochureFormData({ ...brochureFormData, country: e.target.value })}
+                                                        onChange={(e) =>
+                                                            setBrochureFormData({
+                                                                ...brochureFormData,
+                                                                country: e.target.value,
+                                                            })
+                                                        }
                                                         disabled={isSubmitting} // Disable field during submission
                                                     >
                                                         <option value="">Select Country</option>
@@ -378,55 +442,91 @@ const Downloads: React.FC<DownloadsProps> = ({ generalDownloadsInfo }) => {
                                                                 {country}
                                                             </option>
                                                         ))}
-
                                                     </select>
                                                 </div>
-                                                {brochureFormErrors.country && <p style={{ color: 'red', textAlign: 'left' }}>{brochureFormErrors.country}</p>}
+                                                {brochureFormErrors.country && (
+                                                    <p style={{ color: "red", textAlign: "left" }}>
+                                                        {brochureFormErrors.country}
+                                                    </p>
+                                                )}
                                             </div>
                                         </div>
-                                        <div className='d-flex name-info'>
-                                            <div className='col-6 test country-drop'>
+                                        <div className="d-flex name-info">
+                                            <div className="col-6 test country-drop">
                                                 <label>Interested In:*</label>
-                                                <div className='country-drop-block'>
+                                                <div className="country-drop-block">
                                                     <select
                                                         className="set156"
                                                         name="interested_in"
                                                         ref={interestedInRef}
                                                         value={brochureFormData.interested_in}
-                                                        onChange={(e) => setBrochureFormData({ ...brochureFormData, interested_in: e.target.value })}
+                                                        onChange={(e) =>
+                                                            setBrochureFormData({
+                                                                ...brochureFormData,
+                                                                interested_in: e.target.value,
+                                                            })
+                                                        }
                                                         disabled={isSubmitting} // Disable field during submission
                                                     >
-                                                        <option value="Oral Presentation">Oral Presentation</option>
-                                                        <option value="Poster Presentation">Poster Presentation</option>
-                                                        <option value="Delegate (Participation)">Delegate (Participation)</option>
+                                                        <option value="Oral Presentation">
+                                                            Oral Presentation
+                                                        </option>
+                                                        <option value="Poster Presentation">
+                                                            Poster Presentation
+                                                        </option>
+                                                        <option value="Delegate (Participation)">
+                                                            Delegate (Participation)
+                                                        </option>
                                                         <option value="Volunteer">Volunteer</option>
                                                         <option value="Other">Other</option>
                                                     </select>
                                                 </div>
-                                                {brochureFormErrors.interested_in && <p style={{ color: 'red', textAlign: 'left' }}>{brochureFormErrors.interested_in}</p>}
+                                                {brochureFormErrors.interested_in && (
+                                                    <p style={{ color: "red", textAlign: "left" }}>
+                                                        {brochureFormErrors.interested_in}
+                                                    </p>
+                                                )}
                                             </div>
-                                            <div className='col-6 test2'>
+                                            <div className="col-6 test2">
                                                 <label>Query (Optional):</label>
 
                                                 <textarea
                                                     placeholder="Enter Your Query"
                                                     value={brochureFormData.message}
-                                                    onChange={(e) => setBrochureFormData({ ...brochureFormData, message: e.target.value })}
+                                                    onChange={(e) =>
+                                                        setBrochureFormData({
+                                                            ...brochureFormData,
+                                                            message: e.target.value,
+                                                        })
+                                                    }
                                                     disabled={isSubmitting} // Disable field during submission
                                                 />
-
                                             </div>
-
+                                        </div>
+                                        <div className="d-flex name-info Captcha-brochure-block">
+                                            <div className="col-6 recaptcha-wrapper">
+                                                <ReCAPTCHA
+                                                    ref={recaptchaRef}
+                                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""}
+                                                    onChange={(token) =>
+                                                        setBrochureFormData({ ...brochureFormData, captchaToken: token ?? "" })
+                                                    }
+                                                />
+                                                {brochureFormErrors.captchaToken && (
+                                                    <p style={{ color: "red", textAlign: "left" }}>{brochureFormErrors.captchaToken}</p>
+                                                )}
+                                            </div>
+                                            <div className="col-6 test2"></div>
                                         </div>
                                     </div>
                                     <div className="modal-footer">
                                         <button
                                             type="submit"
-                                            title={isSubmitting ? 'Please wait' : 'Proceed'}
+                                            title={isSubmitting ? "Please wait" : "Proceed"}
                                             className="btn btn-success btn-block"
                                             disabled={isSubmitting} // Disable button during submission
                                         >
-                                            {isSubmitting ? 'Please wait' : 'Proceed'}
+                                            {isSubmitting ? "Please wait" : "Proceed"}
                                         </button>
                                     </div>
                                 </form>

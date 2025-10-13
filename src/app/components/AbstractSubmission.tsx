@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import countries from "../../data/countries";
 import { toast } from "react-toastify";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface FormDataState {
   module_name: string;
@@ -73,14 +74,14 @@ interface Errors {
   [key: string]: string | null;
 }
 
-interface CaptchaValue {
-  text: string;
-  captchaId: string;
-}
+// interface CaptchaValue {
+//   text: string;
+//   captchaId: string;
+// }
 
 import map2 from "../../../public/images/images/map.png";
 import { ApiResponse } from "@/types";
-import Captcha, { CaptchaRef } from "./Captcha";
+// import Captcha, { CaptchaRef } from "./Captcha";
 
 interface GeneralInfoProps {
   generalInfo: ApiResponse;
@@ -138,8 +139,11 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
     useState<string>("No File Chosen");
   const [errors, setErrors] = useState<Errors>({});
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [captchaValue, setCaptchaValue] = useState<CaptchaValue | null>(null);
+  // const [captchaValue, setCaptchaValue] = useState<CaptchaValue | null>(null);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  // Use ref for ReCAPTCHA
+  const captchaRef = useRef<ReCAPTCHA>(null);
 
   const modalRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -157,13 +161,14 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
   const intrestedRef = useRef<HTMLSelectElement>(null);
   const abstractTitleRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
-  const fileRef = useRef<HTMLInputElement>(null);
-  const captchaRef = useRef<CaptchaRef>(null);
-  const [isCaptchaValid, setIsCaptchaValid] = useState<boolean>(false);
+  const fileRef = useRef<HTMLInputElement | null>(null);
 
-  const [formErrors, setFormErrors] = useState<{
-    [key: string]: string | undefined;
-  }>({});
+  // const captchaRef = useRef<CaptchaRef>(null);
+  // const [isCaptchaValid, setIsCaptchaValid] = useState<boolean>(false);
+
+  // const [formErrors, setFormErrors] = useState<{
+  //   [key: string]: string | undefined;
+  // }>({});
 
   // Extract dynamic project name from general.site_url, sanitize, and keep it safe for server path segments
   // const rawSiteUrl = general?.site_url || "";
@@ -440,9 +445,9 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
           case "upload_abstract_file":
             fileRef.current?.focus();
             break;
-          case "captcha":
-            captchaRef.current?.focusCaptcha();
-            break;
+          // case "captcha":
+          //   captchaRef.current?.focusCaptcha();
+          //   break;
         }
         return;
       }
@@ -469,19 +474,19 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
         ) {
           maybeFocusable.focus();
         }
-      } else if (fieldName === "upload_abstract_file" && !isCaptchaValid) {
-        captchaRef.current?.focusCaptcha();
+      } else if (fieldName === "upload_abstract_file") {
+        // captchaRef.current?.focusCaptcha();
       }
     }
   };
 
-  const handleCaptchaInputChange = () => {
-    setFormErrors((prevErrors) => {
-      const newErrors = { ...prevErrors };
-      delete newErrors.captcha;
-      return newErrors;
-    });
-  };
+  // const handleCaptchaInputChange = () => {
+  //   setFormErrors((prevErrors) => {
+  //     const newErrors = { ...prevErrors };
+  //     delete newErrors.captcha;
+  //     return newErrors;
+  //   });
+  // };
 
   const closeModal = () => {
     setShowModal(false);
@@ -659,46 +664,49 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
     } else if (!formData.upload_abstract_file) {
       nextErrors.upload_abstract_file = "Abstract file is required";
       firstErrorField = fileRef;
+    } else if (!captchaToken) {
+      nextErrors.captcha = "Please verify that you are not a robot";
+      firstErrorField = null;
     }
 
     // ====== CAPTCHA CHECK ======
-    if (
-      !nextErrors.title &&
-      !nextErrors.name &&
-      !nextErrors.email &&
-      !nextErrors.alt_email &&
-      !nextErrors.phone &&
-      !nextErrors.city &&
-      !nextErrors.country &&
-      !nextErrors.organization &&
-      !nextErrors.intrested &&
-      !nextErrors.abstract_title &&
-      !nextErrors.upload_abstract_file
-    ) {
-      if (
-        !captchaValue ||
-        !captchaValue.text ||
-        captchaValue.text.trim() === ""
-      ) {
-        nextErrors.captcha = "CAPTCHA is required";
-        setErrors(nextErrors);
-        toast.error(nextErrors.captcha);
-        captchaRef.current?.focusCaptcha?.();
-        return;
-      } else if (!isCaptchaValid) {
-        nextErrors.captcha = "Invalid CAPTCHA";
-        setErrors(nextErrors);
-        toast.error(nextErrors.captcha);
-        captchaRef.current?.focusCaptcha?.();
-        return;
-      } else {
-        const fileError = validateAbstractFile(formData.upload_abstract_file);
-        if (fileError) {
-          nextErrors.upload_abstract_file = fileError;
-          firstErrorField = fileRef;
-        }
-      }
-    }
+    // if (
+    //   !nextErrors.title &&
+    //   !nextErrors.name &&
+    //   !nextErrors.email &&
+    //   !nextErrors.alt_email &&
+    //   !nextErrors.phone &&
+    //   !nextErrors.city &&
+    //   !nextErrors.country &&
+    //   !nextErrors.organization &&
+    //   !nextErrors.intrested &&
+    //   !nextErrors.abstract_title &&
+    //   !nextErrors.upload_abstract_file
+    // ) {
+    //   if (
+    //     !captchaValue ||
+    //     !captchaValue.text ||
+    //     captchaValue.text.trim() === ""
+    //   ) {
+    //     nextErrors.captcha = "CAPTCHA is required";
+    //     setErrors(nextErrors);
+    //     toast.error(nextErrors.captcha);
+    //     captchaRef.current?.focusCaptcha?.();
+    //     return;
+    //   } else if (!isCaptchaValid) {
+    //     nextErrors.captcha = "Invalid CAPTCHA";
+    //     setErrors(nextErrors);
+    //     toast.error(nextErrors.captcha);
+    //     captchaRef.current?.focusCaptcha?.();
+    //     return;
+    //   } else {
+    //     const fileError = validateAbstractFile(formData.upload_abstract_file);
+    //     if (fileError) {
+    //       nextErrors.upload_abstract_file = fileError;
+    //       firstErrorField = fileRef;
+    //     }
+    //   }
+    // }
 
     // ====== SHOW VALIDATION ERRORS ======
     if (Object.keys(nextErrors).length > 0) {
@@ -762,6 +770,7 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
         intrested: utf8ToBase64(formData.intrested.trim()),
         upload_abstract_file: utf8ToBase64(fileUrl.trim()),
         other_info: utf8ToBase64(JSON.stringify(otherInfo)),
+        captchaToken: captchaToken?.trim() ?? ""
       };
 
       const response = await fetch("/api/abstract", {
@@ -822,7 +831,15 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
           message: "",
           upload_abstract_file: null,
         });
-        captchaRef.current?.refreshCaptcha();
+        // <<< ADD THIS LINE TO RESET FILE INPUT DOM >>>
+        if (fileRef.current) {
+          fileRef.current.value = ""; // reset the file input
+        }
+
+        // Reset displayed filename
+        setSelectedFileName("");
+
+        captchaRef.current?.reset();
       } else {
         let message = "Failed to submit the form";
         try {
@@ -1228,7 +1245,7 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
                           onChange={handleChange}
                           ref={fileRef}
                           onKeyDown={(e) =>
-                            handleKeyDown(e, "upload_abstract_file", captchaRef)
+                            handleKeyDown(e, "upload_abstract_file")
                           }
                           disabled={isSubmitting}
                         />
@@ -1249,17 +1266,16 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
                 </div>
 
                 <div className="row clearfix">
-                  <div className="col-md-12" style={{ marginTop: "20px" }}>
-                    <Captcha
+                  <div className="col-md-12 recaptcha-wrapper" style={{ marginTop: "20px" }}>
+                    <ReCAPTCHA
                       ref={captchaRef}
-                      onValidate={setIsCaptchaValid}
-                      onInputChange={handleCaptchaInputChange}
-                      setCaptchaValue={setCaptchaValue}
-                      isSubmitting={isSubmitting}
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                      onChange={(token: string | null) => {
+                        setCaptchaToken(token);
+                        setErrors((prev) => ({ ...prev, captcha: "" })); // clear error on change
+                      }}
                     />
-                    {formErrors.captcha && (
-                      <p className="error">{formErrors.captcha}</p>
-                    )}
+                    {errors.captcha && <p className="error">{errors.captcha}</p>}
                   </div>
                 </div>
                 <hr />

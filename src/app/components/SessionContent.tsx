@@ -88,7 +88,7 @@ const SessionsComponent = ({
             <div className="list-of-topics-navigation-block">
               <p>
                 Explore{" "}
-                <Link href="/list-of-topics" title="List Of Topics">
+                <Link href="/list-of-topics" title="List of Topics">
                   all topics for {generalInfo?.confkeyword}.
                 </Link>{" "}
                 Submit your abstract to present at the conference.

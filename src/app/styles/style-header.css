@@ -10497,3 +10497,48 @@ input[text]:focus {
 		font-size: 11px;
 	}
 }
+
+/* Google recaptcha  */
+.Captcha-brochure-block {
+	margin-top: 15px;
+}
+
+.recaptcha-wrapper {
+	width: 100%;
+	/* container width */
+	max-width: 320px;
+	/* set max width */
+	margin: 0 auto;
+}
+
+.recaptcha-wrapper iframe {
+	width: 100% !important;
+	/* stretch iframe to container */
+	height: auto !important;
+	/* transform: scale(0.85); */
+	/* adjust scaling */
+	transform-origin: 0 0;
+	/* scale from top-left */
+}
+
+@media (max-width: 375px) {
+	.recaptcha-wrapper iframe {
+		transform: scale(0.7);
+	}
+}
+
+#enquiry_submit_btn,
+#joinourcommunitysubmitbtn {
+	margin-top: 10px;
+}
+
+.register-captcha-wrap,
+.sponsor-captcha,
+.volunteer-captcha {
+	margin-top: 20px;
+}
+
+.sponsor-captcha,
+.volunteer-captcha {
+	margin-left: 0;
+}
