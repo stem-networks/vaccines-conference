@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import Link from 'next/link';
 // import axios from 'axios';
 import { ApiResponse, RegistrationInfo } from '@/types';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 interface ContactFormData {
     name: string;
@@ -13,6 +14,7 @@ interface ContactFormData {
     phone: string;
     query: string;
     category: string;
+    captchaToken?: string;
 }
 
 interface ContactFormErrors {
@@ -21,6 +23,7 @@ interface ContactFormErrors {
     phone?: string;
     query?: string;
     userAnswer?: string;
+    captchaToken?: string;
 }
 
 interface MainSliderProps {
@@ -29,26 +32,26 @@ interface MainSliderProps {
 }
 
 // Generate random BODMAS expression
-const generateRandomMathExpression = (): { expression: string; correctAnswer: string } => {
-    const operations = ['+', '-', '*'];
-    const randomOperation = operations[Math.floor(Math.random() * operations.length)];
+// const generateRandomMathExpression = (): { expression: string; correctAnswer: string } => {
+//     const operations = ['+', '-', '*'];
+//     const randomOperation = operations[Math.floor(Math.random() * operations.length)];
 
-    const num1 = Math.floor(Math.random() * 10) + 1;
-    const num2 = Math.floor(Math.random() * 10) + 1;
-    const num3 = Math.floor(Math.random() * 10) + 1;
+//     const num1 = Math.floor(Math.random() * 10) + 1;
+//     const num2 = Math.floor(Math.random() * 10) + 1;
+//     const num3 = Math.floor(Math.random() * 10) + 1;
 
-    const useParentheses = Math.random() < 0.5;
-    let expression: string;
+//     const useParentheses = Math.random() < 0.5;
+//     let expression: string;
 
-    if (useParentheses) {
-        expression = `(${num1} ${randomOperation} ${num2}) ${randomOperation} ${num3}`;
-    } else {
-        expression = `${num1} ${randomOperation} ${num2} ${randomOperation} ${num3}`;
-    }
+//     if (useParentheses) {
+//         expression = `(${num1} ${randomOperation} ${num2}) ${randomOperation} ${num3}`;
+//     } else {
+//         expression = `${num1} ${randomOperation} ${num2} ${randomOperation} ${num3}`;
+//     }
 
-    const correctAnswer = eval(expression).toFixed(2); // returns string
-    return { expression, correctAnswer };
-};
+//     const correctAnswer = eval(expression).toFixed(2); // returns string
+//     return { expression, correctAnswer };
+// };
 
 const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
 
@@ -64,16 +67,20 @@ const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
     };
 
     const [showModal8, setShowModal8] = useState<boolean>(false);
-    const [mathExpression, setMathExpression] = useState('');
-    const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
+    // const [mathExpression, setMathExpression] = useState('');
+    // const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
     const [contactFormData, setContactFormData] = useState<ContactFormData>({
         name: '',
         email: '',
         phone: '',
         query: '',
-        category: ''
+        category: '',
+        captchaToken: ''
     });
+
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
+
     const [modalHeading, setModalHeading] = useState<string>('');
     const [contactFormErrors, setContactFormErrors] = useState<ContactFormErrors>({});
     const [showModal6, setShowModal6] = useState(false); // For success modal
@@ -84,7 +91,7 @@ const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
         heading: '',
         query: ''
     });
-    const [userAnswer, setUserAnswer] = useState('');
+    // const [userAnswer, setUserAnswer] = useState('');
 
     const modalRef = useRef<HTMLDivElement | null>(null);
 
@@ -112,11 +119,11 @@ const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
 
     // Toggle Modal with dynamic heading and category
     const toggleModal2 = (category: string, heading: string): void => {
-        if (!showModal8) {
-            const { expression, correctAnswer } = generateRandomMathExpression();
-            setMathExpression(expression);
-            setCorrectAnswer(correctAnswer);
-        }
+        // if (!showModal8) {
+        //     const { expression, correctAnswer } = generateRandomMathExpression();
+        //     setMathExpression(expression);
+        //     setCorrectAnswer(correctAnswer);
+        // }
 
         setContactFormData((prevState) => ({
             ...prevState,
@@ -158,86 +165,12 @@ const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
             errors.query = 'Message is required';
         }
 
-        else if (!userAnswer) {
-            errors.userAnswer = 'Anti-spam answer is required';
+        else if (!contactFormData.captchaToken) {
+            errors.captchaToken = 'Please verify you are not a robot';
         }
 
         return errors;
     };
-
-    // const handleSubmitContact = async (event: React.FormEvent<HTMLFormElement>) => {
-    //     event.preventDefault();
-    //     setIsSubmitting(true);
-    //     const errors = validateFormContact();
-
-    //     if (Object.keys(errors).length === 0) {
-    //         if (parseFloat(userAnswer) !== parseFloat(correctAnswer || '0')) {
-    //             setContactFormErrors({ userAnswer: 'Incorrect answer. Please try again.' });
-    //             toast.error('Incorrect answer. Please try again.');
-    //             setIsSubmitting(false);
-    //             const answerInput = document.getElementById('userAnswer');
-    //             if (answerInput) answerInput.focus();
-
-    //             return;
-    //         }
-
-    //         try {
-    //             await axios.post('/api/contact', {
-    //                 formData: contactFormData,
-    //             });
-
-    //             setShowModal8(false);
-
-    //             // Set success modal based on category
-    //             setSuccessModalContent({
-    //                 heading: contactFormData.category === 'sponsor' ? 'Sponsorships' : 'Exhibitors',
-    //                 query: (
-    //                     <p>
-    //                         For {contactFormData.category} opportunities, please write to{' '}
-    //                         <Link href={`mailto:${general?.cemail}`} title={general?.cemail}>
-    //                             {general?.cemail}
-    //                         </Link>
-    //                     </p>
-    //                 )
-    //             });
-    //             setShowModal6(true);
-
-
-    //             // Reset the form
-    //             setContactFormData({
-    //                 name: '',
-    //                 email: '',
-    //                 phone: '',
-    //                 query: '',
-    //                 category: ''
-    //             });
-    //             setUserAnswer('');
-    //             setContactFormErrors({});
-    //             // setError('');
-
-    //         } catch (err) {
-    //             console.error('Submission error:', err); // <-- Use the error
-    //             // setError('Error submitting form. Please try again later.');
-    //             toast.error('Error submitting form. Please try again later.');
-    //         }
-    //         finally {
-    //             setIsSubmitting(false)
-    //         }
-
-    //     } else {
-    //         setContactFormErrors(errors);
-
-    //         const firstErrorField = Object.keys(errors)[0];
-    //         const firstErrorMessage = errors[firstErrorField as keyof ContactFormErrors];
-
-    //         toast.error(firstErrorMessage || 'Please fill the form correctly.');
-
-    //         // Focus the field with the first error
-    //         const errorInput = document.getElementById(firstErrorField);
-    //         if (errorInput) errorInput.focus();
-    //         setIsSubmitting(false);
-    //     }
-    // };
 
     // UTF-8 safe Base64 encoder
     function utf8ToBase64(str: string) {
@@ -253,16 +186,6 @@ const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
         const errors = validateFormContact();
 
         if (Object.keys(errors).length === 0) {
-            if (parseFloat(userAnswer) !== parseFloat(correctAnswer || '0')) {
-                setContactFormErrors({ userAnswer: 'Incorrect answer. Please try again.' });
-                toast.error('Incorrect answer. Please try again.');
-                setIsSubmitting(false);
-                const answerInput = document.getElementById('userAnswer');
-                if (answerInput) answerInput.focus();
-
-                return;
-            }
-
             try {
 
                 const payload = {
@@ -270,13 +193,18 @@ const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
                     email: utf8ToBase64(contactFormData.email.trim()),
                     phone: utf8ToBase64(contactFormData.phone.trim()),
                     query: utf8ToBase64(contactFormData.query.trim()),
+                    captchaToken: contactFormData.captchaToken,
                 };
 
-                await fetch("/api/sponsor-exhibitor", {
+                const res = await fetch("/api/sponsor-exhibitor", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(payload),
                 });
+                const data = await res.json();
+                if (!res.ok || !data.success) {
+                    throw new Error(data.error || "Submission failed");
+                }
 
                 // Close modal and show success
                 setShowModal8(false);
@@ -300,9 +228,10 @@ const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
                     email: '',
                     phone: '',
                     query: '',
-                    category: ''
+                    category: '',
+                    captchaToken: ''
                 });
-                setUserAnswer('');
+                recaptchaRef.current?.reset();
                 setContactFormErrors({});
                 // setError('');
 
@@ -328,12 +257,6 @@ const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
             if (errorInput) errorInput.focus();
             setIsSubmitting(false);
         }
-    };
-
-    const refreshCaptcha = () => {
-        const { expression, correctAnswer } = generateRandomMathExpression();
-        setMathExpression(expression);
-        setCorrectAnswer(correctAnswer);
     };
 
     return (
@@ -482,7 +405,7 @@ const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
                                                 {contactFormErrors.query && <p style={{ color: 'red', textAlign: 'left' }}>{contactFormErrors.query}</p>}
                                             </div>
                                         </div>
-                                        <div className='col-12'>
+                                        {/* <div className='col-12'>
                                             <p>Verify you’re human: What is <b>{mathExpression}</b> ?</p>
                                             <input
                                                 id="userAnswer"
@@ -495,6 +418,22 @@ const MainSlider = ({ generalInfo, registerInfo }: MainSliderProps) => {
                                             />
                                             {contactFormErrors.userAnswer && <p style={{ color: 'red', textAlign: 'left' }}>{contactFormErrors.userAnswer}</p>}
                                             <button type="button" title='Refresh Captcha' disabled={isSubmitting} onClick={refreshCaptcha} className="btn btn-secondary mt-2">Refresh Captcha</button>
+                                        </div> */}
+                                        <div className='col-12 mt-2 sponsor-captcha recaptcha-wrapper'>
+                                            <ReCAPTCHA
+                                                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} // your site key
+                                                onChange={(token) =>
+                                                    setContactFormData((prev) => ({
+                                                        ...prev,
+                                                        captchaToken: token ?? "",
+                                                    }))}
+                                                ref={recaptchaRef}
+                                                size="normal"
+                                                theme="light"
+                                            />
+                                            {contactFormErrors.captchaToken && (
+                                                <p style={{ color: "red" }}>{contactFormErrors.captchaToken}</p>
+                                            )}
                                         </div>
                                         <input type="hidden" name="category" value={contactFormData.category || "joinourcommunity"} />
                                     </div>

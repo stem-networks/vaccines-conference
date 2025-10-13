@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import Link from "next/link";
 import { ApiResponse, IndexPageData } from "@/types";
 import countries from "../../data/countries";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface BrochureFormData {
   first_name: string;
@@ -13,6 +14,7 @@ interface BrochureFormData {
   country: string;
   message: string;
   interested_in: string;
+  captchaToken?: string; // ✅ add this
 }
 
 interface BrochureFormErrors {
@@ -51,6 +53,7 @@ const BannerSection: React.FC<BannerSectionProps> = ({
     country: "",
     message: "",
     interested_in: "Oral Presentation",
+    captchaToken: "",
   });
   const [brochureFormErrors, setBrochureFormErrors] =
     useState<BrochureFormErrors>({});
@@ -60,6 +63,8 @@ const BannerSection: React.FC<BannerSectionProps> = ({
   const [showModal5, setShowModal5] = useState(false);
   const [modalType, setModalType] = useState('');
   const modalRef = useRef<HTMLDivElement | null>(null);
+
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const shouldShowModal = (): boolean => {
     if (typeof window === "undefined") return true;
@@ -181,10 +186,24 @@ const BannerSection: React.FC<BannerSectionProps> = ({
       return;
     }
 
+    // Only after all regular fields pass, validate captcha
+    if (!brochureFormData.captchaToken) {
+      const captchaError = { captchaToken: "Please verify you are not a robot" };
+      setBrochureFormErrors(captchaError);
+      toast.error(captchaError.captchaToken);
+      return;
+    }
+
     setBrochureFormErrors({});
     setIsSubmitting(true);
 
+    // if (!recaptchaRef.current) {
+    //   toast.error("Captcha verification unavailable. Please refresh and try again.");
+    //   return;
+    // }
+
     try {
+
       if (typeof window !== "undefined")
         localStorage.setItem("brochureFormSubmitted", Date.now().toString());
 
@@ -196,6 +215,7 @@ const BannerSection: React.FC<BannerSectionProps> = ({
         message: utf8ToBase64(brochureFormData.message.trim()),
         interested_in: utf8ToBase64(brochureFormData.interested_in.trim()),
         modalType,
+        captchaToken: brochureFormData.captchaToken,
       };
 
       const response = await fetch("/api/brochure", {
@@ -214,10 +234,14 @@ const BannerSection: React.FC<BannerSectionProps> = ({
           country: "",
           message: "",
           interested_in: "",
+          captchaToken: "",
         });
+        recaptchaRef.current?.reset(); // reset captcha
         setBrochureFormErrors({});
       } else {
-        toast.error("Failed to submit form. Please try again.");
+        // toast.error("Failed to submit form. Please try again.");
+        const resData = await response.json();
+        toast.error(resData?.error || "Failed to submit form. Please try again.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -601,6 +625,21 @@ const BannerSection: React.FC<BannerSectionProps> = ({
                           disabled={isSubmitting} // Disable field during submission
                         />
                       </div>
+                    </div>
+                    <div className="d-flex name-info Captcha-brochure-block">
+                      <div className="col-6 recaptcha-wrapper">
+                        <ReCAPTCHA
+                          ref={recaptchaRef}
+                          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""}
+                          onChange={(token) =>
+                            setBrochureFormData({ ...brochureFormData, captchaToken: token ?? "" })
+                          }
+                        />
+                        {brochureFormErrors.captchaToken && (
+                          <p style={{ color: "red", textAlign: "left" }}>{brochureFormErrors.captchaToken}</p>
+                        )}
+                      </div>
+                      <div className="col-6 test2"></div>
                     </div>
                   </div>
                   <div className="modal-footer">
