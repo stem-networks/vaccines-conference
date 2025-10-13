@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { OnelinerData, ApiResponse, IndexPageData } from "@/types";
 import { toast } from "react-toastify";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface FooterProps {
   generalData: ApiResponse;
@@ -17,6 +18,7 @@ type FormErrors = {
   enquiryquery?: string;
   email?: string;
   message?: string;
+  captchaToken?: string; // NEW
 };
 
 interface TawkAPIType {
@@ -44,7 +46,10 @@ const Footer: React.FC<FooterProps> = ({ generalData, indexPageData }) => {
     enquiryname: "",
     enquiryemail: "",
     enquiryquery: "",
+    captchaToken: "", // NEW: store recaptcha token
   });
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({});
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -82,6 +87,8 @@ const Footer: React.FC<FooterProps> = ({ generalData, indexPageData }) => {
       errors.enquiryemail = "Email is invalid";
     } else if (!formData.enquiryquery.trim()) {
       errors.enquiryquery = "Query is required";
+    } else if (!formData.captchaToken) {
+      errors.captchaToken = "Please verify you are not a robot";
     }
 
     setFormErrors(errors);
@@ -97,6 +104,10 @@ const Footer: React.FC<FooterProps> = ({ generalData, indexPageData }) => {
       } else if (errors.enquiryquery) {
         toast.error(errors.enquiryquery);
         queryRef.current?.focus();
+      }
+      else if (errors.captchaToken) {
+        toast.error(errors.captchaToken);
+        // recaptchaRef.current?.focus();
       }
       return false;
     }
@@ -141,6 +152,8 @@ const Footer: React.FC<FooterProps> = ({ generalData, indexPageData }) => {
         enquiryname: utf8ToBase64(formData.enquiryname.trim()),
         enquiryemail: utf8ToBase64(formData.enquiryemail.trim()),
         enquiryquery: utf8ToBase64(formData.enquiryquery.trim()),
+        captchaToken: formData.captchaToken, // send captcha token to API
+
       };
 
       const response = await fetch("/api/enquiry", {
@@ -155,7 +168,9 @@ const Footer: React.FC<FooterProps> = ({ generalData, indexPageData }) => {
           enquiryname: "",
           enquiryemail: "",
           enquiryquery: "",
+          captchaToken: ""
         });
+        recaptchaRef.current?.reset();
         setFormErrors({});
       } else {
         // toast.error(response.message || "Submission failed. Please try again.");
@@ -357,8 +372,25 @@ const Footer: React.FC<FooterProps> = ({ generalData, indexPageData }) => {
                   />
                 </div>
 
+                <div className="mt-2 recaptcha-wrapper">
+                  <ReCAPTCHA
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} // your site key
+                    onChange={(token) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        captchaToken: token ?? "",
+                      }))}
+                    ref={recaptchaRef}
+                    size="normal"
+                    theme="light"
+                  />
+                  {formErrors.captchaToken && (
+                    <p style={{ color: "red" }}>{formErrors.captchaToken}</p>
+                  )}
+                </div>
+
                 <button
-                  className="btn btn-primary w-100 mt-3"
+                  className="btn btn-primary w-100 mt-5"
                   type="submit"
                   title="Submit"
                   id="enquiry_submit_btn"

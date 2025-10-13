@@ -1,5 +1,6 @@
 // src/app/api/register/route.ts
 import { NextResponse } from "next/server";
+import axios from "axios";
 
 export async function POST(req: Request) {
 
@@ -13,6 +14,28 @@ export async function POST(req: Request) {
 
   try {
     const data = await req.json();
+    const { captchaToken } = data;
+
+    //  Validate captcha token
+    if (!captchaToken || typeof captchaToken !== "string" || captchaToken.trim() === "") {
+      return NextResponse.json(
+        { success: false, error: "Captcha token missing" },
+        { status: 400 }
+      );
+    }
+
+    // 🔍 Verify captcha with Google
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+    const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captchaToken}`;
+    const { data: verification } = await axios.post(verifyUrl);
+
+    if (!verification.success) {
+      return NextResponse.json(
+        { success: false, error: "Invalid captcha verification" },
+        { status: 400 }
+      );
+    }
+
     const cid = process.env.CID || "";
 
     const formData = new FormData();
@@ -50,7 +73,10 @@ export async function POST(req: Request) {
     const result = await apiRes.json();
     return NextResponse.json(result);
   } catch (error) {
-    console.error("Register API Error:", error);
-    return NextResponse.json({ success: false, error: "Internal server error" }, { status: 500 });
+    console.error("Error in register API:", error);
+    return NextResponse.json(
+      { success: false, error: "Something went wrong while submitting the form." },
+      { status: 500 }
+    );
   }
 }
