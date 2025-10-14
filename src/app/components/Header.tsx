@@ -121,7 +121,7 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                   </Link>
                   {presenterFee && <span> For Only ${presenterFee}</span>}
                 </li>
-                <li className="text-right">{general.venue_p1 || ""}</li>
+                {/* <li className="text-right">{general.venue_p1 || ""}</li> */}
               </ul>
             </div>
           </div>
@@ -148,7 +148,7 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                 </Link>
               </div>
 
-              {/* <div className="venue-header-block">
+              <div className="venue-header-block">
                 {general.venue_p1 ? (
                   <div className="map_wrap156" style={{ textAlign: 'start' }}>
                     <Image
@@ -178,7 +178,7 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                 ) : null}
               </div>
 
-              <div className='approved-provider-block'>
+              {/* <div className='approved-provider-block'>
                 <Image src="/images/images/cpd.jpg" alt="CPD Accredited Conference" className='approved-prov-img' title="CPD Accredited Conference" width={360} height={130} />
               </div> */}
 

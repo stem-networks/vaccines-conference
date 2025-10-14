@@ -16,85 +16,102 @@ const committee = () => {
     const members: Member[] = [
         {
             id: 1,
-            image: "/images/images/Thomas.png",
-            name: "Thomas J. Webster",
+            image: "/images/committee-2025/Wucherpfennig.webp",
+            name: "Kai Wucherpfennig",
             country: "United States",
-            institution: "Hebei University of Technology",
-            altText: "Thomas J. Webster"
+            institution: "Dana Farber Cancer Institute",
+            altText: "Kai Wucherpfennig",
         },
         {
             id: 2,
-            image: "/images/images/ravi_maharjan.webp",
-            name: "Ravi Maharjan",
-            country: "South Korea",
-            institution: "Dongguk University",
-            altText: "Ravi Maharjan"
+            image: "/images/committee-2025/Nakhasi.webp",
+            name: "Hira L. Nakhasi",
+            country: "United States",
+            institution: "Center for Biologics Evaluation and Research (CBER) of FDA",
+            altText: "Hira L. Nakhasi",
         },
         {
             id: 3,
-            image: "/images/images/giovanni.webp",
-            name: "Giovanni Pagano",
-            country: "Italy",
-            institution: "University of Naples Federico II",
-            altText: "Giovanni Pagano"
+            image: "/images/committee-2025/pierre.png",
+            name: "Pierre A. Morgon",
+            country: "Switzerland",
+            institution: "CEO MRGN Advisors",
+            altText: "Pierre A. Morgon",
         },
         {
             id: 4,
-            image: "/images/images/keerti_Maheshwari.jpeg",
-            name: "Keerti Maheshwari",
-            country: "India",
-            institution: "Delhi Pharmaceutical Sciences and Research University",
-            altText: "Keerti Maheshwari"
+            image: "/images/committee-2025/diego.webp",
+            name: "Diego Tomassone",
+            country: "Italy",
+            institution: "Holos Medica Clinical and Research",
+            altText: "Diego Tomassone",
         },
         {
             id: 5,
-            image: "/images/images/Jaswanth.webp",
-            name: "B.H. Jaswanth Gowda",
+            image: "/images/committee-2025/shokoh_parham.webp",
+            name: "Shokoh Parham",
             country: "United Kingdom",
-            institution: "Queen's University Belfast",
-            altText: "B.H. Jaswanth Gowda"
+            institution: "University of Technology Malaysia",
+            altText: "Shokoh Parham",
         },
         {
             id: 6,
-            image: "/images/images/rodica_olteanu.jpg",
-            name: "Rodica Olteanu",
-            country: "Romania",
-            institution: "Colentina Clinical Hospital",
-            altText: "Rodica Olteanu"
-        }
-        // {
-        //   id: 7,
-        //   image: "/images/images/member7.jpg",
-        //   name: "Dr. Sarah Johnson",
-        //   country: "Canada",
-        //   institution: "University of Toronto",
-        //   altText: "Dr. Sarah Johnson"
-        // },
-        // {
-        //   id: 8,
-        //   image: "/images/images/member8.jpg",
-        //   name: "Prof. Michael Chen",
-        //   country: "Australia",
-        //   institution: "University of Sydney",
-        //   altText: "Prof. Michael Chen"
-        // },
-        // {
-        //   id: 9,
-        //   image: "/images/images/member9.jpg",
-        //   name: "Dr. Elena Rodriguez",
-        //   country: "Spain",
-        //   institution: "University of Barcelona",
-        //   altText: "Dr. Elena Rodriguez"
-        // },
-        // {
-        //   id: 10,
-        //   image: "/images/images/member10.jpg",
-        //   name: "Prof. James Wilson",
-        //   country: "Germany",
-        //   institution: "Technical University of Munich",
-        //   altText: "Prof. James Wilson"
-        // }
+            image: "/images/committee-2025/ahmed_hegazi.webp",
+            name: "Ahmed G. Hegazi",
+            country: "Egypt",
+            institution: "National Research Center",
+            altText: "Ahmed G. Hegazi",
+        },
+        {
+            id: 7,
+            image: "/images/committee-2025/elymar_pascual.webp",
+            name: "Elymar A. Pascual",
+            country: "Philippines",
+            institution: "Talangan Integrated Nation High School",
+            altText: "Elymar A. Pascual",
+        },
+        {
+            id: 8,
+            image: "/images/committee-2025/siniaia.webp",
+            name: "Sinisa Franjic",
+            country: "Croatia",
+            institution: "Independent Research Croatia",
+            altText: "Sinisa Franjic",
+        },
+        {
+            id: 9,
+            image: "/images/committee-2025/claude.webp",
+            name: "Claude R Joiris",
+            country: "Belgium",
+            institution: "University Brussels",
+            altText: "Claude R Joiris",
+        },
+        {
+            id: 10,
+            image: "/images/committee-2025/Sergey.webp",
+            name: "Sergey Suchkov",
+            country: "Russia",
+            institution: "Sechenov University, Moscow",
+            altText: "Sergey Suchkov",
+        },
+        {
+            id: 11,
+            image: "/images/committee-2025/rafei_moutih.webp",
+            name: "Rafei Moutih",
+            country: "Canada",
+            institution: "University of Montreal",
+            altText: "Rafei Moutih",
+        },
+        {
+            id: 12,
+            image: "/images/committee-2025/yehuda_shoenfeld.webp",
+            name: "Yehuda Shoenfeld",
+            country: "Israel",
+            institution: "Sheba Medical Center",
+            altText: "Yehuda Shoenfeld",
+        },
     ];
+
 
     // Split members into rows of 3 for better layout control
     const memberRows = [];
@@ -121,7 +138,7 @@ const committee = () => {
                 </div>
             </div>
 
-            <h2 className="abs_wrap5 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">Our Planning Committee</h2>
+            <h2 className="abs_wrap5 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">Our Planning Committee 2025</h2>
             <div className="speakers-sections members-main-block">
                 <div className='auto-container'>
                     <div className='row clearfix'>

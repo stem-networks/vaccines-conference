@@ -5362,15 +5362,15 @@ li {
 
 .map_wrap156 {
 	padding-left: 100px;
-	font-size: 15.5px;
-	padding-top: 10px;
+	font-size: 17px;
+	padding-top: 18px;
 	line-height: 24px;
 }
 
 .map_wrap156 .map {
 	position: absolute;
 	left: 25px;
-	top: 25px;
+	top: 16.5px;
 	max-width: 63px;
 	height: auto;
 }
@@ -8682,7 +8682,7 @@ li {
 .speakers-section {
 	text-align: center;
 	padding: 20px;
-	/* margin-top: 60px; */
+	margin-top: 30px;
 }
 
 .speakers-section .speaker-row {
@@ -9366,12 +9366,12 @@ li {
 
 /* Members View All button */
 .members-view-all-btn-block .view-more-speakers-btn {
-	background-color: var(--fourth-color);
+	background-color: var(--primary-color);
 	padding: 13px 37px 14px;
 	font-size: 19px;
 	color: #fff;
 	border-radius: 25px;
-	border: 1px solid var(--fourth-color);
+	border: 1px solid var(--primary-color);
 }
 
 .members-view-all-btn-block .view-more-speakers-btn:hover {

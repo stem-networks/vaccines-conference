@@ -17,6 +17,8 @@ const images = [
     '/images/images/g4.webp',
     '/images/images/city1.webp',
     '/images/images/city2.webp',
+    '/images/images/g2.webp',
+    '/images/images/g4.webp',
 ];
 
 const SwiperGallery = () => {

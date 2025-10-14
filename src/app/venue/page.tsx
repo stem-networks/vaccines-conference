@@ -142,14 +142,14 @@ const Venue = async () => {
                                 <div className="google-map">
                                     <div style={{ width: "100%", height: "300px" }}>
 
-                                        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2760.5137950041217!2d6.102712799999999!3d46.2201263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c654ba27a4fad%3A0xeae08a7a56633043!2sIntercityHotel%20Geneva!5e0!3m2!1sen!2sin!4v1747975520473!5m2!1sen!2sin" width="100%"
+                                        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95780.6243159463!2d2.1401890999999997!3d41.392667949999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49816718e30e5%3A0x44b0fb3d4f47660a!2sBarcelona%2C%20Spain!5e0!3m2!1sen!2sin!4v1755149952443!5m2!1sen!2sin" width="100%"
                                             height="100%"
                                             style={{ border: "0" }}
                                             loading="lazy"
                                             allowFullScreen
                                             referrerPolicy="no-referrer-when-downgrade"></iframe> */}
 
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95780.6243159463!2d2.1401890999999997!3d41.392667949999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49816718e30e5%3A0x44b0fb3d4f47660a!2sBarcelona%2C%20Spain!5e0!3m2!1sen!2sin!4v1755149952443!5m2!1sen!2sin" width="100%"
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d621759.6486064836!2d12.242460368656806!3d52.50178971264698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e373f035901%3A0x42120465b5e3b70!2sBerlin%2C%20Germany!5e0!3m2!1sen!2sin!4v1760420288059!5m2!1sen!2sin" width="100%"
                                             height="100%"
                                             style={{ border: "0" }}
                                             loading="lazy"

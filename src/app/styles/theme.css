@@ -205,7 +205,7 @@ a {
 }
 
 .banner_wrap button:hover {
-	background-color: var(--bannerhover-color);
+	background-color: var(--fifth-color);
 }
 
 .sq_mainbox {
@@ -1685,7 +1685,7 @@ a {
 
 .members-view-all-btn-block {
 	text-align: center;
-	margin: 30px;
+	margin: 60px 0 30px;
 }
 
 .members-view-all-btn-block .view-more-speakers-btn {

@@ -7,7 +7,7 @@
         },
         "sessions": {
             "category": "sessions",
-            "content": "Join us at Virology Conference 2026 for an intensive journey through cutting-edge research, novel vaccine development, and novel antiviral approaches. Meet with top professionals as they share new technologies, emerging regulatory landscapes, and the future of virology.",
+            "content": "Learn how vaccines are the cornerstones of global health through current sessions on next-generation vaccines, innovation, and boosters of vaccines as well as the challenges of vaccine distribution and hesitancy.",
             "headding": "Sessions"
         },
         "offers_content": {
@@ -52,82 +52,82 @@
             "content": "Unlock new opportunities and build valuable connections with our comprehensive networking services, tailored to enhance your conference experience.",
             "headding": "Explore Our comprehensive Networking Services"
         },
-         "Be_A_Volunteer": {
+        "Be_A_Volunteer": {
             "category": "Be_A_Volunteer",
-            "content": "Join us as a <b>virology conference</b> volunteer and become part of a team that will shape the future of virology. Get valuable experience, establish connections, and make contributions to scientific advancements. Make a positive impact on global health!",
+            "content": "<b>Help Drive Vaccine Discoveries – Volunteer for VVIC-2026!</b><br/>\nVolunteer at the Vaccines Conference and play an active role in advancing vaccine. Help us by facilitating discussions, network with professionals, and support global health progress. Apply today and make a lasting impact!",
             "headding": "Be A Volunteer"
         },
         "Submit_Your_Abstract": {
             "category": "Submit_Your_Abstract",
-            "content": "Don't miss your opportunity to present at the best virology conferences and share your breakthrough research. Submit your abstract now and become part of the world's leading researchers in unveiling new findings, treatments, and issues in virology.",
+            "content": "Participate in the global conversation. Share your vision, interact with the best professionals, and influence the future with health solutions. Submit your abstract now.",
             "headding": "Submit Your Abstract"
         },
         "footer_content": {
             "category": "footer_content",
-            "content": "Welcome to our Global Conference, where dedicated professionals accumulate to discover the ultra-modern advancements and high-quality practices in healthcare.",
-            "headding": "Footer Content"
+            "content": "Engage in the Vaccines Conference where the world's leading experts in vaccine technology and global researchers meet to discuss and generate ideas that advance the success of immunization.",
+            "headding": "Footer content"
         }
     },
     "banner_conent": {
         "4": {
             "banner_conent_id": "4",
             "image": "images/banner.jpg",
-            "headding": "Shaping the Future of Virology: Research, Resilience, and Global Health",
-            "tag_line": "Virology-VVIC September 22-23, 2026 in Berlin, Germany",
-            "content": "Discover the future of <b>virology!</b> Download our brochure to sign up and learn about cutting-edge research, upcoming trends, and leading expert views in the field.",
+            "headding": "Current Challenges and Future Directions in Vaccine\nDevelopment",
+            "tag_line": "Vaccines-VVIC September 22-23, 2026 in Berlin, Germany",
+            "content": "Discover the latest vaccine research and global health advancements at the <b>Vaccines Conference.</b> This summit provides a comprehensive platform for vaccine technologies and discusses strategies to enhance immunization impact worldwide. Secure your event brochure today.",
             "page": "index",
             "status": "1",
-            "cid": "10040"
+            "cid": "10039"
         }
     },
     "sessions": [
         {
-            "text": "1.\tEmerging and Re-emerging Viral Diseases",
+            "text": "1. Vaccines targeting immune evasion pathways",
             "link": "vaccines-targeting-immune-evasion-pathways",
             "session_short_name": "Vaccines targeting immune evasion pathways"
         },
         {
-            "text": "2.\tAntiviral Research and Drug Development",
+            "text": "2.\tNext-Generation Vaccine Platforms",
             "link": "next-generation-vaccine-platforms",
             "session_short_name": "Next-Generation Vaccine Platforms"
         },
         {
-            "text": "3.\tViral Immunology and Vaccines",
+            "text": "3.\tVaccine Safety and Efficacy",
             "link": "vaccine-safety-and-efficacy",
             "session_short_name": "Vaccine Safety and Efficacy"
         },
         {
-            "text": "4.\tViral Oncology and Tumor Virus Research",
+            "text": "4.\tInnovations in Immunotherapy",
             "link": "innovations-in-immunotherapy",
             "session_short_name": "Innovations in Immunotherapy"
         },
         {
-            "text": "5.\tHIV/AIDS and Retroviral Research",
+            "text": "5.\tVaccine Development for Emerging Infectious Diseases",
             "link": "vaccine-development-for-emerging-infectious-diseases",
             "session_short_name": "Vaccine Development for Emerging Infectious Diseases"
         },
         {
-            "text": "6.\tGeneral and Medical Virology",
+            "text": "6.\tGlobal Immunization Policies and Strategies",
             "link": "global-immunization-policies-and-strategies",
             "session_short_name": "Global Immunization Policies and Strategies"
         },
         {
-            "text": "7.\tPediatric and Clinical Virology",
+            "text": "7. Equitable Vaccine Access and Distribution",
             "link": "equitable-vaccine-access-and-distribution",
             "session_short_name": "Equitable Vaccine Access and Distribution"
         },
         {
-            "text": "8.\tEnvironmental and Food Virology",
+            "text": "8.\tVaccine Hesitancy and Public Trust ",
             "link": "vaccine-hesitancy-and-public-trust",
             "session_short_name": "Vaccine Hesitancy and Public Trust "
         },
         {
-            "text": "9.\tViral Hepatitis and Liver Diseases",
+            "text": "9. Pediatric Vaccines and Canner Vaccines",
             "link": "pediatric-vaccines-and-canner-vaccines",
             "session_short_name": "Pediatric Vaccines and Canner Vaccines"
         },
         {
-            "text": "10.\tViral Genomics and Evolution",
+            "text": "10. Technological Innovations in Vaccine Manufacturing",
             "link": "technological-innovations-in-vaccine-manufacturing",
             "session_short_name": "Technological Innovations in Vaccine Manufacturing"
         }
@@ -145,19 +145,19 @@
     "venue_images": {
         "41": {
             "image": "images/g1.webp",
-            "alt_text": "Tiergarten Park"
+            "alt_text": "Potsdamer Platz"
         },
         "42": {
             "image": "images/g2.webp",
-            "alt_text": "Potsdamer Platz"
+            "alt_text": "Museum Island"
         },
         "43": {
             "image": "images/g3.webp",
-            "alt_text": "Berlin Wall Memorial"
+            "alt_text": "Pfaueninsel"
         },
         "44": {
             "image": "images/g4.webp",
-            "alt_text": "Charlottenburg Palace"
+            "alt_text": "Brandenburg Gate"
         }
     }
 }
