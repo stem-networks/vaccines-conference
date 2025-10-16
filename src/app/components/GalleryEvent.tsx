@@ -33,10 +33,10 @@ const galleryData: GalleryData = {
         "120.webp", "127.webp", "129.webp",
         "133.webp", "136.webp", "137.webp", "138.webp", "139.webp", "107.webp",
         "141.webp", "142.webp", "143.webp", "144.webp", "145.webp", "146.webp", "147.webp",
-        "150.webp", "153.webp","55.webp",
+        "150.webp", "153.webp", "55.webp",
         "160.webp", "161.webp", "162.webp", "164.webp", "165.webp", "167.webp",
         "170.webp", "171.webp", "172.webp", "135.webp", "173.webp", "174.webp", "175.webp", "176.webp",
-        "180.webp", "184.webp", "185.webp", "186.webp", "187.webp", "13.webp", "7.webp", "104.webp","95.webp"
+        "180.webp", "184.webp", "185.webp", "186.webp", "187.webp", "13.webp", "7.webp", "104.webp", "95.webp"
     ],
     allDay2: [], // empty array, OK
 };
