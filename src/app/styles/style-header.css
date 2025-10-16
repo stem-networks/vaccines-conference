@@ -5369,14 +5369,14 @@ li {
 .map_wrap156 {
 	padding-left: 100px;
 	font-size: 15.5px;
-	padding-top: 10px;
+	padding-top: 30px;
 	line-height: 24px;
 }
 
 .map_wrap156 .map {
 	position: absolute;
 	left: 25px;
-	top: 25px;
+	top: 16.5px;
 	max-width: 63px;
 	height: auto;
 }
