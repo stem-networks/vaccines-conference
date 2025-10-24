@@ -16,7 +16,7 @@ Intructions:
 	--white-color: #fff;
 	--black-color: #000;
 	--abstractfilebg-color: #8cdfed;
-	--offerbg-color: #2b3b5c;
+	--offerbg-color: #b34a06;
 	--contentbg-color: #737373;
 	--iconbg-color: #adadad;
 	--bannerhover-color: #029bb4;
@@ -409,7 +409,7 @@ a {
 }
 
 .add_style1 hr {
-	background-color: var(--primary-color);
+	background-color: var(--secondary-color);
 }
 
 .add_style1 a {
