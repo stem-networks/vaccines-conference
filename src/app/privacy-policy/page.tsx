@@ -49,7 +49,7 @@ const PrivacyPolicy = async () => {
   const generalFetch = await fetchGeneralData();
   const general = generalFetch?.data || {};
 
-  console.log("General data", general);
+  // console.log("General data", general);
   return (
     <div>
       <div className="brand_wrap">
