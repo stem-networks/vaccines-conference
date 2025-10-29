@@ -10771,7 +10771,7 @@ input[text]:focus {
 }
 
 .about-conf-section .overview-content-block .overview-heading {
-	color: var(--fourth-color);
+	color: var(--third-color);
 	font-size: 44px;
 	font-weight: 600;
 	/* font-family: 'Bree Serif', serif; */
