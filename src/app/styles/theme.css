@@ -144,7 +144,7 @@ a {
 
 .main-menu .navigation>li>ul>li:hover>a {
 	background: none;
-	color: var(--secondary-color) !important;
+	color: var(--white-color) !important;
 }
 
 .main-menu .navigation>li>ul>li>ul {

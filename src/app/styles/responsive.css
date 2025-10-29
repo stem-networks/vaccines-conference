@@ -419,7 +419,12 @@
 		color: #ffffff !important;
 		right: 15px;
 		font-size: 16px;
-		display: none !important;
+		/* display: none !important; */
+	}
+
+	.main-menu .navigation li.dropdown .fa-angle-down,
+	.main-menu .navigation li.dropdown .fa-angle-up {
+		float: right;
 	}
 
 	.main-menu .navbar-collapse>.navigation>li>ul,

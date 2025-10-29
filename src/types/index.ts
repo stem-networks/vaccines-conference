@@ -65,6 +65,7 @@ export interface PagesData {
   privacy_policy: PageContent[];
   venue: PageContent[];
   previous_conference: PageContent[];
+  galleryEvent: PageContent[];
 }
 
 // Navigation item interface

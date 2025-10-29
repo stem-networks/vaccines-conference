@@ -121,9 +121,16 @@
     ],
     "previous_conference": [
       {
-        "title": "Previous Conference | VVIC 2026 – Vaccines Conference",
-        "content": "Explore the highlights from our previous Vaccines Conference. Discover groundbreaking research, keynote sessions, and scientific networking that shaped VVIC’s journey towards 2026 in Germany.",
-        "meta_keywords": "Previous Vaccines Conference, Virology Past Events, Immunology Research Highlights, Vaccine Development History, VVIC Previous Editions, Global Immunology Meetings, Virology Conference Archives, Past Vaccine Innovation Summits, Immunology and Virology Research Events"
+        "title": "Previous Conferences | Vaccines 2025 | Global Vaccine Research & Immunology Meetings",
+        "content": "Explore the highlights from our previous vaccine and immunology conferences leading up to Vaccines 2025 in Geneva, Switzerland. Discover key sessions, global experts, groundbreaking research, and collaborative discussions that shaped advancements in vaccine science and public health.",
+        "meta_keywords": "Vaccines 2025, previous vaccine conferences, past vaccine events, immunology meetings, vaccine research summit, global vaccine congress, vaccine development, Geneva conferences, vaccine innovation, vaccine science"
+      }
+    ],
+    "galleryEvent": [
+      {
+        "title": "Event Gallery | Vaccines 2025 Geneva | Global Vaccine Conference Moments",
+        "content": "View the Vaccines 2025 event gallery from Geneva, Switzerland, featuring memorable moments, keynote speakers, scientific sessions, networking events, and global collaborations in vaccine research and immunology innovation.",
+        "meta_keywords": "Vaccines 2025 gallery, vaccine conference photos, Geneva events, vaccine summit highlights, scientific sessions, keynote speakers, global health conference, immunology event, vaccine innovation images, vaccine congress moments"
       }
     ]
   },
@@ -138,7 +145,13 @@
     },
     {
       "title": "Previous Conference",
-      "link": "/previous-conference"
+      "link": "/previous-conference",
+      "subItems": [
+        {
+          "title": "2025 Conference Report",
+          "link": "/previous-conference"
+        }
+      ]
     },
     {
       "title": "Guidelines",
