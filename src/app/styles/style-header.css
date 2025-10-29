@@ -11584,3 +11584,23 @@ input[text]:focus {
 .volunteer-captcha {
 	margin-left: 0;
 }
+
+/* Registration details  */
+@media (max-width: 460px) {
+	.sup_wrap_blue tr {
+		display: block;
+	}
+
+	.sup_wrap_blue tr .re_p3 {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		text-align: left;
+	}
+}
+
+@media (max-width: 460px) {
+	.bg_ap1 {
+		line-height: 28px;
+	}
+}
