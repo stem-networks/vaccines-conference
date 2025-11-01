@@ -1,4 +1,4 @@
-import BannerSection from "./components/BannerSection";
+// import BannerSection from "./components/BannerSection";
 import SessionsComponent from "./components/SessionContent";
 import MainSlider from "./components/MainSlider";
 import ImportantDates from "./components/ImportantDates";
@@ -23,6 +23,7 @@ import {
   emptyRegisterInfo,
 } from "@/lib/fallbacks";
 import Speakers from "./components/Speakers";
+import HeroSlider from "./components/HeroSlider";
 
 async function safeFetch<T>(fn: () => Promise<T>, fallback: T): Promise<T> {
   try {
@@ -131,10 +132,13 @@ const Home = async () => {
 
   return (
     <div>
-      <BannerSection
+      {/* <BannerSection
         generalbannerInfo={general}
         onelinerBannerInfo={indexPageData}
-      />
+      /> */}
+
+      <HeroSlider generalbannerInfo={general}
+        onelinerBannerInfo={indexPageData} />
       <Members />
       <SessionsComponent
         generalInfo={general_info}
